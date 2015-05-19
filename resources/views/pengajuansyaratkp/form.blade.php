@@ -1,4 +1,8 @@
 
+		<div class="form-group">
+			{!! Form::label('no_hp','Nomor HP :') !!}
+			{!! Form::text('no_hp',@$pskp->no_hp,['class'=>'form-control','id'=>'no_hp'])!!}
+		</div>
 
 		<div class="form-group">
 			{!! Form::label('jumlahsks','Jumlah SKS yang telah ditempuh :') !!}

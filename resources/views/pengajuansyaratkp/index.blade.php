@@ -11,6 +11,11 @@
 @if (count($pskp)>0)
 <table border="0" class="table">
 	<tr>
+		<td>No.HP</td>
+		<td>:</td>
+		<td>{!! $pskp->no_hp !!}</td>
+	</tr>
+	<tr>
 		<td>Jumlah SKS yang telah ditempuh</td>
 		<td>:</td>
 		<td>{!! $pskp->jumlah_sks !!}</td>

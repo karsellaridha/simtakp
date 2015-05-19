@@ -26,6 +26,11 @@
 		<td><h4>:</h4></td> 
 		<td><h4>{!! $pskp->ppkp->tempat_kp !!}</h4><td>
 	</tr>
+	<tr>
+		<td><h4>Nomor HP</h4></td>
+		<td><h4>:</h4></td> 
+		<td><h4>{!! $pskp->no_hp !!}</h4><td>
+	</tr>
 </table></center>
 
 @if(count($pskp->verifikasi) < 0)

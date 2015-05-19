@@ -20,73 +20,38 @@
     <td>:</td> 
     <td>{!! Auth::user()->mahasiswa->pengajuanpembkp->dosen->nama !!}<td>
   </tr>
+   <tr>
+    <td>Tempat KP</td>
+    <td>:</td> 
+    <td>{!! Auth::user()->mahasiswa->pengajuanpembkp->tempat_kp !!}<td>
+  </tr>
 </table></center>
 
 <div class="box-body">
-  
-@if (count($pskp)>0)
+
+@if (count($inputnilaikp)>0)
 <table border="0" class="table">
   <tr>
-    <td>Jumlah SKS yang telah ditempuh</td>
+    <td>Pembimbing Lapangan</td>
     <td>:</td>
-    <td>{!! $pskp->jumlah_sks !!}</td>
+    <td>{!! $inputnilaikp->pemb_lapangan !!}</td>
   </tr>
   <tr>
-    <td>ID transaksi SPP</td>
+    <td>Jumlah Nilai Pembimbing Lapangan</td>
     <td>:</td>
-    <td>{!! $pskp->id_transaksispp !!}</td>
+    <td>{!! $inputnilaikp->nilai_pemblapangan !!}</td>
   </tr>
   <tr>
-    <td>ID transaksi DPL</td>
+    <td>Form Penilaian Pembimbing</td>
     <td>:</td>
-    <td>{!! $pskp->id_transaksidpl !!}</td>
-  </tr>
-  <tr>
-    <td>Lama Kerja Praktik</td>
-    <td>:</td>
-    <td>{!! $pskp->lama_kp !!}</td>
-  </tr>
-    <tr>
-    <td>Tempat Kerja Praktik</td>
-    <td>:</td>
-    <td>{!! $ppkp->tempat_kp !!}</td>
-  </tr>
-  <tr>
-    <td>Proposal KP yang disetujui pembimbing</td>
-    <td>:</td>
-    <td>{!! $pskp->proposal_kp !!}</td>
-  </tr>
-  <tr>
-    <td>Mengisi Form Permohonan KP</td>
-    <td>:</td>
-    <td>{!! $pskp->permohonan_kp !!}</td>
-  </tr>
-  <tr>
-    <td>Surat Kesediaan Dosen Untuk membimbing yang telah di tanda tangani</td>
-    <td>:</td>
-    <td>{!! $pskp->kesediaan_membimbing !!}</td>
-  </tr>
-  <tr>
-    <td>Dosen Pembimbing</td>
-    <td>:</td>
-    <td>{!! $ppkp->dosen->nama !!}</td>
-  </tr>
-  <tr>
-    <td>Status</td>
-    <td>:</td>
-    <td><span class="label {!! ($pskp->status_syaratkp=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $pskp->status_syaratkp !!}</span></td>
+    <td><a href= "{!! url($inputnilaikp->file_nilai) !!}">Buka File</a></td>
   </tr>
   
 </table>
 @endif
 
-@if (count($pskp)==0)
-<a href="{!! url('inputnilaikpmhs/input')!!}" class="btn btn-primary">{!!"Ajukan"!!}</a>
-@else
-
-@if (@$pskp->status_syaratkp=="diajukan")
-<a href="{!! url('inputnilaikpmhs/input')!!}" class="btn btn-primary">{!! (count($ppkp)>0) ? "Edit" : "Ajukan" !!}</a>
-@endif
+@if (count($inputnilaikp)==0)
+<a href="{!! url('inputnilaikpmhs/input')!!}" class="btn btn-primary">{!!"Input"!!}</a>
 @endif
 
 

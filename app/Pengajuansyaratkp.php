@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pengajuansyaratkp extends Model {
 
 	protected $table = 'pengajuan_syaratkp';
-	protected $fillable	= ['nim','id_pengajuan_pembkp','jumlah_sks','id_transaksispp','id_transaksidpl','lama_kp','status_syaratkp'];
+	protected $fillable	= ['nim','no_hp','id_pengajuan_pembkp','jumlah_sks','id_transaksispp','id_transaksidpl','lama_kp','status_syaratkp'];
 	public $timestamps = false;
 	
 	public function mahasiswa(){

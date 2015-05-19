@@ -166,7 +166,7 @@
                   <ul class="treeview-menu">
 
                     @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Input Penilaian KP</a></li>
+                    <li><a href="inputnilaikpmhs"><i class="fa fa-circle-o"></i> Input Penilaian KP</a></li>
                     @endif
                    
                     </ul>

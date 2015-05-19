@@ -86,8 +86,9 @@ Route::get('bimbingankp/{bimbingankp}', "BimbingankpController@deleteBimbingankp
 Route::get('mhsdibimbingkp',"BimbingankpController@dataMhsbimbingankp");
 Route::get('mhsdibimbingkp/bimbingankp/{id}',"BimbingankpController@bimbingankp");
 
-
-
-
+//input nilai kp dari mhs
+Route::get('inputnilaikpmhs',"InputnilaikpController@index");
+Route::get('inputnilaikpmhs/input',"InputnilaikpController@input");
+Route::post('inputnilaikpmhs/input',"InputnilaikpController@prosesinput");
 
 });
