@@ -1,4 +1,9 @@
-<div class="form-group">
+		<div class="form-group">
+			{!! Form::label('nim','NIM :') !!}
+			{!! Form::text('nim',@$nilaikp->mahasiswa->nim,['class'=>'form-control','id'=>'nim'])!!}
+		</div>
+
+		<div class="form-group">
 			{!! Form::label('kesesuaian_laporan','Kesesuaian Laporan dengan Format :') !!}
 			{!! Form::text('kesesuaian_laporan',@$nilaikp->kesesuaian_laporan,['class'=>'form-control','id'=>'kesesuaian_laporan'])!!}
 			<span style="font-size:10pt; color:red;">point nilai 30%</span>

@@ -55,11 +55,15 @@ class InputnilaikpController extends Controller {
 	}
 
 	public function inputdosen($id){
-		return view("inputnilaikpdosen.inputdosen");
+		$mahasiswa = Mahasiswa::firstOrNew($id)->$id;
+		return view("inputnilaikpdosen.inputdosen")->with('mahasiswa',$mahasiswa);
 	}
 
 	public function prosesInputdosen(Request $request,$id){
-
+		$nilaikp=Inputnilaikp::firstOrNew($nim);
+		$nilaikp->fill($request->all());
+		$nilaikp->save();
+		return redirect("iputnilaikpdosen");
 	}
 
 }
