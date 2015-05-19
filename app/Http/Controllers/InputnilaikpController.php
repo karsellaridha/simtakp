@@ -54,5 +54,13 @@ class InputnilaikpController extends Controller {
 
 	}
 
+	public function inputdosen($id){
+		return view("inputnilaikpdosen.inputdosen");
+	}
+
+	public function prosesInputdosen(Request $request,$id){
+
+	}
+
 }
  

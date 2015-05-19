@@ -82,10 +82,6 @@
 </table>
 @endif
 
-@if (count($inputnilaikp)==0)
-<a href="{!! url('inputnilaikpdosen/input')!!}" class="btn btn-primary">{!! (count($inputnilaikp)>0) ? "Edit" : Input Nilai KP Mahasiswa"!!}</a>
-@endif
-
 </div><!-- /.box-body -->
 </div><!-- /.box -->
 
