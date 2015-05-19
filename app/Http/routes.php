@@ -91,4 +91,9 @@ Route::get('inputnilaikpmhs',"InputnilaikpController@index");
 Route::get('inputnilaikpmhs/input',"InputnilaikpController@input");
 Route::post('inputnilaikpmhs/input',"InputnilaikpController@prosesinput");
 
+//input nilai kp dari mhs
+Route::get('inputnilaikpdosen',"InputnilaikpController@index");
+Route::get('inputnilaikpdosen/input',"InputnilaikpController@input");
+Route::post('inputnilaikpdosen/input',"InputnilaikpController@prosesinput");
+
 });

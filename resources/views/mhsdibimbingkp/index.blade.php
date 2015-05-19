@@ -29,7 +29,7 @@
 			<td>Nilai KP</td>
 			<td>
 				<a href="{!! url("mhsdibimbingkp/bimbingankp/".$data_bimbingankp->id) !!}">Progress Bimbingan</a><br>
-				<a href="{!! url("mhsdibimbingkp/inputnilaikp".$data_bimbingankp->id) !!}">Input Nilai KP</a>
+				<a href="{!! url("mhsdibimbingkp/inputnilaikpdosen".$data_bimbingankp->id) !!}">Input Nilai KP</a>
 			</td>
 		</tr>
 
