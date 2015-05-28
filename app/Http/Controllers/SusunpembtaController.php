@@ -6,6 +6,7 @@ use Illuminate\Http\HttpResponse;
 use  Illuminate\Http\Request;
 
 use App\Pengajuanpembta;
+use App\KuotaBimbingan;
 use App\Dosen;
 use App\Mahasiswa;
 use DB;
@@ -13,9 +14,13 @@ use DB;
 class SusunpembtaController extends Controller {
 
 	public function index(){
-		$dosen=Dosen::all();
-		$ppta= new Pengajuanpembta;
-		return view('susunpembkp.index')->with('ppta',$ppta)->with('dosen',$dosen);
+		$dosen=Dosen::lists('nama','nip');
+		$list_dosen=KuotaBimbingan::lists('kuota_ta','nip');
+		$ppta = Pengajuanpembta::where('tahun','=',date('Y'))->get();
+		return view('susunpembta.index')
+		->with('ppta',$ppta)
+		->with('dosen',$dosen)
+		->with('list_dosen',$list_dosen);
 
 	}
 

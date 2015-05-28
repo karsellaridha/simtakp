@@ -13,12 +13,12 @@ class Pengajuanpembta extends Model {
 		return $this->belongsTo('App\Mahasiswa','nim','nim');
 	}
 
-	public function pembimbing_1(){
-		return $this->belongsTo('App\Dosen','nip','nip');
+	public function data_pembimbing_1(){
+		return $this->belongsTo('App\Dosen','pembimbing_1','nip');
 	}
 
-	public function pembimbing_2(){
-		return $this->belongsTo('App\Dosen','nip','nip');
+	public function data_pembimbing_2(){
+		return $this->belongsTo('App\Dosen','pembimbing_2','nip');
 	}
 
 	public function bimbinganta(){

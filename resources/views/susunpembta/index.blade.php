@@ -13,36 +13,33 @@
 	
 <div class='clearfix'></div><br>
 
-@foreach($dosen as $dos)
-Dosen : {!!$dos->nip!!}<br>
-Nama : {!!$dos->nama!!}<br>
-Kuota : {!!$dos->kuotabimbingan()->kuota_kp!!}<br>
+
 <table class='table table-bordered'>
 	<thead style='background:#c0c0c0'>
 		<tr>
 <td>NIM</td>
 <td>Nama</td>
-<td>Tempat KP</td>
-<td>Tukar</td>
+<td>Judul TA</td>
+<td>Pembimbing 1</td>
+<td>Pembimbing 2</td>
 		</tr>
 	</thead>
 	<tbody>
 
-<?php $p = $ppkp->with('mahasiswa')->where('nip','=',$dos->nip)->where('status_pembimbing','=','diajukan')->where('tahun','=',date('Y'))->get() ?>
-
-@foreach($p as $pp)
+@foreach($ppta as $pp)
 <tr>
 <td>{!! $pp->nim !!}</td>
 <td>{!! $pp->mahasiswa->nama !!}</td>
-<td>{!! $pp->tempat_kp !!}</td>
-<td>{!! Form::checkbox('tukar[]',$pp->id,null,['class'=>'tukar']) !!}</td>
+<td>{!! $pp->judul !!}</td>
+<td>{!! Form::select('pembimbing_1',$dosen,$pp->pembimbing_1,['class'=>'form-control']) !!}</td>
+<td>{!! $pp->pembimbing_2 !!}</td>
 </tr>
 @endforeach
 
 
 	</tbody>
 </table>
-@endforeach
+
 
 
 
@@ -66,13 +63,25 @@ Kuota : {!!$dos->kuotabimbingan()->kuota_kp!!}<br>
 
 {!! Form::close() !!}
 
+<div class='kuotalist'></div>
+
 @stop
 
 @section('js')
 <script type="text/javascript">
+var kuota = <?php echo json_encode($list_dosen); ?>;
 
+function getKuota(idx){
+	return kuota[idx];
+}
 
-
-
+function makeKuotaList(){
+	var data;
+	$.each(kuota as idx){
+		
+	}
+	$("#kuotalist").html(data);
+}
+makeKuotaList();
 </script>
 @stop

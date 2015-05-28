@@ -13,12 +13,12 @@
 	<tr>
 		<td>Dosen Pembimbing 1</td>
 		<td>:</td>
-		<td>{!! $ppta->dosen->nama !!}</td>
+		<td>{!! @$ppta->data_pembimbing_1->nama !!}</td>
 	</tr>
 	<tr>
 		<td>Dosen Pembimbing 2</td>
 		<td>:</td>
-		<td>{!! $ppta->dosen->nama !!}</td>
+		<td>{!! @$ppta->data_pembimbing_2->nama !!}</td>
 	</tr>
 	<tr>
 		<td>Judul Tugas Akhir</td>

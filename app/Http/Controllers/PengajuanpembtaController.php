@@ -33,8 +33,9 @@ class PengajuanpembtaController extends Controller {
 		
 	}
 	public function prosesInput(Request $request){
-		$dosen=Dosen::where("nip","=",$request->input('nip'))->first();
-		if($dosen->sisakuotakp()>0){
+		$pemb1=Dosen::where("nip","=",$request->input('pembimbing_1'))->first();
+		$pemb2=Dosen::where("nip","=",$request->input('pembimbing_2'))->first();
+		if($pemb1->sisakuotata()>0 and $pemb1->sisakuotata()>0){
 			$nim=Auth::user()->mahasiswa->nim;
 			$ppkp=Pengajuanpembta::firstOrNew(["nim"=>$nim]);
 			$ppkp->fill($request->all());
