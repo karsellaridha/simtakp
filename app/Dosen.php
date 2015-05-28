@@ -42,16 +42,18 @@ class Dosen extends Model {
 		return $this->kuotabimbingan()->kuota_kp - $this->jumlahbimbingankp();
 	}
 
-/*
 	public function jumlahbimbinganta(){
 		$jumlahbimbingan=0;
-		$jumlahbimbingan=Pengajuanpembta::where('nip','=', $this->nip)->where('tahun','=',date('Y'))->count();
+		$jumlahbimbingan=Pengajuanpembta::where(
+			function($query){
+				$query->where('pembimbing_1','=', $this->nip)
+					->orWhere('pembimbing_2','=', $this->nip);
+			})->where('tahun','=',date('Y'))->count();
 		return $jumlahbimbingan;
 	}
-*/
-	public function sisakuotata(){
-		return 0;
-	}
 
+	public function sisakuotata(){
+		return $this->kuotabimbingan()->kuota_ta - $this->jumlahbimbinganta();
+	}
 
 }

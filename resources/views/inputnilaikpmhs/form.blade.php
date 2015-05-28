@@ -1,5 +1,10 @@
 
 		<div class="form-group">
+			{!! Form::label('judul_kp','Judul Laporan KP :') !!}
+			{!! Form::text('judul_kp',@$nilaikp->judul_kp,['class'=>'form-control','id'=>'judul_kp'])!!}
+		</div>
+
+		<div class="form-group">
 			{!! Form::label('pemb_lapangan','Pembimbing Lapangan :') !!}
 			{!! Form::text('pemb_lapangan',@$nilaikp->pemb_lapangan,['class'=>'form-control','id'=>'pemb_lapangan'])!!}
 		</div>

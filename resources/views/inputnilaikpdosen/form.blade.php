@@ -1,7 +1,4 @@
-		<div class="form-group">
-			{!! Form::label('nim','NIM :') !!}
-			{!! Form::text('nim',@$nilaikp->mahasiswa->nim,['class'=>'form-control','id'=>'nim'])!!}
-		</div>
+
 
 		<div class="form-group">
 			{!! Form::label('kesesuaian_laporan','Kesesuaian Laporan dengan Format :') !!}

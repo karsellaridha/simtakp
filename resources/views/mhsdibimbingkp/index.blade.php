@@ -13,8 +13,10 @@
 			<th>NIM</th>
 			<th>Nama</th>
 			<th>Dosen Pembimbing</th>
+			<th>Program Studi</th>
 			<th>Tempat KP</th>
 			<th>Nilai KP</th>
+			<th>Detail Nilai</th>
 			<th>Aksi</th>
 		</tr>
 	</thead>
@@ -25,11 +27,15 @@
 			<td>{!!$data_bimbingankp->nim !!}</td>
 			<td>{!!$data_bimbingankp->mahasiswa->nama!!}</td>
 			<td>{!!$data_bimbingankp->dosen->nama!!}</td>
+			<td>{!!$data_bimbingankp->mahasiswa->prodi->nama!!}</td>
 			<td>{!!$data_bimbingankp->tempat_kp!!}</td>
-			<td>Nilai KP</td>
+			<td>{!! (count($data_bimbingankp->nilaikp)>0 ? $data_bimbingankp->nilaikp->total_nilaikp() : "Belum di input") !!}</td>
+			<td><a href="{!! url("mhsdibimbingkp/detail/".$data_bimbingankp->nim) !!}">Lihat Detail</td>
 			<td>
 				<a href="{!! url("mhsdibimbingkp/bimbingankp/".$data_bimbingankp->id) !!}">Progress Bimbingan</a><br>
-				<a href="{!! url("inputnilaikpdosen/".$data_bimbingankp->id) !!}">Input Nilai KP</a>
+				@if(Auth::user()->role=="dosen")
+				{!! (count($data_bimbingankp->nilaikp)>0 ? "<a href='".url('inputnilaikpdosen/'.$data_bimbingankp->nim)."'>Input Nilai KP</a>" : "") !!}
+				@endif
 			</td>
 		</tr>
 

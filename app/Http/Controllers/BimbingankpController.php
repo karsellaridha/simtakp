@@ -10,6 +10,7 @@ use App\Dosen;
 use App\Pengajuanpembkp;
 use Auth;
 use App\Bimbingankp;
+use App\Inputnilaikp;
 
 class BimbingankpController extends Controller {
 public function tambah(){
@@ -48,14 +49,26 @@ public function	deleteBimbingankp($id){
 }
 
 public function dataMhsbimbingankp(){
-	$datamhsbimbingankp=Pengajuanpembkp::where('nip','=',Auth::user()->dosen->nip)->get();
-return view("mhsdibimbingkp.index")->with("datamhsbimbingankp",$datamhsbimbingankp);
-}
+	if(Auth::user()->role=="ketua jurusan"){
+		$datamhsbimbingankp=Pengajuanpembkp::all();
+	}
+	else{
+		$datamhsbimbingankp=Pengajuanpembkp::where('nip','=',Auth::user()->dosen->nip)->get();
+	}
+	return view("mhsdibimbingkp.index")->with("datamhsbimbingankp",$datamhsbimbingankp);
+	}
 
 public function bimbingankp($id){
 		$datamhsbimbingankp=Pengajuanpembkp::findOrFail($id);
 		return view('mhsdibimbingkp.bimbingankp')->with('datamhsbimbingankp',$datamhsbimbingankp);
 	}
+
+public function detail($nim){
+		$pengajuanpembkp=Pengajuanpembkp::where('nim','=',$nim)->first();
+		$nilaikp=Inputnilaikp::where('nim','=',$nim)->first();
+		return view('mhsdibimbingkp.detail')->with('pengajuanpembkp',$pengajuanpembkp)->with('nilaikp',$nilaikp);
+	
+}
 
 }
  

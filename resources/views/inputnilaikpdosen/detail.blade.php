@@ -20,6 +20,12 @@
   </tr>
 
   <tr>
+    <td>Program Studi</td>
+    <td>:</td> 
+    <td>{!! Auth::user()->mahasiswa->prodi->nama !!}<td> 
+  </tr>
+
+  <tr>
     <td>Dosen Pembimbing</td>
     <td>:</td> 
     <td>{!! Auth::user()->mahasiswa->pengajuanpembkp->dosen->nama !!}<td>
@@ -29,6 +35,12 @@
     <td>Tempat KP</td>
     <td>:</td> 
     <td>{!! Auth::user()->mahasiswa->pengajuanpembkp->tempat_kp !!}<td>
+  </tr>
+
+<tr>
+    <td>Judul Laporan KP</td>
+    <td>:</td> 
+    <td>{!! $inputnilaikp->judul_kp !!}<td>
   </tr>
 
   <tr>

@@ -20,4 +20,8 @@ class Pengajuanpembkp extends Model {
 	public function bimbinganKp(){
 		return $this->hasMany('App\Bimbingankp','id_pengajuanpembkp');
 	}
+
+	public function nilaikp(){
+		return $this->hasOne('App\Inputnilaikp','id_pengajuanpembkp');
+	}
 }

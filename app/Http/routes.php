@@ -69,11 +69,6 @@ Route::get('verifikasisyaratkp',"VerifikasisyaratkpController@index");
 Route::get('verifikasisyaratkp/{id}/detail',"VerifikasisyaratkpController@detail");
 Route::post('verifikasisyaratkp/{id}',"VerifikasisyaratkpController@verifikasi");
 
-//Validasi Syarat KP
-Route::get('validasisyaratkp',"ValidasisyaratkpController@index");
-Route::get('validasisyaratkp/{id}/detail',"ValidasisyaratkpController@detail");
-Route::post('validasisyaratkp/{id}',"ValidasisyaratkpController@validasi");
-
 //Input Bimbingan KP
 Route::get('bimbingankp/tambah',"BimbingankpController@tambah");
 Route::post('bimbingankp', "BimbingankpController@prosesTambah");
@@ -85,6 +80,7 @@ Route::get('bimbingankp/{bimbingankp}', "BimbingankpController@deleteBimbingankp
 //tampilkan mahasiswa yang dibimbing kp di page dosen
 Route::get('mhsdibimbingkp',"BimbingankpController@dataMhsbimbingankp");
 Route::get('mhsdibimbingkp/bimbingankp/{id}',"BimbingankpController@bimbingankp");
+Route::get('mhsdibimbingkp/detail/{nim}',"BimbingankpController@detail");
 
 //input nilai kp dari mhs
 Route::get('inputnilaikpmhs',"InputnilaikpController@index");
@@ -92,8 +88,32 @@ Route::get('inputnilaikpmhs/input',"InputnilaikpController@input");
 Route::post('inputnilaikpmhs/input',"InputnilaikpController@prosesinput");
 
 //input nilai kp dari mhs
-Route::get('inputnilaikpdosen',"InputnilaikpController@index");
-Route::get('inputnilaikpdosen/{id}',"InputnilaikpController@inputdosen");
-Route::post('inputnilaikpdosen/{id}',"InputnilaikpController@prosesinputdosen");
+Route::get('inputnilaikpdosen/{nim}/detail',"InputnilaikpController@detail");
+Route::get('inputnilaikpdosen/{nim}',"InputnilaikpController@inputdosen");
+Route::post('inputnilaikpdosen/{nim}',"InputnilaikpController@prosesinputdosen");
+
+//Pengajuan Pembimbing TA
+Route::get('pengajuanpembta', "PengajuanpembtaController@index");
+Route::get('pengajuanpembta/input', "PengajuanpembtaController@input");
+Route::post('pengajuanpembta/input', "PengajuanpembtaController@prosesInput");
+Route::get('pengajuanpembta/detail',"PengajuanpembtaController@detail");
+Route::get('pengajuanpembta/daftardosen/{pemb}',"PengajuanpembtaController@daftarDosen");
+
+//Susun Pembimbing TA
+Route::get('susunpembta',"SusunpembtaController@index");
+Route::post('susunpembta/input',"SusunpembtaController@input");
+Route::get('susunpembta/lihatdata',"SusunpembtaController@lihatdata");
+Route::get('susunpembta/batal/{id}',"SusunpembtaController@batal");
+Route::get('susunpembta/simpan',"SusunpembtaController@simpan");
+
+//Pengajuan syarat TA
+Route::get('pengajuansyaratta', "PengajuansyarattaController@index");
+Route::get('pengajuansyaratta/input', "PengajuansyarattaController@input");
+Route::post('pengajuansyaratta/input', "PengajuansyarattaController@prosesInput");
+
+//Verifikasi Syarat TA
+Route::get('verifikasisyaratta',"VerifikasisyarattaController@index");
+Route::get('verifikasisyaratta/{id}/detail',"VerifikasisyarattaController@detail");
+Route::post('verifikasisyaratta/{id}',"VerifikasisyarattaController@verifikasi");
 
 });

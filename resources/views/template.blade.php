@@ -108,6 +108,8 @@
                       <a href="{{ url('susunpembkp') }}"><i class="fa fa-circle-o"></i> Susun Pembimbing KP </a></li>
                     @endif
               </ul>
+              </li>
+            </ul>
               <!-- end sub menu-->
               @endif
 
@@ -151,7 +153,7 @@
 
                     @if(Auth::user()->role=="ketua jurusan")
                     <li>
-                      <a href="bimbingankpks"><i class="fa fa-circle-o"></i> Lihat Progress Bimbingan KP </a></li>
+                      <a href="mhsdibimbingkp"><i class="fa fa-circle-o"></i> Lihat Progress Bimbingan KP </a></li>
                     @endif
                    
                     </ul>
@@ -169,10 +171,124 @@
                     <li><a href="inputnilaikpmhs"><i class="fa fa-circle-o"></i> Input Penilaian KP</a></li>
                     @endif
                    
+                  </ul>
+            </li>
+            @endif
+                <!-- end sub menu-->
+
+          </li>
+
+          <li class="treeview">
+              <a href="#">
+            <i class="fa fa-dashboard"></i> <span> Tugas Akhir</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+
+              <ul class="treeview-menu">
+
+                <!-- sub menu-->
+                @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="ketua jurusan")
+              <li>
+                  <a href=""><i class="fa fa-circle-o"></i> Dosen Pembimbing TA <i class="fa fa-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu">
+
+                    @if(Auth::user()->role=="mahasiswa")
+                    <li><a href="{{ url('pengajuanpembta') }}"><i class="fa fa-circle-o"></i> Pengajuan Pembimbing TA</a></li>
+                    @endif
+
+                    @if(Auth::user()->role=="ketua jurusan")
+                    <li>
+                      <a href="{{ url('susunpembta') }}"><i class="fa fa-circle-o"></i> Susun Pembimbing TA </a></li>
+                    @endif
+              </ul>
+              </li>
+            </ul>
+              <!-- end sub menu-->
+              @endif
+
+              <!-- sub menu-->
+               @if(Auth::user()->role=="dosen")
+              <li>
+                  <a href="mhsdibimbingta"><i class="fa fa-circle-o"></i> Mahasiswa yang dibimbing</a>
+              </li>
+              @endif
+              <!-- end menu-->
+
+              <!-- sub menu-->
+              @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="admin")
+            <li>
+                  <a href=""><i class="fa fa-circle-o"></i> Administrasi Syarat TA <i class="fa fa-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu">
+
+                    @if(Auth::user()->role=="mahasiswa")
+                    <li><a href="pengajuansyaratta"><i class="fa fa-circle-o"></i> Pengajuan Syarat TA</a></li>
+                    @endif
+
+                    @if(Auth::user()->role=="admin")
+                    <li>
+                      <a href="verifikasisyaratta"><i class="fa fa-circle-o"></i> Verifikasi Syarat TA </a></li>
+                    @endif
+                   
                     </ul>
             </li>
             @endif
                 <!-- end sub menu-->
+
+                <!-- sub menu-->
+                 @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="ketua jurusan")
+            <li>
+                  <a href=""><i class="fa fa-circle-o"></i> Progress Bimbingan TA <i class="fa fa-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu">
+
+                    @if(Auth::user()->role=="mahasiswa")
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Input Progress Bimbingan TA</a></li>
+
+                    <a href=""><i class="fa fa-circle-o"></i> Pembimbing 1 <i class="fa fa-angle-left pull-right"></i></a>
+
+                    <a href=""><i class="fa fa-circle-o"></i> Pembimbing 2 <i class="fa fa-angle-left pull-right"></i></a>
+                    @endif
+
+                    @if(Auth::user()->role=="ketua jurusan")
+                    <li>
+                      <a href="mhsdibimbingta"><i class="fa fa-circle-o"></i> Lihat Progress Bimbingan TA </a></li>
+                    @endif
+                   
+                    </ul>
+            </li>
+            @endif
+                <!-- end sub menu-->
+
+          <!-- sub menu-->
+              @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="admin")
+            <li>
+                  <a href=""><i class="fa fa-circle-o"></i> Administrasi Syarat Ujian TA <i class="fa fa-angle-left pull-right"></i></a>
+                  <ul class="treeview-menu">
+
+                    @if(Auth::user()->role=="mahasiswa")
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Pengajuan Syarat Ujian TA 1</a></li>
+                    @endif
+
+                    @if(Auth::user()->role=="mahasiswa")
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Pengajuan Syarat Ujian TA 2</a></li>
+                    @endif
+
+                    @if(Auth::user()->role=="admin")
+                    <li>
+                      <a href="#"><i class="fa fa-circle-o"></i> Verifikasi Syarat Ujian TA 1</a></li>
+                    @endif
+
+                    @if(Auth::user()->role=="admin")
+                    <li>
+                      <a href="#"><i class="fa fa-circle-o"></i> Verifikasi Syarat Ujian TA 2</a></li>
+                    @endif
+                   
+                   
+                    </ul>
+            </li>
+            @endif
+                <!-- end sub menu-->
+
+          </li>
 
       @if(Auth::user()->role=="admin" or Auth::user()->role=="ketua jurusan")
       <li class="treeview">
@@ -184,7 +300,7 @@
                 <li><a href="{{ url('kuotabimbingan') }}"><i class="fa fa-circle-o"></i>Input Kuota Bimbingan</a></li>
                 
               </ul>
-            </li>
+      </li>
       @endif
            
       @if(Auth::user()->role=="admin")
@@ -197,8 +313,10 @@
                 <li><a href="{{ url('mahasiswa') }}"><i class="fa fa-circle-o"></i>Data Mahasiswa</a></li>
                 <li><a href="{{ url('dosen') }}"><i class="fa fa-circle-o"></i>Data Dosen</a></li>
               </ul>
-            </li>
+      </li>
       @endif
+    </ul>
+    
     </section>
         <!-- /.sidebar -->
         <!-- /.sidebar -->
@@ -264,15 +382,15 @@
         });
 
 
-        function refreshModal(Loading){
+       
           $(document.body).on('hidden.bs.modal', function ()
           {
-            $('.modal-content').html("<div class='modal-body'>"+loading+"</div>");
-            $('#myModal').removedata('bs.modal');
+            $('.modal-content').html("<div class='modal-body'>"+"loading"+"</div>");
+            $('#myModal').removeData('bs.modal');
           });
-        }
 
-        refreshModal("Loading..");
+
+      
 
 
       });

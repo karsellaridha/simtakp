@@ -33,7 +33,7 @@
 	</tr>
 </table></center>
 
-@if(count($pskp->verifikasi) < 0)
+@if(count($pskp->verifikasi)==0)
 
 {!! Form::open(['url'=>"verifikasisyaratkp/$pskp->id"]) !!}
 
@@ -90,7 +90,7 @@
 			<div class="col-md-2 pull-right">
 				<a href="{!! url('verifikasisyaratkp')!!}" class="btn btn-primary form-control">Kembali</a>
 			</div>
-@if(count($pskp->verifikasi) < 0)
+@if(count($pskp->verifikasi)==0)
 			<div class="col-md-2 pull-right">
 				{!! Form::submit("Verifikasi",['class'=>'btn btn-primary form-control','required']) !!}
 			</div>

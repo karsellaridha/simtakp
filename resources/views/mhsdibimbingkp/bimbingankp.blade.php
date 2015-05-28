@@ -54,21 +54,6 @@
 
                   </div>
 
-                 <script type="text/javascript">
-                 $(".pilih").click(function(e){
-                 	e.preventDefault();
-                 	if($(this).data('sisakuota')>0){
-                 		$("#nip").val($(this).data('nip'));
-                 		$("#nama").val($(this).data('nama'));
-                 		$('#myModal').modal('hide');
-                 	}else{
-                 		alert('maaf kuota dosen ini sudah penuh');
-                 	}
-                 	
-
-                 });
-                 </script>
-
 
 @stop
 
