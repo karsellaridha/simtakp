@@ -27,7 +27,7 @@
 
 	@foreach($psta as $data)
 	<tr>
-		<td>{!! $data->nim !!}</td>
+		<td>{!! $data->mahasiswa->nim !!}</td>
 		<td>{!! $data->mahasiswa->nama !!}</td>
 		<td>{!! $data->ppta->dosen->nama!!}</td>
 		<td>{!! $data->ppta->tempat_kp !!}</td>
