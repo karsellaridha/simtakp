@@ -221,7 +221,7 @@
                   <ul class="treeview-menu">
 
                     @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="pengajuansyaratta"><i class="fa fa-circle-o"></i> Pengajuan Syarat TA</a></li>
+                    <li><a href="{{ url('pengajuansyaratta') }}"><i class="fa fa-circle-o"></i> Pengajuan Syarat TA</a></li>
                     @endif
 
                     @if(Auth::user()->role=="admin")
