@@ -13,32 +13,31 @@ use DB;
 class SusunpembkpController extends Controller {
 
 	public function index(){
-		$dosen=Dosen::all();
-		$ppkp= new Pengajuanpembkp;
-		return view('susunpembkp.index')->with('ppkp',$ppkp)->with('dosen',$dosen);
-
-	}
-
-	public function simpan(){
-		$mahasiswa=Pengajuanpembkp::where('status_pembimbing','=','diajukan')->where('tahun','=',date('Y'))->get();
-		foreach ($mahasiswa as $key => $value) {
-			DB::table('pengajuan_pembkp')->where("nim", "=",$value->nim)->update(["status_pembimbing"=>"disetujui"]);
-		}
-		return redirect ('susunpembkp');
+		$dosen=Dosen::lists('nama','nip');
+		$dosenAll=Dosen::all();
+		$ppkp = Pengajuanpembkp::where('tahun','=',date('Y'))->where('status_pembimbing','=','diajukan')->get();
+		return view('susunpembkp.index')
+		->with('ppkp',$ppkp)
+		->with('dosen',$dosen)
+		->with('dosenAll',$dosenAll);
 
 	}
 
 	public function input(Request $request){
-		$nip_temp = '';
-			$p1 = Pengajuanpembkp::findOrFail($request->input('tukar')[0]);
-			$p2 = Pengajuanpembkp::findOrFail($request->input('tukar')[1]);
+		$id = $request->input('id');
+		$pembimbing= $request->input('pembimbing');
 
-			$nip_temp = $p1->nip;
-			$p1->nip = $p2->nip;
-			$p2->nip = $nip_temp;
-
-			$p1->save();
-			$p2->save();
+		DB::transaction(function()use($id,$pembimbing){
+	
+			foreach ($id as $key => $value) {
+					DB::table('pengajuan_pembkp')
+					->where('id','=',$value)
+					->update([
+							'nip'=>$pembimbing[$key],
+							'status_pembimbing'=>'disetujui'
+						]);
+				}	
+		});
 
 			return redirect('susunpembkp');
 	}
