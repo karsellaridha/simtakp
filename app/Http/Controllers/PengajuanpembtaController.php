@@ -15,7 +15,6 @@ class PengajuanpembtaController extends Controller {
 	public function daftarDosen($pemb){
 		$dosen=Dosen::all();
 		return view('pengajuanpembta.index')->with('dosen',$dosen)->with('pemb',$pemb);
-
 	}
 
 	public function index(){
@@ -35,7 +34,7 @@ class PengajuanpembtaController extends Controller {
 	public function prosesInput(Request $request){
 		$pemb1=Dosen::where("nip","=",$request->input('pembimbing_1'))->first();
 		$pemb2=Dosen::where("nip","=",$request->input('pembimbing_2'))->first();
-		if($pemb1->sisakuotata()>0 and $pemb1->sisakuotata()>0){
+		if($pemb1->sisakuotata()>=0 and $pemb1->sisakuotata()>=0){
 			$nim=Auth::user()->mahasiswa->nim;
 			$ppkp=Pengajuanpembta::firstOrNew(["nim"=>$nim]);
 			$ppkp->fill($request->all());
