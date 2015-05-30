@@ -15,43 +15,41 @@ class SusunpembtaController extends Controller {
 
 	public function index(){
 		$dosen=Dosen::lists('nama','nip');
-		$list_dosen=KuotaBimbingan::lists('kuota_ta','nip');
-		$ppta = Pengajuanpembta::where('tahun','=',date('Y'))->get();
+		$dosenAll=Dosen::all();
+		$ppta = Pengajuanpembta::where('tahun','=',date('Y'))->where('status_pembimbing','=','diajukan')->get();
 		return view('susunpembta.index')
 		->with('ppta',$ppta)
 		->with('dosen',$dosen)
-		->with('list_dosen',$list_dosen);
-
-	}
-
-	public function simpan(){
-		$mahasiswa=Pengajuanpembta::where('status_pembimbing','=','diajukan')->where('tahun','=',date('Y'))->get();
-		foreach ($mahasiswa as $key => $value) {
-			DB::table('pengajuan_pembta')->where("nim", "=",$value->nim)->update(["status_pembimbing"=>"disetujui"]);
-		}
-		return redirect ('susunpembta');
+		->with('dosenAll',$dosenAll);
 
 	}
 
 	public function input(Request $request){
-		$nip_temp = '';
-			$p1 = Pengajuanpembta::findOrFail($request->input('tukar')[0]);
-			$p2 = Pengajuanpembta::findOrFail($request->input('tukar')[1]);
+		$id = $request->input('id');
+		$pembimbing_1 = $request->input('pembimbing_1');
+		$pembimbing_2 = $request->input('pembimbing_2');
 
-			$nip_temp = $p1->nip;
-			$p1->nip = $p2->nip;
-			$p2->nip = $nip_temp;
+		DB::transaction(function()use($id,$pembimbing_1,$pembimbing_2){
+	
+			foreach ($id as $key => $value) {
+					DB::table('pengajuan_pembta')
+					->where('id','=',$value)
+					->update([
+							'pembimbing_1'=>$pembimbing_1[$key],
+							'pembimbing_2'=>$pembimbing_2[$key],
+							'status_pembimbing'=>'disetujui'
+						]);
+				}	
+		});
 
-			$p1->save();
-			$p2->save();
+		return redirect ('susunpembta');		
 
-			return redirect('susunpembta');
 	}
 
 	public function lihatdata(){
 		$dosen=Dosen::lists('nama','id');
 		$ppta=Pengajuanpembta::where('status_pembimbing','=','disetujui')->get();
-		return view('susunpembta.lihatdata')->with('ppkp',$ppkp)->with('dosen',$dosen);
+		return view('susunpembta.lihatdata')->with('ppta',$ppta)->with('dosen',$dosen);
 	}
 
 	public function batal($id){
@@ -60,10 +58,6 @@ class SusunpembtaController extends Controller {
 		$ppkp->save();
 
 		return redirect('susunpembta');
-	}
-
-	public function getKuota(){
-
 	}
 
 }
