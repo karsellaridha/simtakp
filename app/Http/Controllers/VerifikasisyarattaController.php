@@ -26,7 +26,7 @@ class VerifikasisyarattaController extends Controller {
 	}
 
 	public function verifikasi($id, Request $request){
-		$field=['jumlah_sks','id_transaksispp','id_transaksidpl','lama_kp'];
+		$field=['jumlah_sks','id_transaksispp','id_transaksidpl','ktm','proposal_ta','tanda_kp','kesediaan_membimbing','persetujuan_ta','sk_pemb','permohonan_ambildata'];
 		$checkable=array();
 		$hitung=0;
 
@@ -43,7 +43,7 @@ class VerifikasisyarattaController extends Controller {
 		$verifikasi=Verifikasisyaratta::firstOrNew(["id_pengajuan_syaratta"=>$id]);
 		$verifikasi->fill($checkable);
 		$verifikasi->save();
-		if($hitung==4){
+		if($hitung==10){
 			Pengajuansyaratta::findOrFail($id)->update(["status_syaratta"=>"diverifikasi"]);
 		} 
 		return redirect('verifikasisyaratta');

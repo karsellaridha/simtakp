@@ -76,9 +76,9 @@ function getKuota(idx){
 }
 
 function makeKuotaList(){
-	var data;
+	var data = '';
 	$.each(kuota as idx){
-		
+		data+="";
 	}
 	$("#kuotalist").html(data);
 }

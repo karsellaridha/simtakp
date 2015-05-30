@@ -4,13 +4,13 @@
 
 <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Edit: {!! $pengajuansyaratkp-> nama !!} </h3>
+                  <h3 class="box-title">Edit: {!! $pengajuansyaratta-> nama !!} </h3>
                 </div><!-- /.box-header -->
 
 
-	{!! Form::model($pengajuansyaratkp,['method'=>'PATCH','action'=>  ['PengajuansyaratkpController@updatePskp',$pengajuansyaratkp->id]]) !!}
+	{!! Form::model($pengajuansyaratta,['method'=>'PATCH','action'=>  ['PengajuansyarattaController@updatePsta',$pengajuansyaratta->id]]) !!}
 		
-		@include('pengajuansyaratkp.form',['submitButtonText'=>'Ubah Pengajuan'])
+		@include('pengajuansyaratta.form',['submitButtonText'=>'Ubah Pengajuan'])
 	
 	{!! Form::close() !!}
 	

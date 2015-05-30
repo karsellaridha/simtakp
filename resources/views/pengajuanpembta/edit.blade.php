@@ -8,7 +8,7 @@
                 </div><!-- /.box-header -->
 
 
-	{!! Form::model($pengajuanpembta,['method'=>'PATCH','action'=>  ['PengajuanpembkpController@updatePpkp',$pengajuanpembta->id], ['id'=>'form'] ]) !!}
+	{!! Form::model($pengajuanpembta,['method'=>'PATCH','action'=>  ['PengajuanpembtaController@updatePpta',$pengajuanpembta->id], ['id'=>'form'] ]) !!}
 		
 		@include('pengajuanpembta.form',['submitButtonText'=>'Ubah Pengajuan'])
 	

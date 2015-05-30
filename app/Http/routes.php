@@ -87,7 +87,7 @@ Route::get('inputnilaikpmhs',"InputnilaikpController@index");
 Route::get('inputnilaikpmhs/input',"InputnilaikpController@input");
 Route::post('inputnilaikpmhs/input',"InputnilaikpController@prosesinput");
 
-//input nilai kp dari mhs
+//input nilai kp dari dosen
 Route::get('inputnilaikpdosen/{nim}/detail',"InputnilaikpController@detail");
 Route::get('inputnilaikpdosen/{nim}',"InputnilaikpController@inputdosen");
 Route::post('inputnilaikpdosen/{nim}',"InputnilaikpController@prosesinputdosen");
@@ -115,5 +115,18 @@ Route::post('pengajuansyaratta/input', "PengajuansyarattaController@prosesInput"
 Route::get('verifikasisyaratta',"VerifikasisyarattaController@index");
 Route::get('verifikasisyaratta/{id}/detail',"VerifikasisyarattaController@detail");
 Route::post('verifikasisyaratta/{id}',"VerifikasisyarattaController@verifikasi");
+
+//Input Bimbingan TA
+Route::get('bimbinganta/tambah',"BimbingantaController@tambah");
+Route::post('bimbinganta', "BimbingantaController@prosesTambah");
+Route::get('bimbinganta/', "BimbingantaController@dataBimbinganta");
+Route::get('bimbinganta/edit/{bimbinganta}', "BimbingantaController@editBimbinganta");
+Route::patch('bimbinganta/{bimbinganta}', "BimbingantaController@updateBimbinganta");
+Route::get('bimbinganta/{bimbinganta}', "BimbingantaController@deleteBimbinganta");
+
+//tampilkan mahasiswa yang dibimbing ta di page dosen
+Route::get('mhsdibimbingta',"BimbingantaController@dataMhsbimbinganta");
+Route::get('mhsdibimbingta/bimbinganta/{id}',"BimbingantaController@bimbinganta");
+Route::get('mhsdibimbingta/detail/{nim}',"BimbingantaController@detail");
 
 });

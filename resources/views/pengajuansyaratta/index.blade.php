@@ -31,24 +31,24 @@
 		<td>{!! $psta->id_transaksidpl !!}</td>
 	</tr>
 	<tr>
-		<td>Fotokopi KTTM yang berlaku</td>
+		<td>Fotokopi KTM yang berlaku</td>
 		<td>:</td>
 		<td>{!! $psta->ktm !!}</td>
 	</tr>
 	<tr>
 		<td>Proposal Tugas Akhir</td>
 		<td>:</td>
-		<td>{!! $psta->proposal !!}</td>
+		<td>{!! $psta->proposal_ta !!}</td>
 	</tr>
 		<tr>
 		<td>Tanda Terima Laporan Kerja Praktik</td>
 		<td>:</td>
-		<td>{!! $ppta->tanda_kp !!}</td>
+		<td>{!! $psta->tanda_kp !!}</td>
 	</tr>
 	<tr>
 		<td>Form Kesediaan untuk membimbing dari calon Pembimbing TA</td>
 		<td>:</td>
-		<td>{!! $psta->pembimbing_ta !!}</td>
+		<td>{!! $psta->kesediaan_membimbing !!}</td>
 	</tr>
 	<tr>
 		<td>Halaman Persetujuan Proyek TA</td>
@@ -61,25 +61,25 @@
 		<td>{!! $psta->sk_pemb !!}</td>
 	</tr>
 	<tr>
-		<td>Dosen Pembimbing</td>
+		<td>Permohonan Surat Pengantar pengambilan Data/Pelaksanaan Tugas Akhir</td>
 		<td>:</td>
-		<td>{!! $ppta->dosen->nama !!}</td>
+		<td>{!! $psta->permohonan_ambildata !!}</td>
 	</tr>
 	<tr>
 		<td>Status</td>
 		<td>:</td>
-		<td><span class="label {!! ($pskp->status_syaratkp=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $psta->status_syaratta !!}</span></td>
+		<td><span class="label {!! ($psta->status_syaratkp=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $psta->status_syaratta !!}</span></td>
 	</tr>
 	
 </table>
 @endif
 
 @if (count($psta)==0)
-<a href="{!! url('pengajuansyaratkp/input')!!}" class="btn btn-primary">{!!"Ajukan"!!}</a>
+<a href="{!! url('pengajuansyaratta/input')!!}" class="btn btn-primary">{!!"Ajukan"!!}</a>
 @else
 
-@if (@$pskp->status_syaratta=="diajukan")
-<a href="{!! url('pengajuansyaratkp/input')!!}" class="btn btn-primary">{!! (count($ppta)>0) ? "Edit" : "Ajukan" !!}</a>
+@if (@$psta->status_syaratta=="diajukan")
+<a href="{!! url('pengajuansyaratta/input')!!}" class="btn btn-primary">{!! (count($ppta)>0) ? "Edit" : "Ajukan" !!}</a>
 @endif
 @endif
 
