@@ -68,7 +68,7 @@
 	<tr>
 		<td>Status</td>
 		<td>:</td>
-		<td><span class="label {!! ($psta->status_syaratkp=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $psta->status_syaratta !!}</span></td>
+		<td><span class="label {!! ($psta->status_syaratta=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $psta->status_syaratta !!}</span></td>
 	</tr>
 	
 </table>
@@ -78,7 +78,7 @@
 <a href="{!! url('pengajuansyaratta/input')!!}" class="btn btn-primary">{!!"Ajukan"!!}</a>
 @else
 
-@if (@$psta->status_syaratta=="diajukan")
+@if (@$psta->status_syaratta!="diverifikasi")
 <a href="{!! url('pengajuansyaratta/input')!!}" class="btn btn-primary">{!! (count($ppta)>0) ? "Edit" : "Ajukan" !!}</a>
 @endif
 @endif
