@@ -86,6 +86,21 @@
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
 
+<!-- menu Dosen -->
+@if(Auth::user()->role=="dosen")
+              <li>
+                  <a href="{!! url('mhsdibimbingkp') !!}"><i class="fa fa-circle-o"></i> Membimbing Kp</a>
+              </li>
+              <li>
+                  <a href="{!! url('mhsdibimbingta')!!} "><i class="fa fa-circle-o"></i> Membimbing TA</a>
+              </li>
+              <li>
+                  <a href="{!! url('mhsdiujita') !!}"><i class="fa fa-circle-o"></i> Menguji TA</a>
+              </li>
+@endif
+
+
+
             <li class="treeview">
               <a href="#">
             <i class="fa fa-dashboard"></i> <span> Kerja Praktik</span>
@@ -114,11 +129,7 @@
               @endif
 
               <!-- sub menu-->
-               @if(Auth::user()->role=="dosen")
-              <li>
-                  <a href="mhsdibimbingkp"><i class="fa fa-circle-o"></i> Mahasiswa yang dibimbing</a>
-              </li>
-              @endif
+               
               <!-- end menu-->
 
               <!-- sub menu-->
@@ -133,7 +144,7 @@
 
                     @if(Auth::user()->role=="admin")
                     <li>
-                      <a href="verifikasisyaratkp"><i class="fa fa-circle-o"></i> Verifikasi Syarat KP </a></li>
+                      <a href="{!! url('verifikasisyaratkp') !!}"><i class="fa fa-circle-o"></i> Verifikasi Syarat KP </a></li>
                     @endif
                    
                     </ul>
@@ -206,13 +217,7 @@
               <!-- end sub menu-->
               @endif
 
-              <!-- sub menu-->
-               @if(Auth::user()->role=="dosen")
-              <li>
-                  <a href="mhsdibimbingta"><i class="fa fa-circle-o"></i> Mahasiswa yang dibimbing</a>
-              </li>
-              @endif
-              <!-- end menu-->
+
 
               <!-- sub menu-->
               @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="admin")
@@ -265,11 +270,9 @@
                   <ul class="treeview-menu">
 
                     @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Pengajuan Syarat Ujian TA 1</a></li>
-                    @endif
-
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Pengajuan Syarat Ujian TA 2</a></li>
+                    <li><a href="{!! url('ujian_ta') !!}"><i class="fa fa-circle-o"></i> Pengajuan Syarat Ujian </a></li>
+                  
+                  
                     @endif
 
                     @if(Auth::user()->role=="admin")

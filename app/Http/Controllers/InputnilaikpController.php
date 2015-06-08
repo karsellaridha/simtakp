@@ -22,7 +22,8 @@ class InputnilaikpController extends Controller {
 	}
 
 	public function input(){
-	return view("inputnilaikpmhs.input");
+		
+		return view("inputnilaikpmhs.input");
 	}
 
 	public function prosesInput(Request $request, Inputnilaikp $nilaikp){

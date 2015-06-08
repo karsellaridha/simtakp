@@ -128,5 +128,14 @@ Route::get('bimbinganta/{bimbinganta}', "BimbingantaController@deleteBimbinganta
 Route::get('mhsdibimbingta',"BimbingantaController@dataMhsbimbinganta");
 Route::get('mhsdibimbingta/bimbinganta/{id}',"BimbingantaController@bimbinganta");
 Route::get('mhsdibimbingta/detail/{nim}',"BimbingantaController@detail");
+Route::get('mhsdibimbingta/penilaian/{nim}',"BimbingantaController@penilaian");
+Route::post('mhsdibimbingta/penilaian/{nim}',"BimbingantaController@penilaianProses");
+
+
+
+Route::controller('ujian_ta','PengajuanUjianTaController');
+Route::controller('verifikasi_ujian/ta1','VerifikasiUjianTa1Controller');
+Route::controller('susunjadwalta','SusunJadwalTaController');
+
 
 });

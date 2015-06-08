@@ -1,3 +1,7 @@
+		<div class="form-group">
+			{!! Form::label('no_hp','Judul TA (fix):') !!}
+			{!! Form::text('judul',@$psta->judul,['class'=>'form-control','id'=>'no_hp'])!!}
+		</div>
 
 		<div class="form-group">
 			{!! Form::label('no_hp','Nomor HP :') !!}

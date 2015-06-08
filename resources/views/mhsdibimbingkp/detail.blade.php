@@ -36,7 +36,7 @@
   <tr>
     <td>Judul Laporan KP</td>
     <td>:</td> 
-    <td>{!! $nilaikp->judul_kp !!}<td>
+    <td>{!! @$nilaikp->judul_kp !!}<td>
   </tr>
 
   <tr>
@@ -48,11 +48,11 @@
   <tr>
     <td>Pembimbing Lapangan</td>
     <td>:</td>
-    <td>{!! $nilaikp->pemb_lapangan !!}</td>
+    <td>{!! @$nilaikp->pemb_lapangan !!}</td>
   </tr>
   
-</table>
-
+</table><br><br>
+@if(count($nilaikp)>0)
 <p><center><b>FORMULIR PENILAIAN KERJA PRAKTEK (KP) DOSEN PEMBIMBING</b></center></p> 
 <table border="2" class="table">
 
@@ -132,8 +132,9 @@
   </tr>
 
 </table>
-
-
+@else
+- Nilai Belum di input -
+@endif
 
 
 </div><!-- /.box-body -->

@@ -6,132 +6,52 @@
                   <h3 class="box-title">Detail Nilai TA Keseluruhan Mahasiswa</h3>
                 </div><!-- /.box-header -->
 <div class="box-body">
+<a href='{!! url("mhsdibimbingta/penilaian/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right' data-toggle="modal" data-target="#myModal">Input Nilai TA 2</a> 
+<a href='{!! url("mhsdibimbingta/penilaian/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right'  style='margin-right:10px'>Input Nilai TA 1</a>
 
+<br><br>
 <table border="0" class="table">
 
   <tr>
     <td>Nama Mahasiswa</td>
     <td>:</td> 
-    <td>{!! $pengajuanpembkp->mahasiswa->nama !!}<td> 
+    <td>{!! $pengajuanpembta->mahasiswa->nama !!}<td> 
   </tr>
 
   <tr>
     <td>NIM</td>
     <td>:</td> 
-    <td>{!! $pengajuanpembkp->mahasiswa->nim !!}<td>
+    <td>{!! $pengajuanpembta->mahasiswa->nim !!}<td>
   </tr>
 
   <tr>
     <td>Program Studi</td>
     <td>:</td> 
-    <td>{!! $pengajuanpembkp->mahasiswa->prodi->nama !!}<td> 
+    <td>{!! $pengajuanpembta->mahasiswa->prodi->nama !!}<td> 
   </tr>
-  
   <tr>
-    <td>Tempat KP</td>
+    <td>Pembimbing 1</td>
     <td>:</td> 
-    <td>{!! $pengajuanpembkp->mahasiswa->pengajuanpembkp->tempat_kp !!}<td>
+    <td>{!! $pengajuanpembta->data_pembimbing_1->nama !!}<td> 
   </tr>
-
   <tr>
-    <td>Judul Laporan KP</td>
+    <td>Pembimbing 2</td>
     <td>:</td> 
-    <td>{!! $nilaikp->judul_kp !!}<td>
+    <td>{!! @$pengajuanpembta->data_pembimbing_2->nama !!}<td> 
   </tr>
-
-  <tr>
-    <td>Dosen Pembimbing</td>
+   <tr>
+    <td>Judul</td>
     <td>:</td> 
-    <td>{!! $pengajuanpembkp->dosen->nama !!}<td>
-  </tr>
 
-  <tr>
-    <td>Pembimbing Lapangan</td>
-    <td>:</td>
-    <td>{!! $nilaikp->pemb_lapangan !!}</td>
+   <?php $j = $psta->where('nim','=',$pengajuanpembta->nim)->first()?>
+      <td>{!! (isset($j->judul)) ? 
+          $j->judul :
+          $pengajuanpembta->judul." <span class='label label-danger'>belum fix</span>";
+       !!}</td>
   </tr>
   
 </table>
 
-<p><center><b>FORMULIR PENILAIAN KERJA PRAKTEK (KP) DOSEN PEMBIMBING</b></center></p> 
-<table border="2" class="table">
-
-  <tr>
-    <td>No.</td>
-    <td>Penilaian</td>
-    <td>Bobot (B)</td>
-    <td>Nilai (N)</td>
-    <td>BxN</td>
-  </tr>
-
-  <tr>
-    <td>1</td>
-    <td>Kesesuaian Laporan dengan Format</td>
-    <td>30%</td>
-    <td>{!! $nilaikp->kesesuaian_laporan !!}</td>
-    <td>{!! 0.3*$nilaikp->kesesuaian_laporan !!}</td>
-  </tr>
-
-  <tr>
-    <td>2</td>
-    <td>Penguasaan Materi KP</td>
-    <td>30%</td>
-    <td>{!! $nilaikp->penguasaan_materi !!}</td>
-    <td>{!! 0.3*$nilaikp->penguasaan_materi !!}</td>
-  </tr>
-
-  <tr>
-    <td>3</td>
-    <td>Analisis dan Perancangan</td>
-    <td>30%</td>
-    <td>{!! $nilaikp->analisis_perancangan !!}</td>
-    <td>{!! 0.3*$nilaikp->analisis_perancangan !!}</td>
-  </tr>
-
-  <tr>
-    <td>4</td>
-    <td>Sikap dan Etika</td>
-    <td>10%</td>
-    <td>{!! $nilaikp->sikap_etika !!}</td>
-    <td>{!! 0.3*$nilaikp->sikap_etika !!}</td>
-  </tr>
-</table>
-<br>
-
-<p><center><b>REKAP NILAI KERJA PRAKTEK (KP)</b></center></p> 
-<table border="2" class="table">
-
-  <tr>
-    <td><div align="center">No.</div></td>
-    <td><div align="center">Penilaian</div></td>
-    <td><div align="center">Status (B)</div></td>
-    <td><div align="center">Nilai (N)</div></td>
-    <td><div align="center">Keterangan</div></td>
-  </tr>
-
-  <tr>
-    <td><div align="center">1</div></td>
-    <td>{!! $pengajuanpembkp->dosen->nama !!}</td>
-    <td>Dosen Pembimbing KP</td>
-    <td>60%</td>
-    <td>{!! $nilaikp->nilai_totaldosbing() !!}</td>
-  </tr>
-
-  <tr>
-    <td><div align="center">2</div></td>
-    <td>{!! $nilaikp->pemb_lapangan !!}</td>
-    <td>Pembimbing Lapangan</td>
-    <td>40%</td>
-    <td>{!! $nilaikp->nilai_totalpemblapangan() !!}</td>
-  </tr>
-
-  <tr>
-    <td colspan="3"><div align="center">Rata-Rata Nilai</div></td>
-    <td>100%</td>
-    <td>{!! $nilaikp->total_nilaikp() !!}</td>
-  </tr>
-
-</table>
 
 
 
