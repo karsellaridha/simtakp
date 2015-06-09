@@ -29,15 +29,14 @@
 	<tr>
 		<td>{!! $data->mahasiswa->nim !!}</td>
 		<td>{!! $data->mahasiswa->nama !!}</td>
-		<td>{!! $data->ppta->data_pembimbing_1->nama!!}</td>
-		<td>{!! @$data->ppta->data_pembimbing_2->nama!!}</td>
-		<td>{!! $data->ppta->judul !!}</td>
-		<td><a href="{!! url("verifikasisyaratta/$data->id/detail") !!}">Verifikasi</a></td>
-		<td><span class="label {!! ($data->status_syaratta=="diverifikasi")? "label-success" : "label-danger" !!}">{!! $data->status_syaratta !!}</td>
+		<td>{!! $data->ppta->dosen->nama!!}</td>
+		<td>{!! $data->ppta->tempat_kp !!}</td>
+		<td><a href="{!! url("verifikasisyaratta/$data->id/detail") !!}">Detail</a></td>
+		<td><span class="label {!! ($data->status_syaratta=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $data->status_syaratta !!}</td>
 		<td>
 			@if(count($verifikasi->where("id_pengajuan_syaratta",'=',$data->id)->get())>0)
 			<a href="{!! url('#')!!}">Cetak Hasil Verifikasi</a><br>
-			<a href="{!! url('#')!!}">Cetak Surat Izin Ambil Data</a><br>
+			<a href="{!! url('#')!!}">Cetak Surat Izin Ambil Data</a>
 			<a href="{!! url('#')!!}">Cetak SK TA</a>
 			@endif
 		</td>

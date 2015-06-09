@@ -31,9 +31,7 @@ class PengajuansyarattaController extends Controller {
 		$nim=Auth::user()->mahasiswa->nim;
 		$ppta=Pengajuanpembta::where("nim","=",$nim)->first();
 		$psta=Pengajuansyaratta::firstOrNew(["nim"=>$nim]);
-		$input = $request->all();
-		$input['status_syaratta'] = 'diajukan'; 
-		$psta->fill($input);
+		$psta->fill($request->all());
 		$psta->id_pengajuan_pembta=$ppta->id;
 		$psta->save();
 		return redirect("pengajuansyaratta");
