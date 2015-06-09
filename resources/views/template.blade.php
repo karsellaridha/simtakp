@@ -111,21 +111,29 @@
   background:#fff;
 }
 
-.skin-blue .sidebar a {
+.skin-blue .sidebar li a {
 color: #000;
 }
 
+.skin-blue .sidebar li a:hover {
+color: #c0c0c0;
+}
+
+.skin-blue .treeview-menu>li.active>a, .skin-blue .treeview-menu>li>a:hover {
+color: #000;
+}
 
 </style>
 
 @if(Auth::user()->role=="mahasiswa")
 
-<li>
+<li class='treeview'>
 <a href="#" style='color:#fff'>
   <i class="fa fa-dashboard"></i> Kerja Praktik
+  <i class="fa fa-angle-left pull-right"></i>
 </a>
-</li>
-<li class='white'>
+<ul class="treeview-menu">
+  <li class='white'>
   <a href="{{ url('pengajuanpembkp') }}">
     <i class="fa fa-circle-o"></i> Pengajuan Pembimbing KP
   </a>
@@ -140,14 +148,20 @@ color: #000;
     <i class="fa fa-circle-o"></i> Input Penilaian KP
   </a>
 </li>
-
-<li>
-<a href="#" style='color:#fff'>
-  <i class="fa fa-dashboard"></i> Tugas Akhir
-</a>
+</ul>
 </li>
 
-<li class='white'>
+
+<!-- TUGAS AKHIR /////////////////////////////////////-->
+
+
+<li class='treeview'>
+<a href="#" style='color:#fff'>
+  <i class="fa fa-dashboard"></i> Tugas Akhir
+  <i class="fa fa-angle-left pull-right"></i>
+</a>
+<ul class="treeview-menu">
+ <li class='white'>
   <a href="{{ url('pengajuanpembta') }}">
     <i class="fa fa-circle-o"></i> Pengajuan Pembimbing TA
   </a>
@@ -165,8 +179,71 @@ color: #000;
   <a href="{!! url('ujian_ta') !!}">
     <i class="fa fa-circle-o"></i> 
     Pengajuan Syarat Ujian </a>
-  </li>
+  </li> 
+</ul>
+</li>
+
 @endif
+
+@if(Auth::user()->role=="admin")
+<li class='treeview'>
+<a href="#" style='color:#fff'>
+  <i class="fa fa-dashboard"></i> Kerja Praktik
+  <i class="fa fa-angle-left pull-right"></i>
+</a>
+<ul class="treeview-menu">
+  <li class='white'>
+  <a href="{!! url('verifikasisyaratkp') !!}"><i class="fa fa-circle-o"></i> Verifikasi Syarat KP </a>
+  </li>
+</ul>
+</li>
+
+<li class='treeview'>
+<a href="#" style='color:#fff'>
+  <i class="fa fa-dashboard"></i> Tugas Akhir
+  <i class="fa fa-angle-left pull-right"></i>
+</a>
+<ul class="treeview-menu">
+      <li class='white'>
+    <a href="{!! url('verifikasisyaratta') !!}"><i class="fa fa-circle-o"></i> Verifikasi Syarat TA </a>
+    </li>
+    <li class='white treeview'>
+     <a href="#">
+        <i class="fa fa-circle-o"></i> Verifikasi Syarat Ujian TA
+       <i class="fa fa-angle-left pull-right"></i>
+       </a>
+      <ul class="treeview-menu">
+          <li>
+            <a href="{!! url('verifikasi_ujian/ta1')!!}"><i class="fa fa-minus">
+          </i> Verifikasi Syarat Ujian TA 1</a>
+          </li>
+          <li>
+            <a href="{!! url('verifikasi_ujian/ta2')!!}"><i class="fa fa-minus">
+          </i> Verifikasi Syarat Ujian TA 2</a>
+          </li>
+      
+  </ul>
+ </li>
+</ul>
+</li>
+
+<li><a href="{{ url('kuotabimbingan') }}" style='color:white'><i class="fa fa-circle-o"></i>Kuota Bimbingan</a></li>
+
+
+ <li class="treeview">
+              <a href="#" style='color:#fff'>
+                <i class="fa fa-table"></i> <span>Data Master</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class='white'><a href="{{ url('mahasiswa') }}"><i class="fa fa-circle-o"></i>Data Mahasiswa</a></li>
+                <li class='white'><a href="{{ url('dosen') }}"><i class="fa fa-circle-o"></i>Data Dosen</a></li>
+              </ul>
+      </li>
+
+
+@endif
+
 
 
             <li class="treeview">
@@ -280,8 +357,7 @@ color: #000;
                    
 
                     @if(Auth::user()->role=="admin")
-                    <li>
-                      <a href="verifikasisyaratta"><i class="fa fa-circle-o"></i> Verifikasi Syarat TA </a></li>
+                    
                     @endif
                    
                     </ul>
@@ -357,16 +433,7 @@ color: #000;
       @endif
            
       @if(Auth::user()->role=="admin")
-      <li class="treeview">
-              <a href="#">
-                <i class="fa fa-table"></i> <span>Data Master</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{ url('mahasiswa') }}"><i class="fa fa-circle-o"></i>Data Mahasiswa</a></li>
-                <li><a href="{{ url('dosen') }}"><i class="fa fa-circle-o"></i>Data Dosen</a></li>
-              </ul>
-      </li>
+     
       @endif
     </ul>
 
