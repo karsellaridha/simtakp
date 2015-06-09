@@ -141,6 +141,31 @@ color: #000;
   </a>
 </li>
 
+<li>
+<a href="#" style='color:#fff'>
+  <i class="fa fa-dashboard"></i> Tugas Akhir
+</a>
+</li>
+
+<li class='white'>
+  <a href="{{ url('pengajuanpembta') }}">
+    <i class="fa fa-circle-o"></i> Pengajuan Pembimbing TA
+  </a>
+</li>
+<li class='white'>
+  <a href="{{ url('pengajuansyaratta') }}">
+    <i class="fa fa-circle-o"></i> Pengajuan Syarat TA
+  </a>
+</li>
+<li class='white'>
+  <a href="{!! url('bimbinganta') !!}"><i class="fa fa-circle-o">
+  </i> Input Progress Bimbingan TA</a>
+</li>
+<li class='white'>
+  <a href="{!! url('ujian_ta') !!}">
+    <i class="fa fa-circle-o"></i> 
+    Pengajuan Syarat Ujian </a>
+  </li>
 @endif
 
 
@@ -156,10 +181,6 @@ color: #000;
               <li>
                   <a href=""><i class="fa fa-circle-o"></i> Dosen Pembimbing KP <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
-
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="{{ url('pengajuanpembkp') }}"><i class="fa fa-circle-o"></i> Pengajuan Pembimbing KP</a></li>
-                    @endif
 
                     @if(Auth::user()->role=="ketua jurusan")
                     <li>
@@ -181,10 +202,6 @@ color: #000;
                   <a href=""><i class="fa fa-circle-o"></i> Administrasi Syarat KP <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
 
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="pengajuansyaratkp"><i class="fa fa-circle-o"></i> Pengajuan Syarat KP</a></li>
-                    @endif
-
                     @if(Auth::user()->role=="admin")
                     <li>
                       <a href="{!! url('verifikasisyaratkp') !!}"><i class="fa fa-circle-o"></i> Verifikasi Syarat KP </a></li>
@@ -199,11 +216,7 @@ color: #000;
                  @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="ketua jurusan")
             <li>
                   <a href=""><i class="fa fa-circle-o"></i> Progress Bimbingan KP <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="bimbingankp"><i class="fa fa-circle-o"></i> Input Progress Bimbingan KP</a></li>
-                    @endif
+                  <ul class="treeview-menu"
 
                     @if(Auth::user()->role=="ketua jurusan")
                     <li>
@@ -220,10 +233,6 @@ color: #000;
             <li>
                   <a href=""><i class="fa fa-circle-o"></i> Penilaian KP <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
-
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="inputnilaikpmhs"><i class="fa fa-circle-o"></i> Input Penilaian KP</a></li>
-                    @endif
                    
                   </ul>
             </li>
@@ -268,9 +277,7 @@ color: #000;
                   <a href=""><i class="fa fa-circle-o"></i> Administrasi Syarat TA <i class="fa fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
 
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="{{ url('pengajuansyaratta') }}"><i class="fa fa-circle-o"></i> Pengajuan Syarat TA</a></li>
-                    @endif
+                   
 
                     @if(Auth::user()->role=="admin")
                     <li>
