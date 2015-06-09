@@ -53,6 +53,19 @@
 </table>
 
 
+<hr>
+<h4>Nilai TA 1</h4>
+yang sudah menginput nilai : 
+@foreach($nilaita1->sudahInput($pengajuanpembta->nim) as $v)
+<span class='label label-success'>{!! $v->nama !!} </span>
+@endforeach
+<br>
+<?php $ta1 = $nilaita1->nilaiTotal($pengajuanpembta->nim) ?>
+
+Akumulasi Nilai <br>
+Angka : {!! $ta1['angka'] !!}<br>
+Huruf :  {!! $ta1['huruf'] !!}<br>
+
 
 
 
