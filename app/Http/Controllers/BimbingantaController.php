@@ -13,6 +13,7 @@ use Auth;
 use App\Bimbingankp;
 use App\Inputnilaikp;
 use App\NilaiTa1;
+use App\PengujiUjianTa;
 
 class BimbingantaController extends Controller {
 
@@ -61,11 +62,33 @@ public function dataMhsbimbinganta(){
 		->get();
 	}
 	$psta = new Pengajuansyaratta;
-
+	$nilaita1 = new NilaiTa1;
 	return view("mhsdibimbingta.index")
 	->with('psta', $psta)
-	->with("datamhsbimbinganta",$datamhsbimbingankp);
+	->with("datamhsbimbinganta",$datamhsbimbingankp)
+	->with('nilaita1',$nilaita1);
 	}
+
+
+public function dataMhsujianta(){
+	if(Auth::user()->role=="ketua jurusan"){
+		$datamhsbimbingankp=PengujiUjianTa::all();
+	}
+	else{
+		$datamhsbimbingankp=PengujiUjianTa::where('penguji_1','=',Auth::user()->dosen->nip)
+		->orWhere('penguji_2','=',Auth::user()->dosen->nip)
+		->get();
+	}
+	$psta = new Pengajuansyaratta;
+	$nilaita1 = new NilaiTa1;
+	$pengajuanpembta = new Pengajuanpembta;
+	return view("mhsdiujita.index")
+	->with('psta', $psta)
+	->with('pengajuanpembta',$pengajuanpembta)
+	->with("datamhsbimbinganta",$datamhsbimbingankp)
+	->with('nilaita1',$nilaita1);
+	}
+
 
 public function bimbingankp($id){
 		$datamhsbimbingankp=Pengajuanpembkp::findOrFail($id);
@@ -91,9 +114,9 @@ return view('mhsdibimbingta.penilaian')->with('nim',$nim)
 }
 
 public function penilaianProses($nim, Request $request){
-	$nilai = NilaiTa1::firstOrNew(['nim'=>$nim]);
+	$nilai = NilaiTa1::firstOrNew(['nip'=>Auth::user()->dosen->nip]);
 	$data = $request->all();
-	$data['nip'] = Auth::user()->dosen->nip;
+	$data['nim'] = $nim;
 	$nilai->fill($data);
 	$nilai->save();
 

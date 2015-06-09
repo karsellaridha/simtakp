@@ -51,7 +51,14 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="hidden-xs">Welcome, {!! @Auth::user()->username!!}</span>
+                  <span class="hidden-xs">Welcome, 
+                    @if(Auth::user()->role=='dosen' OR Auth::user()->role=='mahasiswa')
+                    {!! 
+                    (Auth::user()->role=='dosen' AND isset(Auth::user()->role)) ? Auth::user()->dosen->nama." - " : Auth::user()->mahasiswa->nama." - "
+                    !!}
+                    @endif
+
+                    {!! @Auth::user()->username !!} </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -98,7 +105,43 @@
                   <a href="{!! url('mhsdiujita') !!}"><i class="fa fa-circle-o"></i> Menguji TA</a>
               </li>
 @endif
+<style type="text/css">
 
+.white{
+  background:#fff;
+}
+
+.skin-blue .sidebar a {
+color: #000;
+}
+
+
+</style>
+
+@if(Auth::user()->role=="mahasiswa")
+
+<li>
+<a href="#" style='color:#fff'>
+  <i class="fa fa-dashboard"></i> Kerja Praktik
+</a>
+</li>
+<li class='white'>
+  <a href="{{ url('pengajuanpembkp') }}">
+    <i class="fa fa-circle-o"></i> Pengajuan Pembimbing KP
+  </a>
+</li>
+<li class='white'>
+  <a href="{{ url('bimbingankp') }}">
+    <i class="fa fa-circle-o"></i> Input Progress Bimbingan KP
+  </a>
+</li>
+<li class='white'>
+  <a href="{{ url('inputnilaikpmhs') }}">
+    <i class="fa fa-circle-o"></i> Input Penilaian KP
+  </a>
+</li>
+
+@endif
 
 
             <li class="treeview">
@@ -319,7 +362,8 @@
       </li>
       @endif
     </ul>
-    
+
+
     </section>
         <!-- /.sidebar -->
         <!-- /.sidebar -->

@@ -57,7 +57,7 @@
 <h4>Nilai TA 1</h4>
 yang sudah menginput nilai : 
 @foreach($nilaita1->sudahInput($pengajuanpembta->nim) as $v)
-<span class='label label-success' style='margin-left:10px'>{!! $v->nama !!} </span>  
+<span class='label label-success'>{!! $v->nama !!} </span>
 @endforeach
 <br>
 <?php $ta1 = $nilaita1->nilaiTotal($pengajuanpembta->nim) ?>

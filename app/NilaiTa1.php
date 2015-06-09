@@ -43,6 +43,7 @@ class NilaiTa1 extends Model {
 			$nilai_angka += $this->hitungNilai($value);
 			$banyak++;
 		}
+		$banyak = ($banyak==0) ? 1: $banyak;
 
 		$nilai_angka = $nilai_angka/$banyak;
 		$nilai_huruf = $this->nilaiHuruf($nilai_angka);
@@ -56,8 +57,10 @@ class NilaiTa1 extends Model {
 
 	private function nilaiHuruf($nilai){
 		$return = "";
-		
-		if($nilai<41){
+		if($nilai==0){
+			$return = "F";
+		}
+		elseif($nilai<41 AND $nilai>0){
 			$return = "E";
 		}elseif($nilai>=41 AND $nilai<=55){
 			$return = "D";
@@ -88,7 +91,7 @@ class NilaiTa1 extends Model {
 		$total += $nilai->sikap_etika *0.1;
 		$total += $nilai->penilaian_proses *0.15;
 
-		return $total;
+		return round($total,1);
 
 	}
 

@@ -1,3 +1,8 @@
+<?php
+
+use App\NilaiTa1;
+?>
+
 @extends("template")
 @section("content")
 
@@ -11,8 +16,17 @@
 <h4>Ujian TA 1</h4>
 @if(count($pengajuanUjian)>0)
 Jadwal 	: {!! @$pengajuanUjian->jadwal !!}<br>
+Tempat 	: {!! @$pengajuanUjian->tempat_sidang !!}<br>
 Status 	: {!! @$pengajuanUjian->status !!}<br>
-Nilai	: {!! @$pengajuanUjian->status !!}<br>
+<?php
+
+
+$nilaita1 = new NilaiTa1;
+$ta1 = $nilaita1->nilaiTotal($pengajuanUjian->nim) ;
+
+?>
+Nilai Angka : {!! $ta1['angka'] !!}<br>
+Nilai Huruf :  {!! $ta1['huruf'] !!}<br>
 <a href="">Detail</a> - <a href="">Edit</a>
 @else
 Belum ada data

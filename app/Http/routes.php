@@ -131,6 +131,13 @@ Route::get('mhsdibimbingta/detail/{nim}',"BimbingantaController@detail");
 Route::get('mhsdibimbingta/penilaian/{nim}',"BimbingantaController@penilaian");
 Route::post('mhsdibimbingta/penilaian/{nim}',"BimbingantaController@penilaianProses");
 
+//tampilkan mahasiswa yang dibimbing ta di page dosen
+Route::get('mhsdiujita',"BimbingantaController@dataMhsujianta");
+Route::get('mhsdiujita/bimbinganta/{id}',"BimbingantaController@bimbinganta");
+Route::get('mhsdiujita/detail/{nim}',"BimbingantaController@detail");
+Route::get('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaian");
+Route::post('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaianProses");
+
 
 
 Route::controller('ujian_ta','PengajuanUjianTaController');

@@ -19,12 +19,11 @@
 			<th>Nilai Tugas AKhir 1 </th>
 			<th>Nilai Tugas AKhir 2 </th>
 			<th>Nilai</th>
-			<th>Aksi</th>
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($datamhsbimbinganta as $data_bimbinganta)
-		
+		@foreach($datamhsbimbinganta as $as)
+		<?php $data_bimbinganta = $pengajuanpembta->where('nim','=',$as->nim)->first() ?>
 		<tr>
 			<td>{!!$data_bimbinganta->nim !!}</td>
 			<td>{!!$data_bimbinganta->mahasiswa->nama!!}</td>
@@ -40,9 +39,7 @@
 			<td>{!! $ta1['huruf'] !!}</td>
 			<td></td>
 			<td><a href="{!! url("mhsdibimbingta/detail/".$data_bimbinganta->nim) !!}">Penilaian</td>
-			<td>
-				<a href="{!! url("mhsdibimbingta/bimbinganta/".$data_bimbinganta->id) !!}">Progress Bimbingan</a><br>
-			</td>
+			
 		</tr>
 
 		@endforeach
