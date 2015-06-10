@@ -8,9 +8,9 @@
     <!-- Bootstrap 3.3.2 -->
     {!! Html::style("asset/bootstrap/css/bootstrap.min.css") !!}
     <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    {!! Html::style("css/ionicons.min.css") !!}
     <!-- Ionicons -->
-      <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+     {!! Html::style("css/font-awesome.min.css") !!}
     <!-- DATA TABLES -->
     {!! Html::style("asset/plugins/datatables/dataTables.bootstrap.css") !!}
     <!-- Theme style -->
@@ -25,6 +25,27 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+<style type="text/css">
+
+.white{
+  background:#fff;
+}
+
+.skin-blue .sidebar li a {
+color: #000;
+}
+
+.skin-blue .sidebar li a:hover {
+color: #c0c0c0;
+}
+
+.skin-blue .treeview-menu>li.active>a, .skin-blue .treeview-menu>li>a:hover {
+color: #000;
+}
+
+</style>
+
   </head>
   <body class="skin-blue">
     <div class="wrapper">
@@ -96,34 +117,16 @@
 <!-- menu Dosen -->
 @if(Auth::user()->role=="dosen")
               <li>
-                  <a href="{!! url('mhsdibimbingkp') !!}"><i class="fa fa-circle-o"></i> Membimbing Kp</a>
+                  <a style='color:#fff' href="{!! url('mhsdibimbingkp') !!}"><i class="fa fa-circle-o"></i> Membimbing Kp</a>
               </li>
               <li>
-                  <a href="{!! url('mhsdibimbingta')!!} "><i class="fa fa-circle-o"></i> Membimbing TA</a>
+                  <a style='color:#fff' href="{!! url('mhsdibimbingta')!!} "><i class="fa fa-circle-o"></i> Membimbing TA</a>
               </li>
               <li>
-                  <a href="{!! url('mhsdiujita') !!}"><i class="fa fa-circle-o"></i> Menguji TA</a>
+                  <a  style='color:#fff' href="{!! url('mhsdiujita') !!}"><i class="fa fa-circle-o"></i> Menguji TA</a>
               </li>
 @endif
-<style type="text/css">
 
-.white{
-  background:#fff;
-}
-
-.skin-blue .sidebar li a {
-color: #000;
-}
-
-.skin-blue .sidebar li a:hover {
-color: #c0c0c0;
-}
-
-.skin-blue .treeview-menu>li.active>a, .skin-blue .treeview-menu>li>a:hover {
-color: #000;
-}
-
-</style>
 
 @if(Auth::user()->role=="mahasiswa")
 
@@ -244,199 +247,39 @@ color: #000;
 
 @endif
 
+@if(Auth::user()->role == "ketua jurusan")
 
+  <li>
+  <a href="{{ url('susunpembkp') }}" style='color:#fff'>
+    <i class="fa fa-dashboard"></i> Susun Pembimbing KP 
+  </a>
+  </li>
 
-            <li class="treeview">
-              <a href="#">
-            <i class="fa fa-dashboard"></i> <span> Kerja Praktik</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
+  <li>
+  <a href="mhsdibimbingkp" style='color:#fff'>
+    <i class="fa fa-circle-o"></i> Lihat Progress Bimbingan KP 
+  </a>
+  </li>
 
-              <ul class="treeview-menu">
-                <!-- sub menu-->
-                @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="ketua jurusan")
-              <li>
-                  <a href=""><i class="fa fa-circle-o"></i> Dosen Pembimbing KP <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
+ <li>
+  <a href="{{ url('susunpembta') }}" style='color:#fff'>
+    <i class="fa fa-circle-o"></i> Susun Pembimbing TA 
+  </a>
+</li>
 
-                    @if(Auth::user()->role=="ketua jurusan")
-                    <li>
-                      <a href="{{ url('susunpembkp') }}"><i class="fa fa-circle-o"></i> Susun Pembimbing KP </a></li>
-                    @endif
-              </ul>
-              </li>
-            </ul>
-              <!-- end sub menu-->
-              @endif
+ <li>
+ <a href="mhsdibimbingta" style='color:#fff'>
+  <i class="fa fa-circle-o"></i> Progress Bimbingan TA 
+</a>
+</li>
 
-              <!-- sub menu-->
-               
-              <!-- end menu-->
+ <li>
+  <a href="{{ url('kuotabimbingan') }}" style='color:#fff'>
+    <i class="fa fa-circle-o"></i> Kuota Bimbingan
+  </a>
+</li>
 
-              <!-- sub menu-->
-              @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="admin")
-            <li>
-                  <a href=""><i class="fa fa-circle-o"></i> Administrasi Syarat KP <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-
-                    @if(Auth::user()->role=="admin")
-                    <li>
-                      <a href="{!! url('verifikasisyaratkp') !!}"><i class="fa fa-circle-o"></i> Verifikasi Syarat KP </a></li>
-                    @endif
-                   
-                    </ul>
-            </li>
-            @endif
-                <!-- end sub menu-->
-
-                <!-- sub menu-->
-                 @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="ketua jurusan")
-            <li>
-                  <a href=""><i class="fa fa-circle-o"></i> Progress Bimbingan KP <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu"
-
-                    @if(Auth::user()->role=="ketua jurusan")
-                    <li>
-                      <a href="mhsdibimbingkp"><i class="fa fa-circle-o"></i> Lihat Progress Bimbingan KP </a></li>
-                    @endif
-                   
-                    </ul>
-            </li>
-            @endif
-                <!-- end sub menu-->
-
-                <!-- sub menu-->
-                @if(Auth::user()->role=="mahasiswa")
-            <li>
-                  <a href=""><i class="fa fa-circle-o"></i> Penilaian KP <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-                   
-                  </ul>
-            </li>
-            @endif
-                <!-- end sub menu-->
-
-          </li>
-
-          <li class="treeview">
-              <a href="#">
-            <i class="fa fa-dashboard"></i> <span> Tugas Akhir</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-
-              <ul class="treeview-menu">
-
-                <!-- sub menu-->
-                @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="ketua jurusan")
-              <li>
-                  <a href=""><i class="fa fa-circle-o"></i> Dosen Pembimbing TA <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="{{ url('pengajuanpembta') }}"><i class="fa fa-circle-o"></i> Pengajuan Pembimbing TA</a></li>
-                    @endif
-
-                    @if(Auth::user()->role=="ketua jurusan")
-                    <li>
-                      <a href="{{ url('susunpembta') }}"><i class="fa fa-circle-o"></i> Susun Pembimbing TA </a></li>
-                    @endif
-              </ul>
-              </li>
-            </ul>
-              <!-- end sub menu-->
-              @endif
-
-
-
-              <!-- sub menu-->
-              @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="admin")
-            <li>
-                  <a href=""><i class="fa fa-circle-o"></i> Administrasi Syarat TA <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-
-                   
-
-                    @if(Auth::user()->role=="admin")
-                    
-                    @endif
-                   
-                    </ul>
-            </li>
-            @endif
-                <!-- end sub menu-->
-
-                <!-- sub menu-->
-                 @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="ketua jurusan")
-            <li>
-                  <a href=""><i class="fa fa-circle-o"></i> Progress Bimbingan TA <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Input Progress Bimbingan TA</a></li>
-
-                    <a href=""><i class="fa fa-circle-o"></i> Pembimbing 1 <i class="fa fa-angle-left pull-right"></i></a>
-
-                    <a href=""><i class="fa fa-circle-o"></i> Pembimbing 2 <i class="fa fa-angle-left pull-right"></i></a>
-                    @endif
-
-                    @if(Auth::user()->role=="ketua jurusan")
-                    <li>
-                      <a href="mhsdibimbingta"><i class="fa fa-circle-o"></i> Lihat Progress Bimbingan TA </a></li>
-                    @endif
-                   
-                    </ul>
-            </li>
-            @endif
-                <!-- end sub menu-->
-
-          <!-- sub menu-->
-              @if(Auth::user()->role=="mahasiswa" or Auth::user()->role=="admin")
-            <li>
-                  <a href=""><i class="fa fa-circle-o"></i> Administrasi Syarat Ujian TA <i class="fa fa-angle-left pull-right"></i></a>
-                  <ul class="treeview-menu">
-
-                    @if(Auth::user()->role=="mahasiswa")
-                    <li><a href="{!! url('ujian_ta') !!}"><i class="fa fa-circle-o"></i> Pengajuan Syarat Ujian </a></li>
-                  
-                  
-                    @endif
-
-                    @if(Auth::user()->role=="admin")
-                    <li>
-                      <a href="#"><i class="fa fa-circle-o"></i> Verifikasi Syarat Ujian TA 1</a></li>
-                    @endif
-
-                    @if(Auth::user()->role=="admin")
-                    <li>
-                      <a href="#"><i class="fa fa-circle-o"></i> Verifikasi Syarat Ujian TA 2</a></li>
-                    @endif
-                   
-                   
-                    </ul>
-            </li>
-            @endif
-                <!-- end sub menu-->
-
-          </li>
-
-      @if(Auth::user()->role=="admin" or Auth::user()->role=="ketua jurusan")
-      <li class="treeview">
-              <a href="#">
-                <i class="fa fa-table"></i> <span>Kuota Bimbingan</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="{{ url('kuotabimbingan') }}"><i class="fa fa-circle-o"></i>Input Kuota Bimbingan</a></li>
-                
-              </ul>
-      </li>
-      @endif
-           
-      @if(Auth::user()->role=="admin")
-     
-      @endif
-    </ul>
-
+@endif
 
     </section>
         <!-- /.sidebar -->

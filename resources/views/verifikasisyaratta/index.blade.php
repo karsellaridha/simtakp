@@ -29,8 +29,9 @@
 	<tr>
 		<td>{!! $data->mahasiswa->nim !!}</td>
 		<td>{!! $data->mahasiswa->nama !!}</td>
-		<td>{!! $data->ppta->dosen->nama!!}</td>
-		<td>{!! $data->ppta->tempat_kp !!}</td>
+		<td>{!! @$data->ppta->data_pembimbing_1->nama!!}</td>
+		<td>{!! @$data->ppta->data_pembimbing_2->nama!!}</td>
+		<td>{!! @$data->judul !!}</td>
 		<td><a href="{!! url("verifikasisyaratta/$data->id/detail") !!}">Detail</a></td>
 		<td><span class="label {!! ($data->status_syaratta=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $data->status_syaratta !!}</td>
 		<td>

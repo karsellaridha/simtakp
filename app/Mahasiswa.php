@@ -16,6 +16,9 @@ class Mahasiswa extends Model {
 	public function pengajuanpembkp(){
 		return $this->hasOne('App\Pengajuanpembkp','nim','nim');
 	}
+	public function pengajuanpembta(){
+		return $this->hasOne('App\Pengajuanpembta','nim','nim');
+	}
 
 	public function saveMhs($data){
 		return DB::transaction(function()use($data){
@@ -28,5 +31,9 @@ class Mahasiswa extends Model {
 
 	public function bimbingankp(){
 		return $this->hasOne('App\Bimbingankp','nim','nim');
+	}
+
+	public function bimbinganta(){
+		return $this->hasOne('App\Bimbinganta','nim','nim');
 	}
 }

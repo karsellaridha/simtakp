@@ -1,4 +1,7 @@
-
+<div class="form-group">
+			{!! Form::label('tanggal','NIP :') !!}
+			{!! Form::text('nip',$nip,['class'=>'form-control','id'=>'tanggal','required','readonly']) !!}
+		</div>
 
 		<div class="form-group">
 			{!! Form::label('tanggal','Tanggal :') !!}
