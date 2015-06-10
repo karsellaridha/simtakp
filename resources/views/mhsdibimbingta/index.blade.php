@@ -12,12 +12,12 @@
 		<tr bgcolor="#CCCCCC">
 			<th>NIM</th>
 			<th>Nama</th>
-			<th>Dosen Pembimbing 1</th>
-			<th>Dosen Pembimbing 2</th>
+			<th>Pembimbing 1</th>
+			<th>Pembimbing 2</th>
 			<th>Program Studi</th>
-			<th>Judul Tugas Akhir</th>
-			<th>Nilai Tugas AKhir 1 </th>
-			<th>Nilai Tugas AKhir 2 </th>
+			<th>Judul TA</th>
+			<th>Nilai TA 1 </th>
+			<th>Nilai TA 2 </th>
 			<th>Nilai</th>
 			<th>Aksi</th>
 		</tr>

@@ -117,7 +117,7 @@ Route::get('verifikasisyaratta/{id}/detail',"VerifikasisyarattaController@detail
 Route::post('verifikasisyaratta/{id}',"VerifikasisyarattaController@verifikasi");
 
 //Input Bimbingan TA
-Route::get('bimbinganta/tambah',"BimbingantaController@tambah");
+Route::get('bimbinganta/tambah/{nip}',"BimbingantaController@tambah");
 Route::post('bimbinganta', "BimbingantaController@prosesTambah");
 Route::get('bimbinganta/', "BimbingantaController@dataBimbinganta");
 Route::get('bimbinganta/edit/{bimbinganta}', "BimbingantaController@editBimbinganta");
@@ -137,8 +137,6 @@ Route::get('mhsdiujita/bimbinganta/{id}',"BimbingantaController@bimbinganta");
 Route::get('mhsdiujita/detail/{nim}',"BimbingantaController@detail");
 Route::get('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaian");
 Route::post('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaianProses");
-
-
 
 Route::controller('ujian_ta','PengajuanUjianTaController');
 Route::controller('verifikasi_ujian/ta1','VerifikasiUjianTa1Controller');

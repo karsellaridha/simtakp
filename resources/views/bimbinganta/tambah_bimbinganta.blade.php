@@ -10,7 +10,7 @@
                 <div class="box-body">
 
 	
-	{!! Form::open(['url'=>'bimbingantap']) !!}
+	{!! Form::open(['url'=>'bimbinganta']) !!}
 
 		@include('bimbinganta.form',['submitButtonText'=>'Save'])
 	

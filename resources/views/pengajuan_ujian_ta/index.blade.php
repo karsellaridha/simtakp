@@ -8,16 +8,30 @@ use App\NilaiTa1;
 
 <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Pengajuan Ujian TA</h3>
+                  <h2 class="box-title"><b>Pengajuan Ujian TA</b></h2>
                 </div><!-- /.box-header -->
   
    <div class="box-body">
 
-<h4>Ujian TA 1</h4>
+<h4>Ujian Proposal TA</h4>
+<table class="table">
 @if(count($pengajuanUjian)>0)
-Jadwal 	: {!! @$pengajuanUjian->jadwal !!}<br>
-Tempat 	: {!! @$pengajuanUjian->tempat_sidang !!}<br>
-Status 	: {!! @$pengajuanUjian->status !!}<br>
+<tr>
+	<td>Jadwal</td>
+	<td>:</td>
+	<td>{!! @$pengajuanUjian->jadwal !!}</td>
+</tr>
+<tr>
+	<td>Tempat</td>
+	<td>:</td>
+	<td>{!! @$pengajuanUjian->tempat_sidang !!}</td>
+</tr>
+<tr>
+	<td>Status</td>
+	<td>:</td>
+	<td><span class="label {!! ($pengajuanUjian->status=="diajukan")? "label-danger" : "label-success" !!}">{!! @$pengajuanUjian->status !!}</span></td>
+</tr>
+
 <?php
 
 
@@ -25,15 +39,26 @@ $nilaita1 = new NilaiTa1;
 $ta1 = $nilaita1->nilaiTotal($pengajuanUjian->nim) ;
 
 ?>
-Nilai Angka : {!! $ta1['angka'] !!}<br>
-Nilai Huruf :  {!! $ta1['huruf'] !!}<br>
-<a href="">Detail</a> - <a href="">Edit</a>
+<tr>
+	<td>Nilai Angka</td>
+	<td>:</td>
+	<td><b>{!! $ta1['angka'] !!}</b></td>
+</tr>
+<tr>
+	<td>Nilai Huruf</td>
+	<td>:</td>
+	<td><font color="red"><b>{!! $ta1['huruf'] !!}</b></font></td>
+</tr>
+<tr>
+	<td><a href="">Detail</a> - <a href="">Edit</a></td>
+
 @else
 Belum ada data
 @endif
 <hr>
+</table>
 
-<h4>Ujian TA 2</h4>
+<h4>Ujian Komprehensif TA</h4>
 @if(count($pengajuanUjian2)>0)
 Jadwal : {!! @$pengajuanUjian2->jadwal !!}<br>
 Status : {!! @$pengajuanUjian2->status !!}<br>

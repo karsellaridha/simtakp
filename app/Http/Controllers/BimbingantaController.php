@@ -10,31 +10,32 @@ use App\Dosen;
 use App\Pengajuanpembta;
 use App\Pengajuansyaratta;
 use Auth;
-use App\Bimbingankp;
+use App\Bimbinganta;
 use App\Inputnilaikp;
 use App\NilaiTa1;
 use App\PengujiUjianTa;
 
 class BimbingantaController extends Controller {
 
-public function tambah(){
-	return view("bimbingankp.tambah_bimbingankp");
+public function tambah($nip){
+	return view("bimbinganta.tambah_bimbinganta")
+	->with('nip',$nip);
 	}
 
-public function prosesTambah(Request $request, Bimbingankp $bimbingankp){
-	Bimbingankp::create(['nim'=>Auth::user()->mahasiswa->nim,
-		'nip'=>Auth::user()->mahasiswa->pengajuanpembkp->dosen->nip,
+public function prosesTambah(Request $request){
+	Bimbinganta::create(['nim'=>Auth::user()->mahasiswa->nim,
+		'nip'=>$request->input('nip'),
 		'tanggal'=>$request->input('tanggal'),
 		'hasil_konsultasi'=>$request->input('hasil_konsultasi'),
 		'id_pengajuanpembkp'=>Auth::user()->mahasiswa->pengajuanpembkp->id]);
-	return redirect("bimbingankp");
+	return redirect("bimbinganta");
 
 	}
 
 public function dataBimbinganta(){
-	$bimbingankp=Bimbingankp::where("nim","=",Auth::user()->mahasiswa->nim)->orderBy('tanggal')->get();
+	$databimbinganta=Bimbinganta::where("nim","=",Auth::user()->mahasiswa->nim)->orderBy('tanggal')->get();
 
-return view("bimbingankp.index")->with("databimbingankp",$bimbingankp);
+	return view("bimbinganta.index")->with("databimbinganta",$databimbinganta);
 }
 
 public function editBimbingankp($id){
