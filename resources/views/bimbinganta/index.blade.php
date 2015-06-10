@@ -16,12 +16,12 @@
 		<td>:</td> 
 		<td>{!! Auth::user()->mahasiswa->nama !!}<td>	
 	<tr>
-		<td>Dosen Pembimbing 1</td>
+		<td>Pembimbing 1</td>
 		<td>:</td> 
 		<td>{!! Auth::user()->mahasiswa->pengajuanpembta->data_pembimbing_1->nama !!}<td>
 	</tr>
 	<tr>
-		<td>Dosen Pembimbing 2</td>
+		<td>Pembimbing 2</td>
 		<td>:</td> 
 		<td>{!! @Auth::user()->mahasiswa->pengajuanpembta->data_pembimbing_2->nama !!}<td>
 	</tr>
@@ -39,16 +39,19 @@
 <table class="table" id='datatable'>
 		<thead>
 		<tr bgcolor="#CCCCCC">
-			<th>Dosen</th>
+			<th>No.</th>
+			<th>Pembimbing</th>
 			<th>Tanggal Bimbingan</th>
 			<th>Hasil Konsultasi</th>
 			<th>Opsi</th>
 		</tr>
 	</thead>
 	<tbody>
+		<?php $no=1; ?>
 		@foreach($databimbinganta as $data_bimbinganta)
 		
 		<tr>
+			<th>{!! $no++ !!}</th>
 			<th>{!!$data_bimbinganta->dosen->nama!!}</th>
 			<td>{!!$data_bimbinganta->tanggal!!}</td>
 			<td>{!!$data_bimbinganta->hasil_konsultasi!!}</td>

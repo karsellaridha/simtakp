@@ -29,15 +29,18 @@
 <table class="table" id='datatable'>
 		<thead>
 		<tr bgcolor="#CCCCCC">
+			<th>No.</th>
 			<th>Tanggal Bimbingan</th>
 			<th>Hasil Konsultasi</th>
 			<th>Opsi</th>
 		</tr>
 	</thead>
 	<tbody>
+		<?php $no=1; ?>
 		@foreach($databimbingankp as $data_bimbingankp)
 		
 		<tr>
+			<td>{!! $no++ !!}</td>
 			<td>{!!$data_bimbingankp->tanggal!!}</td>
 			<td>{!!$data_bimbingankp->hasil_konsultasi!!}</td>
 			<td><a href="{!! URL::to('bimbingankp/edit',$data_bimbingankp->id)!!}">edit</a> | <a href="{!! URL::to('bimbingankp',$data_bimbingankp->id)!!}" onClick="return confirm('Hapus Data Konsultasi KP?')">hapus</a></td>

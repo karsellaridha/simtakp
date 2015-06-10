@@ -18,6 +18,7 @@
 <table class='table table-bordered'>
 	<thead style='background:#c0c0c0'>
 		<tr>
+<td>No.</td>
 <td>NIM</td>
 <td>Nama</td>
 <td>Judul KP</td>
@@ -25,9 +26,10 @@
 		</tr>
 	</thead>
 	<tbody>
-
+<?php $no=1; ?>
 @foreach($ppkp as $pp)
 <tr>
+<td>{!! $no++ !!}</td>
 <td>{!! $pp->nim !!}</td>
 <td>{!! $pp->mahasiswa->nama !!}</td>
 <td>{!! $pp->tempat_kp !!}</td>

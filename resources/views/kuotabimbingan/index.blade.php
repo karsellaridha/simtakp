@@ -13,6 +13,7 @@
 <table cellpadding="5" cellspacing="0" border="1" class="table" id='datatable'>
 	<thead>
 	<tr bgcolor="#CCCCCC">
+		<th>No.</th>
 		<th>NIP</th>
 		<th>Nama Dosen</th>
 		<th>Kuota Bimbingan KP Tersedia</th>
@@ -22,8 +23,10 @@
 	</thead>
 	<tbody>
 
+	<?php $no=1; ?>
 	@foreach($dosen as $data)
 	<tr>
+		<td>{!! $no++ !!}</td>
 		<td>{!! $data->nip !!}</td>
 		<td>{!! $data->nama !!}</td>
 		<td>{!! @$data->kuotabimbingan()->kuota_kp !!}</td>

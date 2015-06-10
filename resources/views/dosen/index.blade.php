@@ -14,6 +14,7 @@
 <table cellpadding="5" cellspacing="0" border="1" class="table" id='datatable'>
 		<thead>
 		<tr bgcolor="#CCCCCC">
+			<th>No.</th>
 			<th>NIP</th>
 			<th>Nama</th>
 			<th>Jabatan</th>
@@ -22,9 +23,11 @@
 		</tr>
 	</thead>
 	<tbody>
+		<?php $no=1; ?>
 		@foreach($datadosen as $data_dosen)
 		
 		<tr>
+			<td>{!! $no++ !!}</td>
 			<td>{!!$data_dosen->nip!!}</td>
 			<td>{!!$data_dosen->nama!!}</td>
 			<td>{!!$data_dosen->jabatan!!}</td>

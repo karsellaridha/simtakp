@@ -13,6 +13,7 @@
 <table cellpadding="5" cellspacing="0" border="1" class="table" id='datatable'>
 		<thead>
 		<tr bgcolor="#CCCCCC">
+			<th>No.</th>
 			<th>NIM</th>
 			<th>Nama</th>
 			<th>Jenis Kelamin</th>
@@ -21,9 +22,11 @@
 		</tr>
 	</thead>
 	<tbody>
+		<?php $no=1; ?>
 		@foreach($datamahasiswa as $data_mahasiswa)
 		
 		<tr>
+			<td>{!! $no++ !!}</td>
 			<td>{!!$data_mahasiswa->nim!!}</td>
 			<td>{!!$data_mahasiswa->nama!!}</td>
 			<td>{!!$data_mahasiswa->jenis_kelamin!!}</td>
