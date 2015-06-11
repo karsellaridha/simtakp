@@ -38,6 +38,7 @@ public function updateMahasiswa(Request $request, $id){
 public function	deleteMahasiswa($id){
 	$mahasiswa=Mahasiswa::findOrFail($id);
 	User::findOrFail($mahasiswa->id_user)->delete();
+	
 	return redirect('mahasiswa');
 }
 

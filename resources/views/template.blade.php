@@ -141,9 +141,14 @@ color: #000;
     <i class="fa fa-circle-o"></i> Pengajuan Pembimbing KP
   </a>
 </li>
+  <li class='white'>
+  <a href="{{ url('pengajuansyaratkp') }}">
+    <i class="fa fa-circle-o"></i> Pengajuan Syarat KP
+  </a>
+</li>
 <li class='white'>
   <a href="{{ url('bimbingankp') }}">
-    <i class="fa fa-circle-o"></i> Input Progress Bimbingan KP
+    <i class="fa fa-circle-o"></i> Progress Bimbingan KP
   </a>
 </li>
 <li class='white'>

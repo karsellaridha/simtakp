@@ -37,7 +37,8 @@ public function updatedosen(Request $request, $id){
 
 public function	deletedosen($id){
 	$dosen=Dosen::findOrFail($id);
-	User::findOrFail($dosen->id_user)->delete();
+	$user = User::findOrfail($dosen->id_user);
+	$user->delete();
 	return redirect('dosen');
 }
 

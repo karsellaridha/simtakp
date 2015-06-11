@@ -15,7 +15,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::group(["middleware"=>"auth"], function(){
+Route::group(["middleware"=>["auth","cekIzinAksesHalaman"]], function(){
 
 
 Route::get('simtakp',function(){
@@ -23,6 +23,7 @@ Route::get('simtakp',function(){
 });
 
 //Data User
+
 
 //Data Mahasiswa
 Route::get('mahasiswa/tambah', "MahasiswaController@tambah");
