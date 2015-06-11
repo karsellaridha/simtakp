@@ -139,8 +139,6 @@ Route::get('mhsdiujita/detail/{nim}',"BimbingantaController@detail");
 Route::get('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaian");
 Route::post('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaianProses");
 
-
-
 Route::controller('ujian_ta','PengajuanUjianTaController');
 Route::controller('verifikasi_ujian/ta1','VerifikasiUjianTa1Controller');
 Route::controller('susunjadwalta','SusunJadwalTaController');

@@ -55,19 +55,33 @@
 
 <hr>
 <h4>Nilai TA 1</h4>
-yang sudah menginput nilai : 
-@foreach($nilaita1->sudahInput($pengajuanpembta->nim) as $v)
-<span class='label label-success' style='margin-left:10px'>{!! $v->nama !!} </span>  
-@endforeach
-<br>
+<table>
+  <tr>
+    <td>Yang sudah menginput nilai</td>
+    <td>:</td>
+    <td>@foreach($nilaita1->sudahInput($pengajuanpembta->nim) as $v)
+        <span class='label label-success' style='margin-left:10px'>{!! $v->nama !!} </span>  
+        @endforeach</td>
+  </tr>
+</table>
+
 <?php $ta1 = $nilaita1->nilaiTotal($pengajuanpembta->nim) ?>
 
-Akumulasi Nilai <br>
-Angka : {!! $ta1['angka'] !!}<br>
-Huruf :  {!! $ta1['huruf'] !!}<br>
+<h4>Akumulasi Nilai</h4>
+<table>
 
+  <tr>
+    <td>Angka</td>
+    <td>:</td>
+    <td>{!! $ta1['angka'] !!}</td>
+  </tr>
 
-
+  <tr>
+    <td>Huruf</td>
+    <td>:</td>
+    <td>{!! $ta1['huruf'] !!}</td>
+  <tr>  
+</table>
 
 </div><!-- /.box-body -->
 </div><!-- /.box -->

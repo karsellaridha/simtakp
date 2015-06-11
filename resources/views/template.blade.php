@@ -79,7 +79,7 @@ color: #000;
                     !!}
                     @endif
 
-                    {!! @Auth::user()->username !!} </span>
+                {!! @Auth::user()->username !!} </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -117,13 +117,14 @@ color: #000;
 <!-- menu Dosen -->
 @if(Auth::user()->role=="dosen")
               <li>
-                  <a style='color:#fff' href="{!! url('mhsdibimbingkp') !!}"><i class="fa fa-circle-o"></i> Membimbing Kp</a>
+
+                  <a style='color:#fff' href="{!! url('mhsdibimbingkp') !!}"><i class="fa fa-dashboard"></i> Membimbing KP</a>
               </li>
               <li>
-                  <a style='color:#fff' href="{!! url('mhsdibimbingta')!!} "><i class="fa fa-circle-o"></i> Membimbing TA</a>
+                  <a style='color:#fff' href="{!! url('mhsdibimbingta')!!} "><i class="fa fa-dashboard"></i> Membimbing TA</a>
               </li>
               <li>
-                  <a  style='color:#fff' href="{!! url('mhsdiujita') !!}"><i class="fa fa-circle-o"></i> Menguji TA</a>
+                  <a  style='color:#fff' href="{!! url('mhsdiujita') !!}"><i class="fa fa-dashboard"></i> Menguji TA</a>
               </li>
 @endif
 
@@ -262,25 +263,29 @@ color: #000;
 
   <li>
   <a href="mhsdibimbingkp" style='color:#fff'>
-    <i class="fa fa-circle-o"></i> Lihat Progress Bimbingan KP 
+
+    <i class="fa fa-dashboard"></i> Lihat Progress Bimbingan KP 
   </a>
   </li>
 
  <li>
   <a href="{{ url('susunpembta') }}" style='color:#fff'>
-    <i class="fa fa-circle-o"></i> Susun Pembimbing TA 
+
+    <i class="fa fa-dashboard"></i> Susun Pembimbing TA 
   </a>
 </li>
 
  <li>
  <a href="mhsdibimbingta" style='color:#fff'>
-  <i class="fa fa-circle-o"></i> Progress Bimbingan TA 
+
+  <i class="fa fa-dashboard"></i> Progress Bimbingan TA 
 </a>
 </li>
 
  <li>
   <a href="{{ url('kuotabimbingan') }}" style='color:#fff'>
-    <i class="fa fa-circle-o"></i> Kuota Bimbingan
+
+    <i class="fa fa-dashboard"></i> Kuota Bimbingan
   </a>
 </li>
 

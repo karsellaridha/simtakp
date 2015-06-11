@@ -13,6 +13,7 @@
 <table cellpadding="5" cellspacing="0" border="1" class="table" id='datatable'>
 	<thead>
 	<tr bgcolor="#CCCCCC">
+		<th>No.</th>
 		<th>NIM</th>
 		<th>Nama</th>
 		<th>Dosen Pembimbing</th>
@@ -24,8 +25,10 @@
 	</thead>
 	<tbody>
 
+	<?php $no=1; ?>
 	@foreach($pskp as $data)
 	<tr>
+		<td>{!! $no++ !!}
 		<td>{!! $data->nim !!}</td>
 		<td>{!! $data->mahasiswa->nama !!}</td>
 		<td>{!! $data->ppkp->dosen->nama!!}</td>

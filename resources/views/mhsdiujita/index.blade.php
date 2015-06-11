@@ -10,6 +10,7 @@
 <table class="table" id='datatable'>
 		<thead>
 		<tr bgcolor="#CCCCCC">
+			<th>No.</th>
 			<th>NIM</th>
 			<th>Nama</th>
 			<th>Dosen Pembimbing 1</th>
@@ -22,9 +23,11 @@
 		</tr>
 	</thead>
 	<tbody>
+		<?php $no=1; ?>
 		@foreach($datamhsbimbinganta as $as)
 		<?php $data_bimbinganta = $pengajuanpembta->where('nim','=',$as->nim)->first() ?>
 		<tr>
+			<td>{!! $no++ !!}</td>
 			<td>{!!$data_bimbinganta->nim !!}</td>
 			<td>{!!$data_bimbinganta->mahasiswa->nama!!}</td>
 			<td>{!!$data_bimbinganta->data_pembimbing_1->nama!!}</td>

@@ -10,6 +10,7 @@
 <table class="table" id='datatable'>
 		<thead>
 		<tr bgcolor="#CCCCCC">
+			<th>No.</th>
 			<th>NIM</th>
 			<th>Nama</th>
 			<th>Dosen Pembimbing</th>
@@ -21,9 +22,11 @@
 		</tr>
 	</thead>
 	<tbody>
+		<?php $no=1; ?>
 		@foreach($datamhsbimbingankp as $data_bimbingankp)
 		
 		<tr>
+			<td>{!! $no++ !!}</td>
 			<td>{!!$data_bimbingankp->nim !!}</td>
 			<td>{!!$data_bimbingankp->mahasiswa->nama!!}</td>
 			<td>{!!$data_bimbingankp->dosen->nama!!}</td>
