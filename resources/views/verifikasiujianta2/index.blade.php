@@ -3,7 +3,7 @@
 
 <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Verifikasi Ujian Proposal TA</h3>
+                  <h3 class="box-title">Verifikasi Ujian Komprehensif TA</h3>
                 </div><!-- /.box-header -->
   
    <div class="box-body">
@@ -28,7 +28,7 @@
 	<td>{!! $p->nim !!}</td>
 	<td>{!! $p->mahasiswa->nama !!}</td>
 	<td><span class="label {!! ($p->status=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $p->status !!}</span></td>
-	<td><a href='{!! url("verifikasi_ujian/ta1/input/".$p->nim) !!}'>Verifikasi</a></td>
+	<td><a href='{!! url("verifikasi_ujian/ta2/input/".$p->nim) !!}'>Verifikasi</a></td>
 </tr>
 	@endforeach
 </tbody>

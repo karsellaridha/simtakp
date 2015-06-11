@@ -1,4 +1,15 @@
+	<style type="text/css">
+		.form-control{
+			width: 100px;
+			float:right;
+		}
 
+		label{
+			width: 800px;
+		}
+	</style>
+
+	{!! Form::open(['url'=>'ujian_ta/tambah']) !!}
 		<div class="form-group">
 			{!! Form::label('ksmktm','Fotocopy Kartu Studi Mahasiswa (KSM) atau Kartu rencana
 Studi (KRS) dan Kartu Tanda Mahasiswa (KTM) :') !!}
@@ -72,11 +83,8 @@ pembayaran apapun, yang masih berlaku :') !!}
 		</div>
 
 		<div class="form-group">
-			{!! Form::label('map_kuning','Semua berkas dimasukkan ke dalam map berwarna kuning :') !!}
-			{!! Form::select('map_kuning',["ada"=>"Ada","tidak ada"=>"Tidak Ada"],@$psuta2->map_kuning,['class'=>'form-control','id'=>'map_kuning']) !!}
+			{!! Form::submit('Ajukan',['class'=>'btn btn-primary form-control']) !!}
 		</div>
 
-		<div class="form-group">
-			{!! Form::submit($submitButtonText,['class'=>'btn btn-primary form-control']) !!}
-		</div>
-	
+	{!! Form::close() !!}
+	<div class='clearfix'></div>

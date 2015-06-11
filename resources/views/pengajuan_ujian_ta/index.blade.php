@@ -51,6 +51,7 @@ $ta1 = $nilaita1->nilaiTotal($pengajuanUjian->nim) ;
 </tr>
 <tr>
 	<td><a href="">Detail</a> - <a href="">Edit</a></td>
+</tr>
 
 @else
 Belum ada data
@@ -59,11 +60,26 @@ Belum ada data
 </table>
 
 <h4>Ujian Komprehensif TA</h4>
+<table class="table">
 @if(count($pengajuanUjian2)>0)
-Jadwal : {!! @$pengajuanUjian2->jadwal !!}<br>
-Status : {!! @$pengajuanUjian2->status !!}<br>
-Nilai	: {!! @$pengajuanUjian->status !!}<br>
-<a href="">Detail</a> - <a href="">Edit</a>
+<tr>
+	<td>Jadwal</td>
+	<td>:</td>
+	<td>{!! @$pengajuanUjian2->jadwal !!}</td>
+</tr>
+<tr>
+	<td>Status</td>
+	<td>:</td>
+	<td>{!! @$pengajuanUjian2->status !!}</td>
+</tr>
+<tr>
+	<td>Nilai</td>
+	<td>:</td>
+	<td><span class="label {!! ($pengajuanUjian->status=="diajukan")? "label-danger" : "label-success" !!}">{!! @$pengajuanUjian->status !!}</span></td>
+</tr>
+<tr>
+	<td><a href="">Detail</a> - <a href="">Edit</a></td>
+</tr>
 @else
 Belum ada data
 @endif
