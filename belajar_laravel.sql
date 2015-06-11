@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09 Jun 2015 pada 09.18
--- Versi Server: 5.6.20
+-- Generation Time: Jun 11, 2015 at 05:20 PM
+-- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bimbingan_kp`
+-- Table structure for table `bimbingan_kp`
 --
 
 CREATE TABLE IF NOT EXISTS `bimbingan_kp` (
@@ -36,18 +36,18 @@ CREATE TABLE IF NOT EXISTS `bimbingan_kp` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data untuk tabel `bimbingan_kp`
+-- Dumping data for table `bimbingan_kp`
 --
 
 INSERT INTO `bimbingan_kp` (`id`, `nim`, `nip`, `tanggal`, `hasil_konsultasi`, `id_pengajuanpembkp`) VALUES
 (1, '09111003024', '12345678', '2015-05-16', 'belajar laravel', 4),
 (2, '09111003036', '197210182008121001', '2015-05-20', 'bimbingan', 7),
-(3, '09111003024', '12345678', '2015-05-30', '- tambah menu pengelolaan TA\r\n- ganti warna latar menu\r\n- logo ditambahkan', 4);
+(3, '09111003024', '12345678', '2015-05-30', 'tambah menu pengelolaan TA, ganti warna latar menu,logo ditambahkan', 4);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bimbingan_ta`
+-- Table structure for table `bimbingan_ta`
 --
 
 CREATE TABLE IF NOT EXISTS `bimbingan_ta` (
@@ -57,12 +57,19 @@ CREATE TABLE IF NOT EXISTS `bimbingan_ta` (
   `tanggal` date NOT NULL,
   `hasil_konsultasi` text NOT NULL,
   `id_pengajuanpembta` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `bimbingan_ta`
+--
+
+INSERT INTO `bimbingan_ta` (`id`, `nim`, `nip`, `tanggal`, `hasil_konsultasi`, `id_pengajuanpembta`) VALUES
+(1, '09111003024', '197210182008121001', '2015-06-10', 'bab 1 perbaiki format penulisan, tambah referensi', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dosen`
+-- Table structure for table `dosen`
 --
 
 CREATE TABLE IF NOT EXISTS `dosen` (
@@ -75,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `dosen` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
--- Dumping data untuk tabel `dosen`
+-- Dumping data for table `dosen`
 --
 
 INSERT INTO `dosen` (`id`, `nip`, `nama`, `jabatan`, `jabatan_akademik`, `id_user`) VALUES
@@ -85,7 +92,7 @@ INSERT INTO `dosen` (`id`, `nip`, `nama`, `jabatan`, `jabatan_akademik`, `id_use
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kuota_bimbingan`
+-- Table structure for table `kuota_bimbingan`
 --
 
 CREATE TABLE IF NOT EXISTS `kuota_bimbingan` (
@@ -97,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `kuota_bimbingan` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data untuk tabel `kuota_bimbingan`
+-- Dumping data for table `kuota_bimbingan`
 --
 
 INSERT INTO `kuota_bimbingan` (`id`, `nip`, `kuota_kp`, `kuota_ta`, `tahun`) VALUES
@@ -107,7 +114,7 @@ INSERT INTO `kuota_bimbingan` (`id`, `nip`, `kuota_kp`, `kuota_ta`, `tahun`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mahasiswa`
+-- Table structure for table `mahasiswa`
 --
 
 CREATE TABLE IF NOT EXISTS `mahasiswa` (
@@ -120,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `mahasiswa` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `mahasiswa`
+-- Dumping data for table `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id`, `nama`, `nim`, `jenis_kelamin`, `id_prodi`, `id_user`) VALUES
@@ -130,13 +137,13 @@ INSERT INTO `mahasiswa` (`id`, `nama`, `nim`, `jenis_kelamin`, `id_prodi`, `id_u
 (4, 'Rini Agustini', '09111003075', 'perempuan', 1, 52),
 (5, 'Test', '09111003022', 'perempuan', 2, 53),
 (6, '0911100302436', '0911100302436', 'laki-laki', 2, 54),
-(7, 'zxcvbnm', '09111003000', 'laki-laki', 1, 55),
+(7, 'Fahmi Natakusuma', '09111003000', 'laki-laki', 1, 55),
 (8, 'Ahmad Nazarudin', '09111003064', 'laki-laki', 1, 56);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_kp`
+-- Table structure for table `nilai_kp`
 --
 
 CREATE TABLE IF NOT EXISTS `nilai_kp` (
@@ -155,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `nilai_kp` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data untuk tabel `nilai_kp`
+-- Dumping data for table `nilai_kp`
 --
 
 INSERT INTO `nilai_kp` (`id`, `nim`, `judul_kp`, `id_pengajuanpembkp`, `pemb_lapangan`, `nilai_pemblapangan`, `file_nilai`, `kesesuaian_laporan`, `penguasaan_materi`, `analisis_perancangan`, `sikap_etika`, `nilai_dosbing`) VALUES
@@ -164,7 +171,7 @@ INSERT INTO `nilai_kp` (`id`, `nim`, `judul_kp`, `id_pengajuanpembkp`, `pemb_lap
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_ta1`
+-- Table structure for table `nilai_ta1`
 --
 
 CREATE TABLE IF NOT EXISTS `nilai_ta1` (
@@ -187,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `nilai_ta1` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `nilai_ta1`
+-- Dumping data for table `nilai_ta1`
 --
 
 INSERT INTO `nilai_ta1` (`id`, `nim`, `nip`, `persentasi`, `kesesuaian_format`, `bahasa_indonesia`, `kesesuaian_isi`, `kelengkapan_dokumen`, `analisis`, `metodologi`, `basisdata`, `office`, `os`, `jaringan`, `sikap_etika`, `penilaian_proses`) VALUES
@@ -196,7 +203,7 @@ INSERT INTO `nilai_ta1` (`id`, `nim`, `nip`, `persentasi`, `kesesuaian_format`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengajuan_pembkp`
+-- Table structure for table `pengajuan_pembkp`
 --
 
 CREATE TABLE IF NOT EXISTS `pengajuan_pembkp` (
@@ -209,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `pengajuan_pembkp` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data untuk tabel `pengajuan_pembkp`
+-- Dumping data for table `pengajuan_pembkp`
 --
 
 INSERT INTO `pengajuan_pembkp` (`id`, `nim`, `nip`, `tempat_kp`, `tahun`, `status_pembimbing`) VALUES
@@ -224,7 +231,7 @@ INSERT INTO `pengajuan_pembkp` (`id`, `nim`, `nip`, `tempat_kp`, `tahun`, `statu
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengajuan_pembta`
+-- Table structure for table `pengajuan_pembta`
 --
 
 CREATE TABLE IF NOT EXISTS `pengajuan_pembta` (
@@ -238,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `pengajuan_pembta` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data untuk tabel `pengajuan_pembta`
+-- Dumping data for table `pengajuan_pembta`
 --
 
 INSERT INTO `pengajuan_pembta` (`id`, `nim`, `pembimbing_1`, `pembimbing_2`, `judul`, `tahun`, `status_pembimbing`) VALUES
@@ -248,7 +255,7 @@ INSERT INTO `pengajuan_pembta` (`id`, `nim`, `pembimbing_1`, `pembimbing_2`, `ju
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengajuan_syaratkp`
+-- Table structure for table `pengajuan_syaratkp`
 --
 
 CREATE TABLE IF NOT EXISTS `pengajuan_syaratkp` (
@@ -267,7 +274,7 @@ CREATE TABLE IF NOT EXISTS `pengajuan_syaratkp` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `pengajuan_syaratkp`
+-- Dumping data for table `pengajuan_syaratkp`
 --
 
 INSERT INTO `pengajuan_syaratkp` (`id`, `nim`, `no_hp`, `id_pengajuan_pembkp`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `lama_kp`, `proposal_kp`, `permohonan_kp`, `kesediaan_membimbing`, `status_syaratkp`) VALUES
@@ -277,7 +284,7 @@ INSERT INTO `pengajuan_syaratkp` (`id`, `nim`, `no_hp`, `id_pengajuan_pembkp`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengajuan_syaratta`
+-- Table structure for table `pengajuan_syaratta`
 --
 
 CREATE TABLE IF NOT EXISTS `pengajuan_syaratta` (
@@ -300,7 +307,7 @@ CREATE TABLE IF NOT EXISTS `pengajuan_syaratta` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `pengajuan_syaratta`
+-- Dumping data for table `pengajuan_syaratta`
 --
 
 INSERT INTO `pengajuan_syaratta` (`id`, `nim`, `judul`, `no_hp`, `id_pengajuan_pembta`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `ktm`, `proposal_ta`, `tanda_kp`, `kesediaan_membimbing`, `persetujuan_ta`, `sk_pemb`, `permohonan_ambildata`, `status_syaratta`) VALUES
@@ -309,7 +316,7 @@ INSERT INTO `pengajuan_syaratta` (`id`, `nim`, `judul`, `no_hp`, `id_pengajuan_p
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengajuan_syaratujianta1`
+-- Table structure for table `pengajuan_syaratujianta1`
 --
 
 CREATE TABLE IF NOT EXISTS `pengajuan_syaratujianta1` (
@@ -331,7 +338,7 @@ CREATE TABLE IF NOT EXISTS `pengajuan_syaratujianta1` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `pengajuan_syaratujianta1`
+-- Dumping data for table `pengajuan_syaratujianta1`
 --
 
 INSERT INTO `pengajuan_syaratujianta1` (`id`, `nim`, `status`, `jadwal`, `tempat_sidang`, `ksm`, `spp`, `dkn`, `ktm`, `form_konsultasi`, `rekomendasi_sidang`, `tugas_akhir_1`, `sk_pembimbing_ta`, `updated_at`, `created_at`) VALUES
@@ -340,7 +347,35 @@ INSERT INTO `pengajuan_syaratujianta1` (`id`, `nim`, `status`, `jadwal`, `tempat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penguji_ujian_ta`
+-- Table structure for table `pengajuan_syaratujianta2`
+--
+
+CREATE TABLE IF NOT EXISTS `pengajuan_syaratujianta2` (
+`id` int(10) unsigned NOT NULL,
+  `nim` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL,
+  `jadwal` date NOT NULL,
+  `tempat_sidang` varchar(255) NOT NULL,
+  `ksmktm` enum('ada','tidak ada') NOT NULL,
+  `biaya_ujian` enum('ada','tidak ada') NOT NULL,
+  `dkn` enum('ada','tidak ada') NOT NULL,
+  `sertifikat` enum('ada','tidak ada') NOT NULL,
+  `suliet` enum('ada','tidak ada') NOT NULL,
+  `printscreen_suliet` enum('ada','tidak ada') NOT NULL,
+  `rekomendasi` enum('ada','tidak ada') NOT NULL,
+  `form_ta1` enum('ada','tidak ada') NOT NULL,
+  `eksemplar` enum('ada','tidak ada') NOT NULL,
+  `bebas_pustaka` enum('ada','tidak ada') NOT NULL,
+  `bebas_bayaran` enum('ada','tidak ada') NOT NULL,
+  `sk_ta` enum('ada','tidak ada') NOT NULL,
+  `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `create_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penguji_ujian_ta`
 --
 
 CREATE TABLE IF NOT EXISTS `penguji_ujian_ta` (
@@ -353,7 +388,7 @@ CREATE TABLE IF NOT EXISTS `penguji_ujian_ta` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `penguji_ujian_ta`
+-- Dumping data for table `penguji_ujian_ta`
 --
 
 INSERT INTO `penguji_ujian_ta` (`id`, `nim`, `penguji_1`, `penguji_2`, `updated_at`, `created_at`) VALUES
@@ -362,7 +397,7 @@ INSERT INTO `penguji_ujian_ta` (`id`, `nim`, `penguji_1`, `penguji_2`, `updated_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `prodi`
+-- Table structure for table `prodi`
 --
 
 CREATE TABLE IF NOT EXISTS `prodi` (
@@ -371,7 +406,7 @@ CREATE TABLE IF NOT EXISTS `prodi` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data untuk tabel `prodi`
+-- Dumping data for table `prodi`
 --
 
 INSERT INTO `prodi` (`id`, `nama`) VALUES
@@ -381,7 +416,7 @@ INSERT INTO `prodi` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -393,16 +428,16 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `remember_token`) VALUES
-(11, 'admin_indralaya', '$2y$10$xjFplltitavluTjg4HxJI.0JTGUcR/WH5SKoOkz1yclL4XDoVy8t2', 'admin', 'Twcb2AgOdffhxv3AH05C9uDwdVuVEKB9Yi5loICsgcyIJILpjTnMvu9CxEC8'),
-(42, 'kajur_SI', '$2y$10$hk.vPJNn7qxJGy0N22xaQeYwhFukQuomKKo4smuxlgVTxDAeU8qLq', 'ketua jurusan', 'r4wxyqzDSo1UcI73W9Mr8G0fqpsxn7PyU98VHXnYJ86Gl2jB40zlL5rVZQxx'),
+(11, 'admin_indralaya', '$2y$10$xjFplltitavluTjg4HxJI.0JTGUcR/WH5SKoOkz1yclL4XDoVy8t2', 'admin', 'P3uH5Y0nlueGhXKi4axCApWBralLBPuz3pTJ1fKtgtsSFgcqD8a5NkpOt48q'),
+(42, 'kajur_SI', '$2y$10$hk.vPJNn7qxJGy0N22xaQeYwhFukQuomKKo4smuxlgVTxDAeU8qLq', 'ketua jurusan', '2rq3Rlg2hkI4Gq68UUHLHgIpqmESA3emcSPdfHWdmpWCJJGGdLWwB12oh1o4'),
 (43, 'sekjur_SI', '$2y$10$O2QX1Xy1w5XQWfhNepcENeMTzYoEeY785KeDpMtWPomu1dccU40iu', 'sekretaris jurusan', 'IxyWKf1JMSHrBxRQAseu7jB5ktYWjls5FTY6GgPyKOJ5iQDAMGOeRxVzq95a'),
 (44, 'admin_bukit', '$2y$10$F9./kbVCyIwNqHzKitM.iOGZkc3PIkwAT7.gijcUgUUQFpiyL78Z2', 'admin', 'yDuhyGEqV2b39WHwGIA3mMuluBHJhaWPdE80kPUJB5tMQtpsE1RfoEqrj6as'),
-(47, '197210182008121001', '$2y$10$dmdbKjsyXXYczUqwaV8KEeo1BOQgAnniHBpO5WlHBc3opVVPu7TY2', 'dosen', 'T6Ox9QXMON8v26z7NNVD1l62LhC9TTZ8wcYSdyigGtPEfpLD1grB8WSrc65C'),
-(48, '09111003024', '$2y$10$IG03FmjMEZlgDasVZPz2wuO4QdDD7TPSB3cRQIds7R0jrnVfyC.zy', 'mahasiswa', 'N1YJUgWDrGKiicq47H9ef6GFwjDUkKHqoV8O6FJxvUZoNBiSO607UovebimS'),
+(47, '197210182008121001', '$2y$10$dmdbKjsyXXYczUqwaV8KEeo1BOQgAnniHBpO5WlHBc3opVVPu7TY2', 'dosen', 'l7XbGnVjdfrz2AyeCQLoln7cALPbMkB1aMTM7ADrJXjNtBrVw8XVgQYukz0K'),
+(48, '09111003024', '$2y$10$IG03FmjMEZlgDasVZPz2wuO4QdDD7TPSB3cRQIds7R0jrnVfyC.zy', 'mahasiswa', 'B24ynezVsOQs3ibJKM6U5gVDYknsYErUz9TPejT13x8H0iiq2xywkA834Aha'),
 (49, '09111003036', '$2y$10$ptE009n/pb9tbSeH4PgqJuslNdhLpddkBrXMQAVoY2uFnoSgc8cZ.', 'mahasiswa', 'egezQUcmfsErGJJaBRAToYWCymlR3gSD2tgfytzm133jO0ayFHAygd7wvctZ'),
 (50, '12345678', '$2y$10$3TYuc7yDQIpKHzoZvZ0KvOloe17UCS4kxf/6GlbkWqRo4pu5Tk0Dy', 'dosen', 'YjLOCfw2ktqNseya878ZG9oS0KSlWUHYEMkacJEk9Z4ora9SO5f01IHlyNar'),
 (51, '09111003016', '$2y$10$I.E/vJpHmot6ua/3AQWHleeCYrWCipiBDA7.IeJD.5jJEcqSEnbiW', 'mahasiswa', '8kE11tbo4yqMeXEu4dobQgCm2ojpBdFldnkbLFRQChGRpJYgdSLws1ALbZRZ'),
@@ -415,7 +450,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `remember_token`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `verifikasi_syaratkp`
+-- Table structure for table `verifikasi_syaratkp`
 --
 
 CREATE TABLE IF NOT EXISTS `verifikasi_syaratkp` (
@@ -431,7 +466,7 @@ CREATE TABLE IF NOT EXISTS `verifikasi_syaratkp` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
--- Dumping data untuk tabel `verifikasi_syaratkp`
+-- Dumping data for table `verifikasi_syaratkp`
 --
 
 INSERT INTO `verifikasi_syaratkp` (`id`, `id_pengajuan_syaratkp`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `lama_kp`, `proposal_kp`, `permohonan_kp`, `kesediaan_membimbing`) VALUES
@@ -441,7 +476,7 @@ INSERT INTO `verifikasi_syaratkp` (`id`, `id_pengajuan_syaratkp`, `jumlah_sks`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `verifikasi_syaratta`
+-- Table structure for table `verifikasi_syaratta`
 --
 
 CREATE TABLE IF NOT EXISTS `verifikasi_syaratta` (
@@ -460,7 +495,7 @@ CREATE TABLE IF NOT EXISTS `verifikasi_syaratta` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `verifikasi_syaratta`
+-- Dumping data for table `verifikasi_syaratta`
 --
 
 INSERT INTO `verifikasi_syaratta` (`id`, `id_pengajuan_syaratta`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `ktm`, `proposal_ta`, `tanda_kp`, `kesediaan_membimbing`, `persetujuan_ta`, `sk_pemb`, `permohonan_ambildata`) VALUES
@@ -472,28 +507,51 @@ INSERT INTO `verifikasi_syaratta` (`id`, `id_pengajuan_syaratta`, `jumlah_sks`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `verifikasi_syaratujianta1`
+-- Table structure for table `verifikasi_syaratujianta1`
 --
 
 CREATE TABLE IF NOT EXISTS `verifikasi_syaratujianta1` (
 `id` int(10) unsigned NOT NULL,
   `nim` varchar(255) NOT NULL,
-  `ksm` enum('ada','tidak ada') NOT NULL,
-  `spp` enum('ada','tidak ada') NOT NULL,
-  `dkn` enum('ada','tidak ada') NOT NULL,
-  `ktm` enum('ada','tidak ada') NOT NULL,
-  `form_konsultasi` enum('ada','tidak ada') NOT NULL,
-  `rekomendasi_sidang` enum('ada','tidak ada') NOT NULL,
-  `tugas_akhir_1` enum('ada','tidak ada') NOT NULL,
-  `sk_pembimbing_ta` enum('ada','tidak ada') NOT NULL
+  `ksm` enum('ya','tidak') NOT NULL,
+  `spp` enum('ya','tidak') NOT NULL,
+  `dkn` enum('ya','tidak') NOT NULL,
+  `ktm` enum('ya','tidak') NOT NULL,
+  `form_konsultasi` enum('ya','tidak') NOT NULL,
+  `rekomendasi_sidang` enum('ya','tidak') NOT NULL,
+  `tugas_akhir_1` enum('ya','tidak') NOT NULL,
+  `sk_pembimbing_ta` enum('ya','tidak') NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data untuk tabel `verifikasi_syaratujianta1`
+-- Dumping data for table `verifikasi_syaratujianta1`
 --
 
 INSERT INTO `verifikasi_syaratujianta1` (`id`, `nim`, `ksm`, `spp`, `dkn`, `ktm`, `form_konsultasi`, `rekomendasi_sidang`, `tugas_akhir_1`, `sk_pembimbing_ta`) VALUES
 (1, '09111003024', '', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `verifikasi_syaratujianta2`
+--
+
+CREATE TABLE IF NOT EXISTS `verifikasi_syaratujianta2` (
+  `id` int(11) NOT NULL,
+  `nim` varchar(225) NOT NULL,
+  `ksmktm` enum('ya','tidak') NOT NULL,
+  `biaya_ujian` enum('ya','tidak') NOT NULL,
+  `dkn` enum('ya','tidak') NOT NULL,
+  `sertifikat` enum('ya','tidak') NOT NULL,
+  `suliet` enum('ya','tidak') NOT NULL,
+  `printscreen_suliet` enum('ya','tidak') NOT NULL,
+  `rekomendasi` enum('ya','tidak') NOT NULL,
+  `form_ta1` enum('ya','tidak') NOT NULL,
+  `eksemplar` enum('ya','tidak') NOT NULL,
+  `bebas_pustaka` enum('ya','tidak') NOT NULL,
+  `bebas_bayaran` enum('ya','tidak') NOT NULL,
+  `sk_ta` enum('ya','tidak') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -572,6 +630,12 @@ ALTER TABLE `pengajuan_syaratujianta1`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pengajuan_syaratujianta2`
+--
+ALTER TABLE `pengajuan_syaratujianta2`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id` (`id`);
+
+--
 -- Indexes for table `penguji_ujian_ta`
 --
 ALTER TABLE `penguji_ujian_ta`
@@ -620,7 +684,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `bimbingan_ta`
 --
 ALTER TABLE `bimbingan_ta`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dosen`
 --
@@ -672,6 +736,11 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 ALTER TABLE `pengajuan_syaratujianta1`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `pengajuan_syaratujianta2`
+--
+ALTER TABLE `pengajuan_syaratujianta2`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `penguji_ujian_ta`
 --
 ALTER TABLE `penguji_ujian_ta`
@@ -702,29 +771,29 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 ALTER TABLE `verifikasi_syaratujianta1`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `dosen`
+-- Constraints for table `dosen`
 --
 ALTER TABLE `dosen`
 ADD CONSTRAINT `dosen_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kuota_bimbingan`
+-- Constraints for table `kuota_bimbingan`
 --
 ALTER TABLE `kuota_bimbingan`
 ADD CONSTRAINT `kuota_bimbingan_ibfk_1` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `mahasiswa`
+-- Constraints for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
 ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `pengajuan_pembkp`
+-- Constraints for table `pengajuan_pembkp`
 --
 ALTER TABLE `pengajuan_pembkp`
 ADD CONSTRAINT `pengajuan_pembkp_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE NO ACTION ON UPDATE CASCADE,
