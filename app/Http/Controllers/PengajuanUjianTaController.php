@@ -51,6 +51,37 @@ class PengajuanUjianTaController extends Controller {
 		
 	}
 
+	public function getIndex(){
+		$pengajuanUjian = PengajuanSyaratUjianTa1::where('nim','=',Auth::user()->mahasiswa->nim)->first();
+		$pengajuanUjian2 = null;
+		return view("pengajuan_ujian_ta.index")
+		->with('pengajuanUjian',$pengajuanUjian)
+		->with('pengajuanUjian2',$pengajuanUjian2);
+	}
+
+	public function getInput(){
+		$pengajuanUjian = PengajuanSyaratUjianTa2::where('nim','=',Auth::user()->mahasiswa->nim)->count();
+
+		return view("pengajuan_ujian_ta.tambah")
+		->with('pengajuanUjian',$pengajuanUjian);
+	} 
+
+	public function postInput(Request $request){
+
+		$data = $request->all();
+		$data['status'] = 1;
+
+		$pstu1 = PengajuanSyaratUjianTa2::firstOrNew(['nim'=>Auth::user()->mahasiswa->nim]);
+		$pstu1->fill($data);
+		$pstu1->save();
+
+		return redirect('ujian_ta');
+	}
+
+	public function getEdit($jenis){
+		
+	}
+
 
 } // end of class
  

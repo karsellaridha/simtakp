@@ -140,6 +140,7 @@ Route::post('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaianProses"
 
 Route::controller('ujian_ta','PengajuanUjianTaController');
 Route::controller('verifikasi_ujian/ta1','VerifikasiUjianTa1Controller');
+Route::controller('verifikasi_ujian/ta2','VerifikasiUjianTa2Controller');
 Route::controller('susunjadwalta','SusunJadwalTaController');
 
 
