@@ -1,6 +1,7 @@
 <?php
 
 use App\NilaiTa1;
+use App\NilaiTa2;
 ?>
 
 @extends("template")
@@ -12,6 +13,13 @@ use App\NilaiTa1;
                 </div><!-- /.box-header -->
   
    <div class="box-body">
+
+@if(count($pengajuanUjian)>0)
+	<a href='{!! url("ujian_ta/input/ta2") !!}' class='btn btn-primary pull-right'>Ajukan <br> Ujian Komprehensif</a>
+@else
+	<a href='{!! url("ujian_ta/input/ta1") !!}' class='btn btn-primary pull-right'>Ajukan <br> Ujian Proposal TA</a>
+@endif
+<div class='clearfix'></div>
 
 <h4>Ujian Proposal TA</h4>
 <table class="table">
@@ -68,14 +76,31 @@ Belum ada data
 	<td>{!! @$pengajuanUjian2->jadwal !!}</td>
 </tr>
 <tr>
-	<td>Status</td>
+	<td>Tempat</td>
 	<td>:</td>
-	<td>{!! @$pengajuanUjian2->status !!}</td>
+	<td>{!! @$pengajuanUjian2->tempat_sidang !!}</td>
 </tr>
 <tr>
-	<td>Nilai</td>
+	<td>Status</td>
 	<td>:</td>
-	<td><span class="label {!! ($pengajuanUjian->status=="diajukan")? "label-danger" : "label-success" !!}">{!! @$pengajuanUjian->status !!}</span></td>
+	<td><span class="label {!! ($pengajuanUjian2->status=="diajukan")? "label-danger" : "label-success" !!}">{!! @$pengajuanUjian2->status !!}</span></td>
+</tr>
+<?php
+
+
+$nilaita2 = new NilaiTa2;
+$ta2 = $nilaita2->nilaiTotal($pengajuanUjian2->nim) ;
+
+?>
+<tr>
+	<td>Nilai Angka</td>
+	<td>:</td>
+	<td><b>{!! $ta2['angka'] !!}</b></td>
+</tr>
+<tr>
+	<td>Nilai Huruf</td>
+	<td>:</td>
+	<td><font color="red"><b>{!! $ta2['huruf'] !!}</b></font></td>
 </tr>
 <tr>
 	<td><a href="">Detail</a> - <a href="">Edit</a></td>
@@ -84,7 +109,7 @@ Belum ada data
 Belum ada data
 @endif
 <hr>
-
+</table>
    </div>
 
 </div>

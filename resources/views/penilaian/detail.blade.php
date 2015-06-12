@@ -6,8 +6,8 @@
                   <h3 class="box-title">Detail Nilai TA Keseluruhan Mahasiswa</h3>
                 </div><!-- /.box-header -->
 <div class="box-body">
-<a href='{!! url("mhsdibimbingta/penilaian/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right' data-toggle="modal" data-target="#myModal">Input Nilai TA 2</a> 
-<a href='{!! url("mhsdibimbingta/penilaian/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right'  style='margin-right:10px'>Input Nilai TA 1</a>
+<a href='{!! url("penilaian/$sebagai/ta2/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right' data-toggle="modal" data-target="#myModal">Input Nilai TA 2</a> 
+<a href='{!! url("penilaian/$sebagai/ta1/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right'  style='margin-right:10px'>Input Nilai TA 1</a>
 
 <br><br>
 <table border="0" class="table">
@@ -80,6 +80,37 @@
     <td>Huruf</td>
     <td>:</td>
     <td>{!! $ta1['huruf'] !!}</td>
+  <tr>  
+</table>
+
+
+<hr>
+<h4>Nilai TA 2</h4>
+<table>
+  <tr>
+    <td>Yang sudah menginput nilai</td>
+    <td>:</td>
+    <td>@foreach($nilaita2->sudahInput($pengajuanpembta->nim) as $v)
+        <span class='label label-success' style='margin-left:10px'>{!! $v->nama !!} </span>  
+        @endforeach</td>
+  </tr>
+</table>
+
+<?php $ta2 = $nilaita2->nilaiTotal($pengajuanpembta->nim) ?>
+
+<h4>Akumulasi Nilai</h4>
+<table>
+
+  <tr>
+    <td>Angka</td>
+    <td>:</td>
+    <td>{!! $ta2['angka'] !!}</td>
+  </tr>
+
+  <tr>
+    <td>Huruf</td>
+    <td>:</td>
+    <td>{!! $ta2['huruf'] !!}</td>
   <tr>  
 </table>
 

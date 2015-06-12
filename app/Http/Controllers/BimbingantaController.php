@@ -96,33 +96,9 @@ public function bimbingankp($id){
 		return view('mhsdibimbingkp.bimbingankp')->with('datamhsbimbingankp',$datamhsbimbingankp);
 	}
 
-public function detail($nim){
-		$pengajuanpembta=Pengajuanpembta::where('nim','=',$nim)->first();
-		$nilaikp=null;
-		$psta = new Pengajuansyaratta;
-		$nilaita1 = new NilaiTa1;
-		return view('mhsdibimbingta.detail')
-		->with('nilaita1',$nilaita1)
-		->with('psta',$psta)
-		->with('pengajuanpembta',$pengajuanpembta)->with('nilaikp',$nilaikp);
-	
-}
 
-public function penilaian($nim){
-$nilaiuta1 = NilaiTa1::where('nim','=',$nim)->where('nip','=',Auth::user()->dosen->nip)->first();
-return view('mhsdibimbingta.penilaian')->with('nim',$nim)
-->with('nilaiuta1',$nilaiuta1);
-}
 
-public function penilaianProses($nim, Request $request){
-	$nilai = NilaiTa1::firstOrNew(['nip'=>Auth::user()->dosen->nip]);
-	$data = $request->all();
-	$data['nim'] = $nim;
-	$nilai->fill($data);
-	$nilai->save();
 
-	return redirect("mhsdibimbingta/detail/$nim");
-}
 
 }
  

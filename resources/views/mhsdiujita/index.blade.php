@@ -41,7 +41,7 @@
 			 <?php $ta1 = $nilaita1->nilaiTotal($data_bimbinganta->nim) ?>
 			<td>{!! $ta1['huruf'] !!}</td>
 			<td></td>
-			<td><a href="{!! url("mhsdibimbingta/detail/".$data_bimbinganta->nim) !!}">Penilaian</td>
+			<td><a href="{!! url("penilaian/detail/penguji/".$data_bimbinganta->nim) !!}">Penilaian</td>
 			
 		</tr>
 

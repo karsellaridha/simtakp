@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 
 
-class NilaiTa1 extends Model {
+class NilaiTa2 extends Model {
 
 	protected $table = 'nilai_ta2';
 	protected $fillable	= [

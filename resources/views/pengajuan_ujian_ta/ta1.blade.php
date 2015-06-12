@@ -9,7 +9,7 @@
 		}
 	</style>
 
-	{!! Form::open(['url'=>'ujian_ta/tambah']) !!}
+	{!! Form::open(['url'=>'ujian_ta/input/ta1']) !!}
 		<div class="form-group">
 			{!! Form::label('ksmktm','Fotocopy Kartu Studi Mahasiswa (KSM) atau Kartu rencana Studi
 (KRS) dan Kartu Tanda Mahasiswa (KTM) :') !!}

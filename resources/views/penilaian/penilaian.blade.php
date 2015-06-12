@@ -3,12 +3,12 @@
 
 <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Input Nilai TA 1</h3>
+                  <h3 class="box-title">Input Nilai TA </h3>
                 </div><!-- /.box-header -->
         <div class="box-body">
 
 
-{!! Form::open(['url'=>"mhsdibimbingta/penilaian/$nim"]) !!}
+{!! Form::open(['url'=>"penilaian/$sebagai/$jenis/$nim"]) !!}
 
 
 
@@ -89,12 +89,13 @@
       {!! Form::text('sikap_etika',@$nilaiuta1->sikap_etika,['class'=>'form-control','id'=>'sikap_etika']) !!}
       <span style="font-size:10pt; color:red;">Bobot nilai 10%</span>
     </div>
-
+@if($sebagai == "pembimbing")
     <div class="form-group">
       {!! Form::label('penilaian_proses','Penilaian Proses :') !!}
       {!! Form::text('penilaian_proses',@$nilaiuta1->penilaian_proses,['class'=>'form-control','id'=>'penilaian_proses']) !!}
       <span style="font-size:10pt; color:red;">Bobot nilai 15%</span>
     </div>
+@endif
       {!! Form::submit("simpan",['class'=>'btn btn-primary pull-right']) !!}
 {!! Form::close() !!}
 <div class='clearfix'></div>

@@ -8,9 +8,15 @@
   
    <div class="box-body">
 
-   	@if($pengajuanUjian === 0)
+   	@if($jenis === 'ta1')
 
    		@include('pengajuan_ujian_ta.ta1')
+
+   	@endif
+
+   	@if($jenis === 'ta2')
+
+   		@include('pengajuan_ujian_ta.ta2')
 
    	@endif
 
