@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2015 at 03:47 PM
+-- Generation Time: Jun 12, 2015 at 04:52 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -274,8 +274,7 @@ CREATE TABLE IF NOT EXISTS `pengajuan_pembta` (
 --
 
 INSERT INTO `pengajuan_pembta` (`id`, `nim`, `pembimbing_1`, `pembimbing_2`, `judul`, `tahun`, `status_pembimbing`) VALUES
-(2, '09111003036', '197210182008121001', '12345678', 'sdasd', '2015', 'disetujui'),
-(3, '09111003024', '197210182008121001', '', 'sistem informasi pengelolaan TA', '2015', 'disetujui');
+(2, '09111003036', '197210182008121001', '12345678', 'sdasd', '2015', 'disetujui');
 
 -- --------------------------------------------------------
 
@@ -330,13 +329,6 @@ CREATE TABLE IF NOT EXISTS `pengajuan_syaratta` (
   `permohonan_ambildata` enum('ada','tidak ada') NOT NULL,
   `status_syaratta` enum('diajukan','diverifikasi') NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `pengajuan_syaratta`
---
-
-INSERT INTO `pengajuan_syaratta` (`id`, `nim`, `judul`, `no_hp`, `id_pengajuan_pembta`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `ktm`, `proposal_ta`, `tanda_kp`, `kesediaan_membimbing`, `persetujuan_ta`, `sk_pemb`, `permohonan_ambildata`, `status_syaratta`) VALUES
-(1, '09111003024', 'saasdaasadasdasd', '089765432156', 3, '146', '088367q3y6', '8q95124746782', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'diverifikasi');
 
 -- --------------------------------------------------------
 
@@ -490,14 +482,6 @@ CREATE TABLE IF NOT EXISTS `verifikasi_syaratkp` (
   `kesediaan_membimbing` enum('ya','tidak') NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
---
--- Dumping data for table `verifikasi_syaratkp`
---
-
-INSERT INTO `verifikasi_syaratkp` (`id`, `id_pengajuan_syaratkp`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `lama_kp`, `proposal_kp`, `permohonan_kp`, `kesediaan_membimbing`) VALUES
-(12, 1, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
-(13, 2, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya');
-
 -- --------------------------------------------------------
 
 --
@@ -518,16 +502,6 @@ CREATE TABLE IF NOT EXISTS `verifikasi_syaratta` (
   `sk_pemb` enum('ya','tidak') NOT NULL,
   `permohonan_ambildata` enum('ya','tidak') NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `verifikasi_syaratta`
---
-
-INSERT INTO `verifikasi_syaratta` (`id`, `id_pengajuan_syaratta`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `ktm`, `proposal_ta`, `tanda_kp`, `kesediaan_membimbing`, `persetujuan_ta`, `sk_pemb`, `permohonan_ambildata`) VALUES
-(1, 1, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
-(2, 2147483647, 'tidak', 'tidak', 'tidak', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
-(3, 2147483647, 'tidak', 'tidak', 'tidak', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
-(4, 2147483647, 'tidak', 'tidak', 'tidak', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak');
 
 -- --------------------------------------------------------
 
@@ -877,7 +851,8 @@ ADD CONSTRAINT `pengajuan_pembkp_ibfk_2` FOREIGN KEY (`nip`) REFERENCES `dosen` 
 --
 ALTER TABLE `pengajuan_pembta`
 ADD CONSTRAINT `pengajuan_pembta_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `pengajuan_pembta_ibfk_2` FOREIGN KEY (`pembimbing_1`) REFERENCES `dosen` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `pengajuan_pembta_ibfk_2` FOREIGN KEY (`pembimbing_1`) REFERENCES `dosen` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `pengajuan_pembta_ibfk_3` FOREIGN KEY (`pembimbing_2`) REFERENCES `dosen` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pengajuan_syaratkp`
