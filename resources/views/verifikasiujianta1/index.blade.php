@@ -11,7 +11,7 @@
 <table cellpadding="5" cellspacing="0" border="1" class="table" id='datatable'>
 <thead>
 <tr bgcolor="#CCCCCC">
-	<td>No.</td>
+
 	<td>No.</td>
 	<td>NIM</td>
 	<td>Nama</td>

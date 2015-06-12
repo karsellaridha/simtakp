@@ -6,10 +6,10 @@ use Illuminate\Http\HttpResponse;
 use  Illuminate\Http\Request;
 
 use App\Mahasiswa;
-use App\PengajuanSyaratUjianTa1;
+use App\PengajuanSyaratUjianTa2;
 use App\Pengajuansyaratta;
 use Auth;
-use App\VerifikasiUjianTa1;
+use App\VerifikasiUjianTa2;
 
 
 class VerifikasiUjianTa2Controller extends Controller {
