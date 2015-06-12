@@ -262,7 +262,7 @@ color: #000;
   </li>
 
   <li>
-  <a href="mhsdibimbingkp" style='color:#fff'>
+  <a href="{{ url('mhsdibimbingkp') }}" style='color:#fff'>
 
     <i class="fa fa-dashboard"></i> Lihat Progress Bimbingan KP 
   </a>
@@ -276,7 +276,7 @@ color: #000;
 </li>
 
  <li>
- <a href="mhsdibimbingta" style='color:#fff'>
+ <a href="{{ url('mhsdibimbingta') }}" style='color:#fff'>
 
   <i class="fa fa-dashboard"></i> Progress Bimbingan TA 
 </a>
