@@ -60,5 +60,18 @@ class SusunpembkpController extends Controller {
 
 	}
 
+	public function printReguler(){
+		$dosen=Dosen::lists('nama','id');
+		$ppkp=Pengajuanpembkp::where('status_pembimbing','=','disetujui')->get();
+		return view('susunpembkp.printreguler')->with('ppkp',$ppkp)->with('dosen',$dosen);
+
+	}
+
+	public function printBilingual(){
+		$dosen=Dosen::lists('nama','id');
+		$ppkp=Pengajuanpembkp::where('status_pembimbing','=','disetujui')->get();
+		return view('susunpembkp.printbilingual')->with('ppkp',$ppkp)->with('dosen',$dosen);
+
+	}
 }
  

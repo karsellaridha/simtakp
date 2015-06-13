@@ -49,5 +49,12 @@ class VerifikasisyaratkpController extends Controller {
 		return redirect('verifikasisyaratkp');
 	}
 
+	public function cetakVerifikasi($id){
+			
+		$pskp=Pengajuansyaratkp::findOrFail($id);
+		$verifikasi=Verifikasisyaratkp::findOrFail($id);
+		return view('verifikasisyaratkp.cetak_verifikasi')->with('verifikasi',$verifikasi);
+	}
+
 }
  

@@ -110,11 +110,14 @@ Route::post('susunpembkp/input',"SusunpembkpController@input");
 Route::get('susunpembkp/lihatdata',"SusunpembkpController@lihatdata");
 Route::get('susunpembkp/batal/{id}',"SusunpembkpController@batal");
 Route::get('susunpembkp/simpan',"SusunpembkpController@simpan");
+Route::get('susunpembkp/printreguler',"SusunpembkpController@printReguler");
+Route::get('susunpembkp/printbilingual',"SusunpembkpController@printBilingual");
 
 //Verifikasi Syarat KP
 Route::get('verifikasisyaratkp',"VerifikasisyaratkpController@index");
 Route::get('verifikasisyaratkp/{id}/detail',"VerifikasisyaratkpController@detail");
 Route::post('verifikasisyaratkp/{id}',"VerifikasisyaratkpController@verifikasi");
+Route::get('verifikasisyaratkp/{id}/cetakverifikasi',"VerifikasisyaratkpController@cetakVerifikasi");
 
 //tampilkan mahasiswa yang dibimbing kp di page dosen
 Route::get('mhsdibimbingkp',"BimbingankpController@dataMhsbimbingankp");

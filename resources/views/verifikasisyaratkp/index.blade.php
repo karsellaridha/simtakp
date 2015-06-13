@@ -37,7 +37,7 @@
 		<td><span class="label {!! ($data->status_syaratkp=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $data->status_syaratkp !!}</td>
 		<td>
 			@if(count($verifikasi->where("id_pengajuan_syaratkp",'=',$data->id)->get())>0)
-			<a href="{!! url('#')!!}">Cetak Hasil Verifikasi</a><br>
+			<a href="{!! url("verifikasisyaratkp/$data->id/cetakverifikasi")!!}">Cetak Hasil Verifikasi</a><br>
 			<a href="{!! url('#')!!}">Cetak Surat Izin KP</a>
 			@endif
 		</td>

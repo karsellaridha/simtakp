@@ -21,6 +21,7 @@
 <td>No.</td>
 <td>NIM</td>
 <td>Nama</td>
+<td>Program studi</td>
 <td>Judul KP</td>
 <td>Pembimbing</td>
 		</tr>
@@ -32,6 +33,7 @@
 <td>{!! $no++ !!}</td>
 <td>{!! $pp->nim !!}</td>
 <td>{!! $pp->mahasiswa->nama !!}</td>
+<td>{!! $pp->mahasiswa->prodi->nama !!}
 <td>{!! $pp->tempat_kp !!}</td>
 <td>
 	{!! Form::input('hidden','id[]',$pp->id,['class'=>'form-control']) !!}
