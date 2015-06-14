@@ -49,5 +49,12 @@ class VerifikasisyarattaController extends Controller {
 		return redirect('verifikasisyaratta');
 	}
 
+	public function cetakVerifikasi($id){
+			
+		$psta=Pengajuansyaratta::findOrFail($id);
+		$verifikasi=Verifikasisyaratta::findOrFail($id);
+		return view('verifikasisyaratta.cetak_verifikasi')->with('verifikasi',$verifikasi);
+	}
+
 }
  

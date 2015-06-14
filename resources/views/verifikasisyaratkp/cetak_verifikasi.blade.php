@@ -78,7 +78,7 @@ window.print();
     </tr>
       
   </table>
-  <p>Indralaya,{!! date('d-m-Y',strtotime($tanggal)) !!}Diperiksa Oleh Adm. :………………………….<br />
+  <p>Indralaya,{!! date('d-m-Y',strtotime($tanggal)) !!}  Diperiksa Oleh Adm. :………………………….<br />
   </p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
