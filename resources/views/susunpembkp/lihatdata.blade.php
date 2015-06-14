@@ -1,6 +1,5 @@
 @extends("template")
 @section("content")
-<link href="assets/print.css"b type='text/css' media="print">
 
 <div class="box">
                 <div class="box-header">

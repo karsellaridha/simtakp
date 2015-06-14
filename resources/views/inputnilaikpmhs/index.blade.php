@@ -30,7 +30,7 @@
 <div class="box-body">
 
 @if (count($inputnilaikp)>0)
-<table border="0" class="table">
+<table cellpadding="5" cellspacing="0" border="1" class="table" id='datatable'>
   <tr>
     <td>Judul Laporan KP</td>
     <td>:</td>

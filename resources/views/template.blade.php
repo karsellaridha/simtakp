@@ -154,7 +154,7 @@ color: #000;
 </li>
 <li class='white'>
   <a href="{{ url('inputnilaikpmhs') }}">
-    <i class="fa fa-circle-o"></i> Input Penilaian KP
+    <i class="fa fa-circle-o"></i> Penilaian KP
   </a>
 </li>
 </ul>

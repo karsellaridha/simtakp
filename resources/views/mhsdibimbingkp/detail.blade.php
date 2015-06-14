@@ -57,15 +57,15 @@
 <table border="2" class="table">
 
   <tr>
-    <td>No.</td>
-    <td>Penilaian</td>
-    <td>Bobot (B)</td>
-    <td>Nilai (N)</td>
-    <td>BxN</td>
+    <td><div align="center">No.</div></td>
+    <td><div align="center">Penilaian</div></td>
+    <td><div align="center">Bobot (B)</div></td>
+    <td><div align="center">Nilai (N)</div></td>
+    <td><div align="center">BxN</div></td>
   </tr>
 
   <tr>
-    <td>1</td>
+    <td><div align="center">1</div></td>
     <td>Kesesuaian Laporan dengan Format</td>
     <td>30%</td>
     <td>{!! $nilaikp->kesesuaian_laporan !!}</td>
@@ -73,7 +73,7 @@
   </tr>
 
   <tr>
-    <td>2</td>
+    <td><div align="center">2</div></td>
     <td>Penguasaan Materi KP</td>
     <td>30%</td>
     <td>{!! $nilaikp->penguasaan_materi !!}</td>
@@ -81,7 +81,7 @@
   </tr>
 
   <tr>
-    <td>3</td>
+    <td><div align="center">3</div></td>
     <td>Analisis dan Perancangan</td>
     <td>30%</td>
     <td>{!! $nilaikp->analisis_perancangan !!}</td>
@@ -89,11 +89,15 @@
   </tr>
 
   <tr>
-    <td>4</td>
+    <td><div align="center">4</div></td>
     <td>Sikap dan Etika</td>
     <td>10%</td>
     <td>{!! $nilaikp->sikap_etika !!}</td>
     <td>{!! 0.3*$nilaikp->sikap_etika !!}</td>
+  </tr>
+  <tr>
+    <td colspan="4"><div align="center">Jumlah</div></td>
+    <td><div align="center"><b>{!! $nilaikp->nilai_totaldosbing() !!}</b></div></td>
   </tr>
 </table>
 <br>
@@ -128,7 +132,7 @@
   <tr>
     <td colspan="3"><div align="center">Rata-Rata Nilai</div></td>
     <td>100%</td>
-    <td>{!! $nilaikp->total_nilaikp() !!}</td>
+    <td><b>{!! $nilaikp->total_nilaikp() !!}</b></td>
   </tr>
 
 </table>
@@ -142,13 +146,16 @@
 
  @if(Auth::user()->role=="mahasiswa")
 <div class="form-group">
+  @if(count($nilaikp->where("nim",'=',$nilaikp->nim)->get())>0)
       <div class="col-md-2 pull-right">
-        <a href="{!! url('#')!!}" class="btn btn-primary form-control">Cetak Penilaian Dosen</a>
+        <a href="{!! url("mhsdibimbingkp/cetak_penilaian_dosen/$nilaikp->nim")!!}" class="btn btn-primary form-control">Cetak Penilaian Dosen</a>
       </div>
 
+
       <div class="col-md-2 pull-right">
-        <a href="{!! url('#')!!}" class="btn btn-primary form-control">Cetak Rekap Penilaian</a>
+        <a href="{!! url("mhsdibimbingkp/cetak_rekap_penilaian/$nilaikp->nim")!!}" class="btn btn-primary form-control">Cetak Rekap Penilaian</a>
       </div>
+  @endif
 </div>
 @endif
 

@@ -123,7 +123,8 @@ Route::get('verifikasisyaratkp/{id}/cetakverifikasi',"VerifikasisyaratkpControll
 Route::get('mhsdibimbingkp',"BimbingankpController@dataMhsbimbingankp");
 Route::get('mhsdibimbingkp/bimbingankp/{id}',"BimbingankpController@bimbingankp");
 Route::get('mhsdibimbingkp/detail/{nim}',"BimbingankpController@detail");
-
+Route::get('mhsdibimbingkp/cetak_penilaian_dosen/{nim}',"BimbingankpController@cetakPenilaiandosen");
+Route::get('mhsdibimbingkp/cetak_rekap_penilaian/{nim}',"BimbingankpController@cetakRekappenilaian");
 
 //input nilai kp dari dosen
 Route::get('inputnilaikpdosen/{nim}/detail',"InputnilaikpController@detail");
