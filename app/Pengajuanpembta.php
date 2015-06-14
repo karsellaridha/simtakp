@@ -21,7 +21,7 @@ class Pengajuanpembta extends Model {
 		return $this->belongsTo('App\Dosen','pembimbing_2','nip');
 	}
 
-	public function bimbinganta(){
+	public function bimbinganTa(){
 		return $this->hasMany('App\Bimbinganta','id_pengajuanpembta');
 	}
 

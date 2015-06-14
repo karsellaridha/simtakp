@@ -27,7 +27,7 @@ public function prosesTambah(Request $request){
 		'nip'=>$request->input('nip'),
 		'tanggal'=>$request->input('tanggal'),
 		'hasil_konsultasi'=>$request->input('hasil_konsultasi'),
-		'id_pengajuanpembkp'=>Auth::user()->mahasiswa->pengajuanpembkp->id]);
+		'id_pengajuanpembta'=>Auth::user()->mahasiswa->pengajuanpembta->id]);
 	return redirect("bimbinganta");
 
 	}
@@ -91,9 +91,9 @@ public function dataMhsujianta(){
 	}
 
 
-public function bimbingankp($id){
-		$datamhsbimbingankp=Pengajuanpembkp::findOrFail($id);
-		return view('mhsdibimbingkp.bimbingankp')->with('datamhsbimbingankp',$datamhsbimbingankp);
+public function bimbinganta($id){
+		$datamhsbimbinganta=Pengajuanpembta::findOrFail($id);
+		return view('mhsdibimbingta.bimbinganta')->with('datamhsbimbinganta',$datamhsbimbinganta);
 	}
 
 
