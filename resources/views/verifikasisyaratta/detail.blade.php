@@ -19,12 +19,12 @@
 	<tr>
 		<td><h4>Dosen Pembimbing 1</h4></td>
 		<td><h4>:</h4></td> 
-		<td><h4>{!! $psta->ppta->dosen->nama !!}</h4><td>
+		<td><h4>{!! $psta->ppta->data_pembimbing_1->nama !!}</h4><td>
 	</tr>
 	<tr>
 		<td><h4>Dosen Pembimbing 2</h4></td>
 		<td><h4>:</h4></td> 
-		<td><h4>{!! $psta->ppta->dosen->nama !!}</h4><td>
+		<td><h4>{!! @$psta->ppta->data_pembimbing_2->nama !!}</h4><td>
 	</tr>
 	<tr>
 		<td><h4>Judul Tugas Akhir</h4></td>
@@ -113,7 +113,7 @@
 			<div class="col-md-2 pull-right">
 				<a href="{!! url('verifikasisyaratta')!!}" class="btn btn-primary form-control">Kembali</a>
 			</div>
-@if(count($pskp->verifikasi)==0)
+@if(count($psta->verifikasi)==0)
 			<div class="col-md-2 pull-right">
 				{!! Form::submit("Verifikasi",['class'=>'btn btn-primary form-control','required']) !!}
 			</div>
