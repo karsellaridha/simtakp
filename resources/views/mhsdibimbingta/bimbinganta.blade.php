@@ -17,9 +17,15 @@
 		<td>{!! $datamhsbimbinganta->mahasiswa->nama !!}<td>
 	</tr>	
 	<tr>
-		<td>Dosen Pembimbing</td>
+		<td>Dosen Pembimbing 1</td>
 		<td>:</td> 
-		<td>{!! $datamhsbimbinganta->dosen->nama !!}<td>
+
+		<td>{!!$datamhsbimbinganta->data_pembimbing_1->nama !!}<td>
+	</tr>
+	<tr>
+		<td>Dosen Pembimbing 2</td>
+		<td>:</td> 
+		<td>{!!@$datamhsbimbinganta->data_pembimbing_2->nama !!}<td>
 	</tr>
 </table></center>
 
@@ -31,6 +37,7 @@
 		<tr bgcolor="#CCCCCC">
 			<th>Tanggal Bimbingan</th>
 			<th>Hasil Konsultasi</th>
+			<th>Dosen</th>
 			
 		</tr>
 	</thead>
@@ -40,6 +47,7 @@
 		<tr>
 			<td>{!!$data_bimbinganta->tanggal!!}</td>
 			<td>{!!$data_bimbinganta->hasil_konsultasi!!}</td>
+			<th>{!!$data_bimbinganta->dosen->nama!!}</th>
 			
 		</tr>
 

@@ -27,7 +27,7 @@ public function prosesTambah(Request $request){
 		'nip'=>$request->input('nip'),
 		'tanggal'=>$request->input('tanggal'),
 		'hasil_konsultasi'=>$request->input('hasil_konsultasi'),
-		'id_pengajuanpembkp'=>Auth::user()->mahasiswa->pengajuanpembkp->id]);
+		'id_pengajuanpembta'=>Auth::user()->mahasiswa->pengajuanpembta->id]);
 	return redirect("bimbinganta");
 
 	}
