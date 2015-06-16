@@ -8,6 +8,7 @@ use  Illuminate\Http\Request;
 use App\Mahasiswa;
 use App\PengajuanSyaratUjianTa1;
 use App\PengajuanSyaratUjianTa2;
+use App\PengujiUjianTa;
 use Auth;
 
 /* 
@@ -24,9 +25,12 @@ class PengajuanUjianTaController extends Controller {
 	public function getIndex(){
 		$pengajuanUjian = PengajuanSyaratUjianTa1::where('nim','=',Auth::user()->mahasiswa->nim)->first();
 		$pengajuanUjian2 = PengajuanSyaratUjianTa2::where('nim','=',Auth::user()->mahasiswa->nim)->first();;
+		
+		$penguji = new PengujiUjianTa;
 		return view("pengajuan_ujian_ta.index")
 		->with('pengajuanUjian',$pengajuanUjian)
-		->with('pengajuanUjian2',$pengajuanUjian2);
+		->with('pengajuanUjian2',$pengajuanUjian2)
+		->with('penguji',$penguji);
 	}
 
 	public function getInput($jenis){

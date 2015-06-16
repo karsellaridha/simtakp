@@ -238,6 +238,25 @@ color: #000;
 
 <li><a href="{{ url('kuotabimbingan') }}" style='color:white'><i class="fa fa-dashboard"></i>Kuota Bimbingan</a></li>
 
+<li class='treeview'>
+<a href="#" style='color:#fff'>
+  <i class="fa fa-dashboard"></i> Input Nilai Ujian TA
+  <i class="fa fa-angle-left pull-right"></i>
+</a>
+
+<ul class="treeview-menu">
+  <li class='white'>
+  <a href="{!! url('#') !!}"><i class="fa fa-circle-o"></i> Ujian Proposal TA </a>
+  </li>
+</ul>
+</li>
+
+<ul class="treeview-menu">
+  <li class='white'>
+  <a href="{!! url('#') !!}"><i class="fa fa-circle-o"></i> Ujian Komprehensif TA </a>
+  </li>
+</ul>
+</li>
 
  <li class="treeview">
               <a href="#" style='color:#fff'>
@@ -295,6 +314,17 @@ color: #000;
     <i class="fa fa-dashboard"></i> Kuota Bimbingan
   </a>
 </li>
+
+<li class="treeview">
+              <a href="#" style='color:#fff'>
+                <i class="fa fa-dashboard"></i> <span>Laporan</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class='white'><a href="{{ url('laporan_kp') }}"><i class="fa fa-circle-o"></i>Mahasiswa Telah Ambil KP</a></li>
+                <li class='white'><a href="{{ url('laporan_ta') }}"><i class="fa fa-circle-o"></i>Mahasiswa Telah Ambil TA</a></li>
+              </ul>
+      </li>
 
 @endif
 

@@ -34,6 +34,17 @@ use App\NilaiTa2;
 	<td>:</td>
 	<td>{!! @$pengajuanUjian->tempat_sidang !!}</td>
 </tr>
+<?php $penguji = $penguji->where('nim','=',$pengajuanUjian->nim)->first() ?>
+<tr>
+	<td>Penguji 1</td>
+	<td>:</td>
+	<td>{!! @$penguji->data_penguji_1->nama !!}</td>
+</tr>
+<tr>
+	<td>Penguji 2</td>
+	<td>:</td>
+	<td>{!! @$penguji->data_penguji_2->nama !!}</td>
+</tr>
 <tr>
 	<td>Status</td>
 	<td>:</td>
@@ -57,12 +68,9 @@ $ta1 = $nilaita1->nilaiTotal($pengajuanUjian->nim) ;
 	<td>:</td>
 	<td><font color="red"><b>{!! $ta1['huruf'] !!}</b></font></td>
 </tr>
-<tr>
-	<td><a href="">Detail</a> - <a href="">Edit</a></td>
-</tr>
 
 @else
-Belum ada data
+Belum Ada Data
 @endif
 <hr>
 </table>
@@ -79,6 +87,17 @@ Belum ada data
 	<td>Tempat</td>
 	<td>:</td>
 	<td>{!! @$pengajuanUjian2->tempat_sidang !!}</td>
+</tr>
+<?php $penguji = $penguji->where('nim','=',$pengajuanUjian->nim)->first() ?>
+<tr>
+	<td>Penguji 1</td>
+	<td>:</td>
+	<td>{!! @$penguji->data_penguji_1->nama !!}</td>
+</tr>
+<tr>
+	<td>Penguji 2</td>
+	<td>:</td>
+	<td>{!! @$penguji->data_penguji_2->nama !!}</td>
 </tr>
 <tr>
 	<td>Status</td>
@@ -102,11 +121,8 @@ $ta2 = $nilaita2->nilaiTotal($pengajuanUjian2->nim) ;
 	<td>:</td>
 	<td><font color="red"><b>{!! $ta2['huruf'] !!}</b></font></td>
 </tr>
-<tr>
-	<td><a href="">Detail</a> - <a href="">Edit</a></td>
-</tr>
 @else
-Belum ada data
+Belum Ada Data
 @endif
 <hr>
 </table>

@@ -53,9 +53,15 @@ public function	deleteBimbinganta($id){
 	return redirect('bimbinganta');
 }
 
-public function dataMhsbimbinganta(){
+public function dataMhsbimbinganta(Request $request){
 	if(Auth::user()->role=="ketua jurusan"){
-		$datamhsbimbinganta=Pengajuanpembta::all();
+		if($request->has('tahun')){
+			$datamhsbimbinganta=Pengajuanpembta::where('tahun','=',$request->input("tahun"))->get();
+		}
+		else {
+			$datamhsbimbinganta=Pengajuanpembta::all();
+		}
+		
 	}
 	else{
 		$datamhsbimbinganta=Pengajuanpembta::where('pembimbing_1','=',Auth::user()->dosen->nip)
@@ -67,7 +73,8 @@ public function dataMhsbimbinganta(){
 	return view("mhsdibimbingta.index")
 	->with('psta', $psta)
 	->with("datamhsbimbinganta",$datamhsbimbinganta)
-	->with('nilaita1',$nilaita1);
+	->with('nilaita1',$nilaita1)
+	->with("tahun",$request->has('tahun'));
 	}
 
 

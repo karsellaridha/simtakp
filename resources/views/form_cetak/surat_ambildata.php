@@ -72,124 +72,78 @@ window.print();
     <td colspan="4">Berkenaan dengan itu, mahasiswa kami di bawah ini :</td>
     </tr>
   <tr>
-    <td width="43">&nbsp;</td>
-    <td width="43">&nbsp;</td>
-    <td width="43">&nbsp;</td>
-    <td width="704">&nbsp;</td>
+    <td width="25">&nbsp;</td>
+    <td width="93">Nama</td>
+    <td width="8"><div align="center">:</div></td>
+    <td width="717">&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>NIM</td>
+    <td><div align="center">:</div></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>Jurusan</td>
+    <td><div align="center">:</div></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>Program Studi</td>
+    <td><div align="center">:</div></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>Judul</td>
+    <td><div align="center">:</div></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td colspan="4"><div align="justify">Bermaksud untuk mengumpulkan data-data yang ada kaitannya dengan judul Tugas Akhir (TA) di lembaga yang Saudara pimpin selama 2 bulan. Mohon kiranya Saudara dapat membantu mahasiswa tersebut. Data-data yang diperoleh hanya akan digunakan untuk kepentingan penelitian dan tidak akan diberikan kepada pihak lain.</div></td>
+    </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+    </tr>
+  <tr>
+    <td colspan="4">Atas bantuan izinnya diucapkan terima kasih.</td>
+    </tr>
+  </table>
+  <table width="855">
+  <tr>
+    <td width="279">&nbsp;</td>
+    <td width="385">&nbsp;</td>
+    <td width="175">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+    <td>Dekan</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
   <tr>
+    <td colspan="2">&nbsp;</td>
     <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
 </table>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 </center>
-<center><table width="832" border="0">
-  <tr>
-    <td colspan="5">Dengan Hormat, Kami sampaikan bahwa salah satu syarat bagi mahasiswa Fakultas Ilmu Komputer Universitas Sriwijaya dalam menyelesaikan pendidikannya adalah menyusun Tugas Akhir(TA).</td>
-    </tr>
-  <?php $no=1; ?>
-  @foreach($ppkp as $data)
-  @if($data->mahasiswa->prodi->nama=="Sistem Informasi Reguler")
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td width="259">&nbsp;</td>
-    <td width="226">&nbsp;</td>
-    <td width="188">&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="5">Berkenaan dengan itu, mahasiswa kami dibawah ini :</td>
-    </tr>
-  <tr>
-    <td><div align="center">Nama</div></td>
-    <td>:</td>
-    <td colspan="3"><div align="left"></div></td>
-    </tr>
-  <tr>
-    <td><div align="center">NIM</div></td>
-    <td>:</td>
-    <td colspan="3"><div align="left"></div></td>
-    </tr>
-  <tr>
-    <td><div align="center">Jurusan</div></td>
-    <td>:</td>
-    <td colspan="3"><div align="left"></div></td>
-    </tr>
-  <tr>
-    <td><div align="center">Program Studi</div></td>
-    <td>:</td>
-    <td colspan="3"><div align="left"></div></td>
-    </tr>
-  <tr>
-    <td width="130"><div align="center">Judul</div></td>
-    <td width="7">:</td>
-    <td colspan="3"><div align="left"></div></td>
-    </tr>
-  @endif
-  @endforeach
-</table></center>
+
 

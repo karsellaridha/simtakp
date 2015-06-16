@@ -48,14 +48,21 @@ public function	deleteBimbingankp($id){
 	return redirect('bimbingankp');
 }
 
-public function dataMhsbimbingankp(){
-	if(Auth::user()->role=="ketua jurusan"){
-		$datamhsbimbingankp=Pengajuanpembkp::all();
+public function dataMhsbimbingankp(Request $request){
+	if(Auth::user()->role=="ketua jurusan"){ 
+		if($request->has('tahun')){
+			$datamhsbimbingankp=Pengajuanpembkp::where('tahun','=',$request->input("tahun"))->get();
+		}
+		else{
+			$datamhsbimbingankp=Pengajuanpembkp::all();
+		}
+		
 	}
 	else{
 		$datamhsbimbingankp=Pengajuanpembkp::where('nip','=',Auth::user()->dosen->nip)->get();
 	}
-	return view("mhsdibimbingkp.index")->with("datamhsbimbingankp",$datamhsbimbingankp);
+	return view("mhsdibimbingkp.index")->with("datamhsbimbingankp",$datamhsbimbingankp)
+	->with("tahun",$request->has('tahun'));
 	}
 
 public function bimbingankp($id){

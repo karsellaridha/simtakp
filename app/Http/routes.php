@@ -77,11 +77,7 @@ Route::get('bimbinganta/{bimbinganta}', "BimbingantaController@deleteBimbinganta
 
 Route::controller('ujian_ta','PengajuanUjianTaController');
 
-
-
 });
-
-
 
 //Data Mahasiswa
 Route::get('mahasiswa/tambah', "MahasiswaController@tambah");
@@ -170,6 +166,19 @@ Route::controller('verifikasi_ujian/ta2','VerifikasiUjianTa2Controller');
 
 // susun jadawal TA
 Route::controller('susunjadwalta','SusunJadwalTaController');
+
+//Laporan
+Route::get('laporan_kp',function(){
+	return view('laporan_kp/index');
+});
+
+Route::get('laporan_kp/laporan',"BimbingankpController@dataMhsbimbingankp");
+
+Route::get('laporan_ta',function(){
+	return view('laporan_ta/index');
+});
+
+Route::get('laporan_ta/laporan',"BimbingantaController@dataMhsbimbinganta");
 
 
 });
