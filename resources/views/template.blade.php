@@ -89,7 +89,7 @@ color: #000;
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="#" class="btn btn-default btn-flat">Ubah Password</a>
                     </div>
                     <div class="pull-right">
                       <a href="{{url('auth/logout')}}" class="btn btn-default btn-flat">Sign out</a>
@@ -236,7 +236,7 @@ color: #000;
 </ul>
 </li>
 
-<li><a href="{{ url('kuotabimbingan') }}" style='color:white'><i class="fa fa-circle-o"></i>Kuota Bimbingan</a></li>
+<li><a href="{{ url('kuotabimbingan') }}" style='color:white'><i class="fa fa-dashboard"></i>Kuota Bimbingan</a></li>
 
 
  <li class="treeview">
@@ -279,6 +279,13 @@ color: #000;
  <a href="{{ url('mhsdibimbingta') }}" style='color:#fff'>
 
   <i class="fa fa-dashboard"></i> Progress Bimbingan TA 
+</a>
+</li>
+
+ <li>
+ <a href="{{ url('susunjadwalta') }}" style='color:#fff'>
+
+  <i class="fa fa-dashboard"></i> Susun Jadwal Ujian TA 
 </a>
 </li>
 

@@ -1,6 +1,6 @@
-<div class="form-group">
-			{!! Form::label('tanggal','NIP :') !!}
-			{!! Form::text('nip',$nip,['class'=>'form-control','id'=>'tanggal','required','readonly']) !!}
+		<div class="form-group">
+			{!! Form::label('nip','NIP :') !!}
+			{!! Form::text('nip',$nip,['class'=>'form-control','id'=>'nip','required','readonly']) !!}
 		</div>
 
 		<div class="form-group">
@@ -10,7 +10,7 @@
 
 		<div class="form-group">
 			{!! Form::label('hasil_konsultasi','Hasil Konsultasi :') !!}
-			{!! Form::textarea('hasil_konsultasi',@$bimbinganta->hasil_konsultasi,['class'=>'form-control','id'=>'nahasil_konsultasima','required']) !!}
+			{!! Form::textarea('hasil_konsultasi',@$bimbinganta->hasil_konsultasi,['class'=>'form-control','id'=>'hasil_konsultasi','required']) !!}
 		</div>
 
 		<div class="form-group">

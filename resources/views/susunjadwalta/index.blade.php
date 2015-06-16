@@ -30,7 +30,7 @@
 <td>{!! "- ".$ta->ppta->data_pembimbing_1->nama."<br>- ".@$ta->ppta->data_pembimbing_2->nama !!}</td>
 <td>{!! @$p->tempat_sidang."<br>".@$p->jadwal !!}</td>
 <?php $penguji = $uji->where('nim','=',$p->nim)->first(); ?>
-<td>{!! "- ".$penguji->data_penguji_1->nama."<br>- ".$penguji->data_penguji_2->nama !!}</td>
+<td>{!! "- ".@$penguji->data_penguji_1->nama."<br>- ".@$penguji->data_penguji_2->nama !!}</td>
 
 <td><a href='{!! url("susunjadwalta/jadwal/$p->nim")!!}' data-toggle="modal" data-target="#myModal" >Susun Jadwal</a> - <a href='{!! url("susunjadwalta/penguji/$p->nim")!!}' data-toggle="modal" data-target="#myModal">Penguji</a> </td>
 </tr>

@@ -3,7 +3,7 @@
 
 <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Laporan Progress Bimbingan TA Mahasiswa yang Dibimbing</h3>
+                  <h3 class="box-title">Menguji Ujian TA mahasiswa</h3>
                 </div><!-- /.box-header -->
 				<div class="box-body">
 

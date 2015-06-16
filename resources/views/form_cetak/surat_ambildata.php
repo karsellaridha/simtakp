@@ -41,7 +41,7 @@ window.print();
     <th>&nbsp;</th>
   </tr>
   <tr>
-    <th colspan="3"><div align="left">Yth. </div></th>
+    <th colspan="3"><div align="left">Yth. Ketua</div></th>
     <th>&nbsp;</th>
   </tr>
   <tr>
@@ -60,7 +60,91 @@ window.print();
   <tbody>
   
   </tbody>
+</table><br />
+<table width="861" border="0">
+  <tr>
+    <td colspan="4"><div align="justify">Dengan hormat, Kami sampaikan bahwa salah satu syarat bagi mahasiswa Fakultas Ilmu Komputer Universitas Sriwijaya dalam menyelesaikan pendidikannya adalah menyusun Tugas Akhir (TA).</div></td>
+    </tr>
+  <tr>
+    <td colspan="4">&nbsp;</td>
+    </tr>
+  <tr>
+    <td colspan="4">Berkenaan dengan itu, mahasiswa kami di bawah ini :</td>
+    </tr>
+  <tr>
+    <td width="43">&nbsp;</td>
+    <td width="43">&nbsp;</td>
+    <td width="43">&nbsp;</td>
+    <td width="704">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
 </table>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 </center>
 <center><table width="832" border="0">

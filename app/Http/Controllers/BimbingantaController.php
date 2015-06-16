@@ -38,27 +38,27 @@ public function dataBimbinganta(){
 	return view("bimbinganta.index")->with("databimbinganta",$databimbinganta);
 }
 
-public function editBimbingankp($id){
-	$bimbingankp=Bimbingankp::findOrFail($id);
-	return view('bimbingankp.edit')->with('bimbingankp',$bimbingankp);
+public function editBimbinganta($id){
+	$bimbinganta=Bimbinganta::findOrFail($id);
+	return view('bimbinganta.edit')->with('bimbinganta',$bimbinganta);
 }
 
-public function updateBimbingankp(Request $request, $id){
-	Bimbingankp::findOrFail($id)->update($request->all());
-	return redirect('bimbingankp');
+public function updateBimbinganta(Request $request, $id){
+	Bimbinganta::findOrFail($id)->update($request->all());
+	return redirect('bimbinganta');
 }
 
-public function	deleteBimbingankp($id){
-	Bimbingankp::findOrFail($id)->delete();
-	return redirect('bimbingankp');
+public function	deleteBimbinganta($id){
+	Bimbinganta::findOrFail($id)->delete();
+	return redirect('bimbinganta');
 }
 
 public function dataMhsbimbinganta(){
 	if(Auth::user()->role=="ketua jurusan"){
-		$datamhsbimbingankp=Pengajuanpembta::all();
+		$datamhsbimbinganta=Pengajuanpembta::all();
 	}
 	else{
-		$datamhsbimbingankp=Pengajuanpembta::where('pembimbing_1','=',Auth::user()->dosen->nip)
+		$datamhsbimbinganta=Pengajuanpembta::where('pembimbing_1','=',Auth::user()->dosen->nip)
 		->orWhere('pembimbing_2','=',Auth::user()->dosen->nip)
 		->get();
 	}
@@ -66,17 +66,17 @@ public function dataMhsbimbinganta(){
 	$nilaita1 = new NilaiTa1;
 	return view("mhsdibimbingta.index")
 	->with('psta', $psta)
-	->with("datamhsbimbinganta",$datamhsbimbingankp)
+	->with("datamhsbimbinganta",$datamhsbimbinganta)
 	->with('nilaita1',$nilaita1);
 	}
 
 
 public function dataMhsujianta(){
 	if(Auth::user()->role=="ketua jurusan"){
-		$datamhsbimbingankp=PengujiUjianTa::all();
+		$datamhsbimbinganta=PengujiUjianTa::all();
 	}
 	else{
-		$datamhsbimbingankp=PengujiUjianTa::where('penguji_1','=',Auth::user()->dosen->nip)
+		$datamhsbimbinganta=PengujiUjianTa::where('penguji_1','=',Auth::user()->dosen->nip)
 		->orWhere('penguji_2','=',Auth::user()->dosen->nip)
 		->get();
 	}
@@ -86,14 +86,14 @@ public function dataMhsujianta(){
 	return view("mhsdiujita.index")
 	->with('psta', $psta)
 	->with('pengajuanpembta',$pengajuanpembta)
-	->with("datamhsbimbinganta",$datamhsbimbingankp)
+	->with("datamhsbimbinganta",$datamhsbimbinganta)
 	->with('nilaita1',$nilaita1);
 	}
 
 
-public function bimbingankp($id){
-		$datamhsbimbingankp=Pengajuanpembkp::findOrFail($id);
-		return view('mhsdibimbingkp.bimbingankp')->with('datamhsbimbingankp',$datamhsbimbingankp);
+public function bimbinganta($id){
+		$datamhsbimbinganta=Pengajuanpembta::findOrFail($id);
+		return view('mhsdibimbingta.bimbinganta')->with('datamhsbimbinganta',$datamhsbimbinganta);
 	}
 
 

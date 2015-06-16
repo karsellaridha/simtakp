@@ -7,6 +7,7 @@ window.print();
 </strong></p>
 <p align="center"> <strong>JURUSAN SISTEM INFORMASI </strong></p>
 <p align="center"><strong>PROGRAM STUDI SISTEM INFORMASI BILINGUAL</strong></p>
+<p align="center"><strong>TAHUN</strong> </p>
 <center><table width="832" border="1">
   <tr>
     <td width="37"><div align="center">No</div></td>

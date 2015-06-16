@@ -28,12 +28,17 @@
 	</tr>
 </table></center>
 
-                <div class="box-body">
-<p><a href='{!! URL::to("bimbinganta/tambah/".Auth::user()->mahasiswa->pengajuanpembta->data_pembimbing_1->nip)!!}' class="btn btn-primary pull-right">Tambah Laporan Bimbingan 1</a></p>
+<div class="box-body">
+	<div class="form-group">
 
-@if(isset(Auth::user()->mahasiswa->pengajuanpembta->data_pembimbing_2->nama))
-<p><a href="{!! URL::to("bimbinganta/tambah")!!}" class="btn btn-primary pull-right">Tambah Laporan Bimbingan 2</a></p>
-@endif
+		<div class="col-md-2 pull-left"><a href="{!! URL::to("bimbinganta/tambah/".Auth::user()->mahasiswa->pengajuanpembta->data_pembimbing_1->nip)!!}" class="btn btn-primary form-control">Bimbingan 1</a>
+		</div>
+
+		@if(isset(Auth::user()->mahasiswa->pengajuanpembta->data_pembimbing_2->nama))
+		<div class="col-md-2 pull-left"><a href="{!! URL::to("bimbinganta/tambah/".Auth::user()->mahasiswa->pengajuanpembta->data_pembimbing_2->nip)!!}")!!}" class="btn btn-primary form-control">Bimbingan 2</a>
+		</div>
+		@endif
+	</div>
 
 <div class='clearfix'></div><br>
 

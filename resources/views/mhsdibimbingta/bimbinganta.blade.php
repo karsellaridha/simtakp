@@ -14,11 +14,12 @@
 	</tr>
 		<td>Nama</td>
 		<td>:</td> 
-		<td>{!! $datamhsbimbinganta->mahasiswa->nama !!}<td>	
+		<td>{!! $datamhsbimbinganta->mahasiswa->nama !!}<td>
+	</tr>	
 	<tr>
 		<td>Dosen Pembimbing</td>
 		<td>:</td> 
-		<td>{!!$datamhsbimbinganta->dosen->nama !!}<td>
+		<td>{!! $datamhsbimbinganta->dosen->nama !!}<td>
 	</tr>
 </table></center>
 

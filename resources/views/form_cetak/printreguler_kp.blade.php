@@ -6,8 +6,9 @@ window.print();
 <p align="center"><strong>PEMBIMBING KERJA PRAKTEK
 </strong></p>
 <p align="center"> <strong>JURUSAN SISTEM INFORMASI </strong></p>
-<p align="center"><strong>PROGRAM STUDI SISTEM INFORMASI BILINGUAL</strong></p>
-<center><table width="832" border="1">
+<p align="center"><strong>PROGRAM STUDI SISTEM INFORMASI REGULER</strong></p>
+<p align="center"><strong>TAHUN</strong></p>
+<center><table width="560" border="1">
   <tr>
     <td width="37"><div align="center">No</div></td>
     <td width="150"><div align="center">NIM</div></td>
@@ -16,7 +17,7 @@ window.print();
   </tr>
   <?php $no=1; ?>
   @foreach($ppkp as $data)
-  @if($data->mahasiswa->prodi->nama=="Sistem Informasi Bilingual")
+  @if($data->mahasiswa->prodi->nama=="Sistem Informasi Reguler")
   <tr>
     <td width="37">{!! $no++ !!}</td>
     <td width="150">{!! $data->mahasiswa->nim !!}</td>
