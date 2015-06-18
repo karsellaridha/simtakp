@@ -130,7 +130,7 @@ window.print();
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><div align="center">1.</div></td>
-      <td colspan="3"><div align="center"></div></td>
+      <td colspan="3"><div align="left">{!! $ppkp->dosen->nama!!}</div></td>
     </tr>
     <tr>
       <td colspan="6">&nbsp;</td>
@@ -146,7 +146,7 @@ window.print();
       <td>&nbsp;</td>
       <td width="101">Nama</td>
       <td width="8"><div align="center">:</div></td>
-      <td width="677">&nbsp;</td>
+      <td width="677">{!! $verifikasi->pskp->mahasiswa->nama !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -154,7 +154,7 @@ window.print();
       <td>&nbsp;</td>
       <td>NIM</td>
       <td><div align="center">:</div></td>
-      <td>&nbsp;</td>
+      <td>{!! $pskp->mahasiswa->nim !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -162,7 +162,7 @@ window.print();
       <td>&nbsp;</td>
       <td>Program Studi</td>
       <td><div align="center">:</div></td>
-      <td>&nbsp;</td>
+      <td>{!! $pskp->mahasiswa->prodi->nama !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -170,7 +170,7 @@ window.print();
       <td>&nbsp;</td>
       <td>Tempat KP</td>
       <td><div align="center">:</div></td>
-      <td>&nbsp;</td>
+      <td>{!! $pskp->ppkp->tempat_kp !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>

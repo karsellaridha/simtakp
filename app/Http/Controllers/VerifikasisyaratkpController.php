@@ -60,7 +60,7 @@ class VerifikasisyaratkpController extends Controller {
 			
 		$pskp=Pengajuansyaratkp::findOrFail($id);
 		$verifikasi=Verifikasisyaratkp::findOrFail($id);
-		$verifikasi=Pengajuanpembkp::findOrFail($id);
+		$ppkp=Pengajuanpembkp::findOrFail($id);
 		return view('form_cetak.surat_izin_kp')->with('pskp',$pskp)->with('verifikasi',$verifikasi)->with('ppkp',$ppkp);
 	}
 
@@ -68,7 +68,8 @@ class VerifikasisyaratkpController extends Controller {
 			
 		$pskp=Pengajuansyaratkp::findOrFail($id);
 		$verifikasi=Verifikasisyaratkp::findOrFail($id);
-		return view('form_cetak.sk_kp')->with('pskp',$pskp)->with('verifikasi',$verifikasi);
+		$ppkp=Pengajuanpembkp::findOrFail($id);
+		return view('form_cetak.sk_kp')->with('pskp',$pskp)->with('verifikasi',$verifikasi)->with('ppkp',$ppkp);;
 	}
 }
  

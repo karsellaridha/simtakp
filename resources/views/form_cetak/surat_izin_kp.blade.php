@@ -41,7 +41,7 @@ window.print();
     <th>&nbsp;</th>
   </tr>
   <tr>
-    <th colspan="3"><div align="left">Yth. Ketua </div></th>
+    <th colspan="3"><div align="left">Yth. Ketua {!! $ppkp->tempat_kp !!}</div></th>
     <th>&nbsp;</th>
   </tr>
   <tr>
@@ -54,7 +54,7 @@ window.print();
   	<th width="77"><div align="left"></div></th>
     <th><div align="left"></div></th>
     <th><div align="left">Tempat</div></th>
-    <th>&nbsp;</th>
+    <th>{!! $ppkp->tempat_kp !!}</th>
   </tr>
   </thead>
   <tbody>
@@ -75,21 +75,21 @@ window.print();
     </tr>
   <tr>
     <td width="25">&nbsp;</td>
-    <td width="118">Nama</td>
-    <td width="3"><div align="center">:</div></td>
-    <td width="697">$verifikasi->pskp->mahasiswa->nama</td>
+    <td width="158">Nama</td>
+    <td width="9"><div align="center">:</div></td>
+    <td width="651">{!! $pskp->mahasiswa->nama !!}</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>NIM</td>
     <td><div align="center">:</div></td>
-    <td>$verifikasi->pskp->mahasiswa->nim</td>
+    <td>{!! $pskp->mahasiswa->nim !!}</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>Dosen Pembimbing</td>
     <td><div align="center">:</div></td>
-    <td>$verifikasi->ppkp->dosen->nama</td>
+    <td>{!! $ppkp->dosen->nama !!}</td>
   </tr>
   <tr>
     <td colspan="4"><div align="justify">Untuk dapat melaksanakan KerjaPraktek  (KP) di lembaga yang Saudara pimpin mulai dari tanggal  - .Mohon kiranya Saudara dapat membantu mahasiswa tersebut.</div></td>

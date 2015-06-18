@@ -53,7 +53,7 @@ class VerifikasisyarattaController extends Controller {
 			
 		$psta=Pengajuansyaratta::findOrFail($id);
 		$verifikasi=Verifikasisyaratta::findOrFail($id);
-		return view('verifikasisyaratta.cetak_verifikasi')->with('verifikasi',$verifikasi);
+		return view('form_cetak.cetak_verifikasi_ta')->with('verifikasi',$verifikasi);
 	}
 
 }

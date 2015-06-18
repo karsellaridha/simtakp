@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2015 at 05:12 PM
+-- Generation Time: Jun 19, 2015 at 01:15 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -55,17 +55,16 @@ CREATE TABLE IF NOT EXISTS `bimbingan_ta` (
   `nip` varchar(30) NOT NULL,
   `tanggal` date NOT NULL,
   `hasil_konsultasi` text NOT NULL,
-  `id_pengajuanpembta` int(10) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `id_pengajuanpembta` int(10) unsigned NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `bimbingan_ta`
 --
 
 INSERT INTO `bimbingan_ta` (`id`, `nim`, `nip`, `tanggal`, `hasil_konsultasi`, `id_pengajuanpembta`) VALUES
-(1, '09111003024', '197210182008121001', '2015-06-15', 'bab 1 latar belakang, tujuan, diperbaiki. bab 2 perbanyak referensi dari buku. tambah penjelasan kerja praktik dan tugas akhir', 0),
-(2, '09111003024', '197210182008121001', '2015-06-19', 'acc bab 1 dan bab 2, bab 3 perbaiki penjelasan metode penelitian, bab 4 erd dan dfd perbaiki', 0),
-(3, '09111003024', '197811172006042001', '2015-06-18', 'bab 1 perbaiki latar belakang ditambahkan', 0);
+(4, '09111003024', '197210182008121001', '2015-06-13', 'bab 1 perbaiki latar belakang, tujuan, bab 2 perjelas sumber data perbanyak ambil penjelasan dari buku', 1),
+(5, '09111003024', '197811172006042001', '2015-06-15', 'bab 1 latar belakang jangan terlalu panjang, bab 2 acc', 1);
 
 -- --------------------------------------------------------
 
@@ -450,15 +449,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `remember_token`) VALUES
-(11, 'admin_indralaya', '$2y$10$xjFplltitavluTjg4HxJI.0JTGUcR/WH5SKoOkz1yclL4XDoVy8t2', 'admin', 'Y7Mr7HOYPr5uWKoP4nuaFpZXCZHlhLH5UlQnbjmy4aT945lF9xzYs0qypHHA'),
+(11, 'admin_indralaya', '$2y$10$xjFplltitavluTjg4HxJI.0JTGUcR/WH5SKoOkz1yclL4XDoVy8t2', 'admin', 'Usyon2zSCkOmyO0kAhTRASowdAF52dfPuyyLzPBVPFbND9y8WmHRBUScDdTq'),
 (42, 'kajur_SI', '$2y$10$hk.vPJNn7qxJGy0N22xaQeYwhFukQuomKKo4smuxlgVTxDAeU8qLq', 'ketua jurusan', 'ljJZD3AWVkhRddXEfKThMdIMBJ8Aw4HH4Y9beUAvxhDKmrTUoWG73iqWfraB'),
 (43, 'sekjur_SI', '$2y$10$O2QX1Xy1w5XQWfhNepcENeMTzYoEeY785KeDpMtWPomu1dccU40iu', 'sekretaris jurusan', 'IxyWKf1JMSHrBxRQAseu7jB5ktYWjls5FTY6GgPyKOJ5iQDAMGOeRxVzq95a'),
 (44, 'admin_bukit', '$2y$10$F9./kbVCyIwNqHzKitM.iOGZkc3PIkwAT7.gijcUgUUQFpiyL78Z2', 'admin', 'yDuhyGEqV2b39WHwGIA3mMuluBHJhaWPdE80kPUJB5tMQtpsE1RfoEqrj6as'),
-(45, '09111003024', '$2y$10$PWGsvVN27xZNYdjK9Xm5L.38JgCX4EFB/icf3CCfTzj3CAVUMpZ.K', 'mahasiswa', 'aCZ4WNRwdGbJmyLHNETg6ks9nc3H2WyNtddVi8k1dp4tByrj1vVKOGVIY1qW'),
-(46, '197210182008121001', '$2y$10$bjj.wjOJgbyop0jlzBcMDeVKyO6vDrLYuOY9Buhw0JCQ6CxmuBKi2', 'dosen', 'QmpM4Cxc3cF26ksLDaCfvIdkn87nP1eu0p7ryGMKp2D91TeVb45yJNaUsaff'),
+(45, '09111003024', '$2y$10$PWGsvVN27xZNYdjK9Xm5L.38JgCX4EFB/icf3CCfTzj3CAVUMpZ.K', 'mahasiswa', 'iY3KmTqh2PnETJjUrQcLSHNyw4G3H80r6hdzYKpkIYqHLvjsQNTqFVy048UO'),
+(46, '197210182008121001', '$2y$10$bjj.wjOJgbyop0jlzBcMDeVKyO6vDrLYuOY9Buhw0JCQ6CxmuBKi2', 'dosen', 'qrfo5Dg4710I2grBjxcLFGkmdRA52Fri1xJbR3iMWRnHy7Q3vsXZ225jfvec'),
 (48, '09111003036', '$2y$10$rqBwoDTCy8paNDe/tdZOROgP4CKoOKTl0kMz1FgU/lI8VAYTmRYBi', 'mahasiswa', '8S2ib7v2o1suKuqoc1xIxStQ6P8ENhyIL4f59fHzuTA8Zo0JIbSZpakzC3gu'),
 (49, '198202122006041003', '$2y$10$j6ndI3yRmU32cVaQTyFdWegvrTnhSd8mc2dZcO0KDEY0fDIpqH7OC', 'dosen', '0TxuCtAbjNe4iZLcenAVWKVpxhmFRi4UZhbOv7pxUucG2d7QaL6RDv6JThFb'),
-(50, '197811172006042001', '$2y$10$l2fkpuHokuSfZqt9xB0hAuMQJepHju.GD6zu47zmxUa10kOkGwbL6', 'dosen', '6Q62DLcgn82Nl6Ubkfzv3HIf7WmYuOFnZAJaBDNTdqbrG350uK3CiWAgprOI'),
+(50, '197811172006042001', '$2y$10$l2fkpuHokuSfZqt9xB0hAuMQJepHju.GD6zu47zmxUa10kOkGwbL6', 'dosen', 'uhDF92FRjmAPbEu9VaNX26wv1ptfz7laCRZ1SLq4GnKg0dl2oj2eGl9jBprD'),
 (51, '09111003026', '$2y$10$zVMKG6PvlwM0twvG0M8rbeuUSNKTkObP4.KoaXNsGNkl4AP9qMooe', 'mahasiswa', 'STypvCZbX2rJwHyUIhcAlkS4ytSLhGxP9LudAwfjx5VNIkAnLzvcvMCKQjYz');
 
 -- --------------------------------------------------------
@@ -708,7 +707,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `bimbingan_ta`
 --
 ALTER TABLE `bimbingan_ta`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `dosen`
 --
@@ -811,7 +810,8 @@ ADD CONSTRAINT `bimbingan_kp_ibfk_3` FOREIGN KEY (`nip`) REFERENCES `dosen` (`ni
 --
 ALTER TABLE `bimbingan_ta`
 ADD CONSTRAINT `bimbingan_ta_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `bimbingan_ta_ibfk_2` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `bimbingan_ta_ibfk_2` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `bimbingan_ta_ibfk_3` FOREIGN KEY (`id_pengajuanpembta`) REFERENCES `pengajuan_pembta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `dosen`

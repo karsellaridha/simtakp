@@ -36,7 +36,7 @@
 		<td><span class="label {!! ($data->status_syaratta=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $data->status_syaratta !!}</td>
 		<td>
 			@if(count($verifikasi->where("id_pengajuan_syaratta",'=',$data->id)->get())>0)
-			<a href="{!! url("verifikasisyaratta/$data->id/cetakverifikasi")!!}">Cetak Hasil Verifikasi</a><br>
+			<a href="{!! url("form_cetak/$data->id/cetak_verifikasi_ta")!!}">Cetak Hasil Verifikasi</a><br>
 			<a href="{!! url('#')!!}">Cetak Surat Izin Ambil Data</a><br>
 			<a href="{!! url('#')!!}">Cetak SK TA</a>
 			@endif
