@@ -45,7 +45,7 @@
 		<td>
 			@if(count($verifikasi->where("id_pengajuan_syaratkp",'=',$data->id)->get())>0)
 			<a href="{!! url("form_cetak/$data->id/cetak_verifikasi_kp")!!}">Cetak Hasil Verifikasi</a><br>
-			<a href="{!! url('#')!!}">Cetak Surat Izin KP</a><br>
+			<a href="{!! url("form_cetak/$data->cetak_surat_izin")!!}">Cetak Surat Izin KP</a><br>
 			<a href="{!! url('#')!!}">Cetak SK KP</a>
 			@endif
 		</td>

@@ -52,7 +52,13 @@ class VerifikasisyaratkpController extends Controller {
 	public function cetakVerifikasi($id){
 			
 		$pskp=Pengajuansyaratkp::findOrFail($id);
-		return view('form_cetak.cetak_verifikasi_kp');
+		return view('form_cetak.cetak_verifikasi_kp')->with('pskp',$pskp);
+	}
+
+	public function cetakSuratizin($id){
+			
+		$pskp=Pengajuansyaratkp::findOrFail($id);
+		return view('form_cetak.cetak_surat_izin');
 	}
 
 }
