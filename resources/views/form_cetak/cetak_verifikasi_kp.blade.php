@@ -15,22 +15,22 @@ window.print();
 <table border="0">
   <thead>
   <tr>
-  	<th width="257"></th>
+    <th width="257"></th>
     <th width="76"><div align="left">NIM</div></th>
     <th width="19">:</th>
-    <th width="263"><div align="left">{!! $verifikasi->pskp->mahasiswa->nim !!}</div></th>
+    <th width="263"><div align="left">{!! $pskp->mahasiswa->nim !!}</div></th>
   </tr>
   <tr>
-  	<th width="257"></th>
+    <th width="257"></th>
     <th><div align="left">Nama</div></th>
     <th width="19">:</th>
-    <th><div align="left">{!! $verifikasi->pskp->mahasiswa->nama !!}</div></th>
+    <th><div align="left">{!! $pskp->mahasiswa->nama !!}</div></th>
   </tr>
   <tr>
-  	<th width="257"></th>
+    <th width="257"></th>
     <th><div align="left">No.Hp</div></th>
     <th width="19">:</th>
-    <th><div align="left">{!! $verifikasi->pskp->no_hp!!}</div></th>
+    <th><div align="left">{!! $pskp->no_hp!!}</div></th>
   </tr>
   </thead>
   <tbody>
@@ -82,7 +82,7 @@ window.print();
   </p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>	 Tanda tangan :……………………………………..<br />
+  <p>  Tanda tangan :……………………………………..<br />
     Indralaya,……………………………… Direkap Oleh Sekjur. :…………….…….…….<br />
   </p>
   <p>&nbsp;</p>

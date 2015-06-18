@@ -80,14 +80,14 @@ public function detail($nim){
 public function cetakPenilaiandosen($nim){
 		$pengajuanpembkp=Pengajuanpembkp::where('nim','=',$nim)->first();
 		$nilaikp=Inputnilaikp::where('nim','=',$nim)->first();
-		return view('mhsdibimbingkp.cetak_penilaian_dosen')->with('pengajuanpembkp',$pengajuanpembkp)->with('nilaikp',$nilaikp);
+		return view('form_cetak.cetak_penilaian_dosen')->with('pengajuanpembkp',$pengajuanpembkp)->with('nilaikp',$nilaikp);
 	
 }
 
 public function cetakRekappenilaian($nim){
 		$pengajuanpembkp=Pengajuanpembkp::where('nim','=',$nim)->first();
 		$nilaikp=Inputnilaikp::where('nim','=',$nim)->first();
-		return view('mhsdibimbingkp.cetak_rekap_penilaian')->with('pengajuanpembkp',$pengajuanpembkp)->with('nilaikp',$nilaikp);
+		return view('form_cetak.cetak_rekap_penilaian')->with('pengajuanpembkp',$pengajuanpembkp)->with('nilaikp',$nilaikp);
 	
 }
 

@@ -77,19 +77,19 @@ window.print();
     <td width="25">&nbsp;</td>
     <td width="118">Nama</td>
     <td width="3"><div align="center">:</div></td>
-    <td width="697">&nbsp;</td>
+    <td width="697">$verifikasi->pskp->mahasiswa->nama</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>NIM</td>
     <td><div align="center">:</div></td>
-    <td>&nbsp;</td>
+    <td>$verifikasi->pskp->mahasiswa->nim</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>Dosen Pembimbing</td>
     <td><div align="center">:</div></td>
-    <td>&nbsp;</td>
+    <td>$verifikasi->ppkp->dosen->nama</td>
   </tr>
   <tr>
     <td colspan="4"><div align="justify">Untuk dapat melaksanakan KerjaPraktek  (KP) di lembaga yang Saudara pimpin mulai dari tanggal  - .Mohon kiranya Saudara dapat membantu mahasiswa tersebut.</div></td>

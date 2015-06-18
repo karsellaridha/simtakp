@@ -181,6 +181,7 @@ Route::get('form_cetak/printreguler_kp',"SusunpembkpController@printReguler");
 Route::get('form_cetak/printbilingual_kp',"SusunpembkpController@printBilingual");
 Route::get('form_cetak/{id}/cetak_verifikasi_kp',"VerifikasisyaratkpController@cetakVerifikasi");
 Route::get('form_cetak/{id}/surat_izin_kp',"VerifikasisyaratkpController@cetakSuratizin");
+Route::get('form_cetak/{id}/sk_kp',"VerifikasisyaratkpController@cetakSk");
 Route::get('form_cetak/cetak_penilaian_dosen/{nim}',"BimbingankpController@cetakPenilaiandosen");
 Route::get('form_cetak/cetak_rekap_penilaian/{nim}',"BimbingankpController@cetakRekappenilaian");
 

@@ -148,12 +148,12 @@
 <div class="form-group">
   @if(count($nilaikp->where("nim",'=',$nilaikp->nim)->get())>0)
       <div class="col-md-2 pull-right">
-        <a href="{!! url("mhsdibimbingkp/cetak_penilaian_dosen/$nilaikp->nim")!!}" class="btn btn-primary form-control">Cetak Penilaian Dosen</a>
+        <a href="{!! url("form_cetak/cetak_penilaian_dosen/$nilaikp->nim")!!}" class="btn btn-primary form-control">Cetak Penilaian Dosen</a>
       </div>
 
 
       <div class="col-md-2 pull-right">
-        <a href="{!! url("mhsdibimbingkp/cetak_rekap_penilaian/$nilaikp->nim")!!}" class="btn btn-primary form-control">Cetak Rekap Penilaian</a>
+        <a href="{!! url("form_cetak/cetak_rekap_penilaian/$nilaikp->nim")!!}" class="btn btn-primary form-control">Cetak Rekap Penilaian</a>
       </div>
   @endif
 </div>

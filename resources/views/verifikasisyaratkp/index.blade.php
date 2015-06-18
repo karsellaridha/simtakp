@@ -36,7 +36,7 @@
 		<td>{!! $data->ppkp->tempat_kp !!}</td>
 		<td></td>
 
-		<td><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="x"rue">input</span></button></td>
+		<td>Input</td>
 
 		<td><a href="{!! url("verifikasisyaratkp/$data->id/detail") !!}">Detail</a></td>
 
@@ -45,8 +45,8 @@
 		<td>
 			@if(count($verifikasi->where("id_pengajuan_syaratkp",'=',$data->id)->get())>0)
 			<a href="{!! url("form_cetak/$data->id/cetak_verifikasi_kp")!!}">Cetak Hasil Verifikasi</a><br>
-			<a href="{!! url("form_cetak/$data->cetak_surat_izin")!!}">Cetak Surat Izin KP</a><br>
-			<a href="{!! url('#')!!}">Cetak SK KP</a>
+			<a href="{!! url("form_cetak/$data->surat_izin_kp")!!}">Cetak Surat Izin KP</a><br>
+			<a href="{!! url("form_cetak/$data->sk_kp")!!}">Cetak SK KP</a>
 			@endif
 		</td>
 		
@@ -60,22 +60,3 @@
 
 
 @stop
-
- <div class="modal-footer">
-
-                  </div>
-
-                 <script type="text/javascript">
-                 $(".pilih").click(function(e){
-                 	e.preventDefault();
-                 	if($(this).data('sisakuota')>0){
-                 		$("#nip").val($(this).data('nip'));
-                 		$("#nama").val($(this).data('nama'));
-                 		$('#myModal').modal('hide');
-                 	}else{
-                 		alert('maaf kuota dosen ini sudah penuh');
-                 	}
-                 	
-
-                 });
-                 </script>
