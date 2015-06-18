@@ -106,21 +106,18 @@ Route::post('susunpembkp/input',"SusunpembkpController@input");
 Route::get('susunpembkp/lihatdata',"SusunpembkpController@lihatdata");
 Route::get('susunpembkp/batal/{id}',"SusunpembkpController@batal");
 Route::get('susunpembkp/simpan',"SusunpembkpController@simpan");
-Route::get('susunpembkp/printreguler',"SusunpembkpController@printReguler");
-Route::get('susunpembkp/printbilingual',"SusunpembkpController@printBilingual");
 
 //Verifikasi Syarat KP
 Route::get('verifikasisyaratkp',"VerifikasisyaratkpController@index");
 Route::get('verifikasisyaratkp/{id}/detail',"VerifikasisyaratkpController@detail");
 Route::post('verifikasisyaratkp/{id}',"VerifikasisyaratkpController@verifikasi");
-Route::get('verifikasisyaratkp/{id}/cetakverifikasi',"VerifikasisyaratkpController@cetakVerifikasi");
+
 
 //tampilkan mahasiswa yang dibimbing kp di page dosen
 Route::get('mhsdibimbingkp',"BimbingankpController@dataMhsbimbingankp");
 Route::get('mhsdibimbingkp/bimbingankp/{id}',"BimbingankpController@bimbingankp");
 Route::get('mhsdibimbingkp/detail/{nim}',"BimbingankpController@detail");
-Route::get('mhsdibimbingkp/cetak_penilaian_dosen/{nim}',"BimbingankpController@cetakPenilaiandosen");
-Route::get('mhsdibimbingkp/cetak_rekap_penilaian/{nim}',"BimbingankpController@cetakRekappenilaian");
+
 
 //input nilai kp dari dosen
 Route::get('inputnilaikpdosen/{nim}/detail',"InputnilaikpController@detail");
@@ -139,7 +136,6 @@ Route::get('susunpembta/simpan',"SusunpembtaController@simpan");
 Route::get('verifikasisyaratta',"VerifikasisyarattaController@index");
 Route::get('verifikasisyaratta/{id}/detail',"VerifikasisyarattaController@detail");
 Route::post('verifikasisyaratta/{id}',"VerifikasisyarattaController@verifikasi");
-Route::get('verifikasisyaratta/{id}/cetakverifikasi',"VerifikasisyarattaController@cetakVerifikasi");
 
 //tampilkan mahasiswa yang dibimbing ta di page dosen
 Route::get('mhsdibimbingta',"BimbingantaController@dataMhsbimbinganta");
@@ -180,5 +176,14 @@ Route::get('laporan_ta',function(){
 
 Route::get('laporan_ta/laporan',"BimbingantaController@dataMhsbimbinganta");
 
+//cetak laporan kp
+Route::get('susunpembkp/printreguler',"SusunpembkpController@printReguler");
+Route::get('susunpembkp/printbilingual',"SusunpembkpController@printBilingual");
+Route::get('verifikasisyaratkp/{id}/cetakverifikasi',"VerifikasisyaratkpController@cetakVerifikasi");
+Route::get('mhsdibimbingkp/cetak_penilaian_dosen/{nim}',"BimbingankpController@cetakPenilaiandosen");
+Route::get('mhsdibimbingkp/cetak_rekap_penilaian/{nim}',"BimbingankpController@cetakRekappenilaian");
+Route::get('verifikasisyaratta/{id}/cetakverifikasi',"VerifikasisyarattaController@cetakVerifikasi");
+
+// cetak laporan ta
 
 });

@@ -34,9 +34,9 @@
 		<td>{!! $data->mahasiswa->nama !!}</td>
 		<td>{!! $data->ppkp->dosen->nama!!}</td>
 		<td>{!! $data->ppkp->tempat_kp !!}</td>
-		<td>{!! !!}</td>
+		<td></td>
 
-		<td><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">input</span></button></td>
+		<td><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="x"rue">input</span></button></td>
 
 		<td><a href="{!! url("verifikasisyaratkp/$data->id/detail") !!}">Detail</a></td>
 

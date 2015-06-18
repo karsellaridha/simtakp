@@ -234,29 +234,30 @@ color: #000;
   </ul>
  </li>
 </ul>
+
+<ul class="treeview-menu">
+    <li class='white treeview'>
+     <a href="#">
+        <i class="fa fa-circle-o"></i> Input Nilai Ujian TA
+       <i class="fa fa-angle-left pull-right"></i>
+       </a>
+      <ul class="treeview-menu">
+          <li>
+            <a href="{!! url('#')!!}"><i class="fa fa-minus">
+          </i> Nilai Ujian TA 1</a>
+          </li>
+          <li>
+            <a href="{!! url('#')!!}"><i class="fa fa-minus">
+          </i> Nilai Ujian TA 2</a>
+          </li>
+      
+  </ul>
+ </li>
+</ul>
+
 </li>
 
 <li><a href="{{ url('kuotabimbingan') }}" style='color:white'><i class="fa fa-dashboard"></i>Kuota Bimbingan</a></li>
-
-<li class='treeview'>
-<a href="#" style='color:#fff'>
-  <i class="fa fa-dashboard"></i> Input Nilai Ujian TA
-  <i class="fa fa-angle-left pull-right"></i>
-</a>
-
-<ul class="treeview-menu">
-  <li class='white'>
-  <a href="{!! url('#') !!}"><i class="fa fa-circle-o"></i> Ujian Proposal TA </a>
-  </li>
-</ul>
-</li>
-
-<ul class="treeview-menu">
-  <li class='white'>
-  <a href="{!! url('#') !!}"><i class="fa fa-circle-o"></i> Ujian Komprehensif TA </a>
-  </li>
-</ul>
-</li>
 
  <li class="treeview">
               <a href="#" style='color:#fff'>
