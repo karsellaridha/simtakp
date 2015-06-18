@@ -43,10 +43,10 @@
 				<a href="{!! url('susunpembkp')!!}" class="btn btn-primary form-control">Kembali</a>
 			</div>
 			<div class="col-md-2 pull-right">
-				<a href="{!! url('susunpembkp/printreguler')!!}" class="btn btn-primary form-control">Cetak SI reg</a>
+				<a href="{!! url('form_cetak/printreguler_kp')!!}" class="btn btn-primary form-control">Cetak SI reg</a>
 			</div>
 			<div class="col-md-2 pull-right">
-				<a  href="{!! url('susunpembkp/printbilingual')!!}" class="btn btn-primary form-control" onclick='window.print()'>Cetak SI bil</a>
+				<a  href="{!! url('form_cetak/printbilingual_kp')!!}" class="btn btn-primary form-control" onclick='window.print()'>Cetak SI bil</a>
 			</div>
 		</div>
 
