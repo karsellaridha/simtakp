@@ -53,7 +53,23 @@ class VerifikasisyarattaController extends Controller {
 			
 		$psta=Pengajuansyaratta::findOrFail($id);
 		$verifikasi=Verifikasisyaratta::findOrFail($id);
-		return view('form_cetak.cetak_verifikasi_ta')->with('verifikasi',$verifikasi);
+		return view('form_cetak.cetak_verifikasi_ta')->with('verifikasi',$verifikasi)->with('psta',$psta);
+	}
+
+	public function cetakSuratambildata($id){
+			
+		$psta=Pengajuansyaratta::findOrFail($id);
+		$verifikasi=Verifikasisyaratta::findOrFail($id);
+		$ppta=Pengajuanpembta::findOrFail($id);
+		return view('form_cetak.surat_ambildata')->with('psta',$psta)->with('verifikasi',$verifikasi)->with('ppta',$ppta);
+	}
+
+	public function cetakSk($id){
+			
+		$psta=Pengajuansyaratta::findOrFail($id);
+		$verifikasi=Verifikasisyaratta::findOrFail($id);
+		$ppta=Pengajuanpembta::findOrFail($id);
+		return view('form_cetak.sk_ta')->with('psta',$psta)->with('verifikasi',$verifikasi)->with('ppta',$ppta);;
 	}
 
 }

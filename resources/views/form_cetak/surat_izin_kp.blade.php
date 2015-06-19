@@ -7,7 +7,7 @@ window.print();
  ?>
 
 <center>
-  <p><img src="../kop copy.png" width="902" height="159"/></p>
+  <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}</p>
 <table border="0">
   <thead>
   <tr>

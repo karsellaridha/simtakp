@@ -37,8 +37,8 @@
 		<td>
 			@if(count($verifikasi->where("id_pengajuan_syaratta",'=',$data->id)->get())>0)
 			<a href="{!! url("form_cetak/$data->id/cetak_verifikasi_ta")!!}">Cetak Hasil Verifikasi</a><br>
-			<a href="{!! url('#')!!}">Cetak Surat Izin Ambil Data</a><br>
-			<a href="{!! url('#')!!}">Cetak SK TA</a>
+			<a href="{!! url("form_cetak/$data->id/surat_ambildata")!!}">Cetak Surat Izin Ambil Data</a><br>
+			<a href="{!! url("form_cetak/$data->id/sk_ta")!!}">Cetak SK TA</a>
 			@endif
 		</td>
 		

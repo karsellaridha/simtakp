@@ -30,7 +30,9 @@
 	<td>{!! $p->mahasiswa->nama !!}</td>
 	<td><span class="label {!! ($p->status=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $p->status !!}</span></td>
 	<td><a href='{!! url("verifikasi_ujian/ta1/input/".$p->nim) !!}'>Detail</a></td>
-	<td>cetak hasil verifikasi</td>
+	@if(count($verifikasi->where("id_syarat_pengajuanujianta1",'=',$p->id)->get())>0)
+	<td><a href="{!! url("form_cetak/$p->id/cetak_verifikasi_uta1")!!}">Cetak Hasil Verifikasi</a><br></td>
+	@endif
 </tr>
 	@endforeach
 </tbody>

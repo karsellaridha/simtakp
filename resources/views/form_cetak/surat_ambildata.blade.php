@@ -7,14 +7,14 @@ window.print();
  ?>
 
 <center>
-  <p><img src="../kop copy.png" width="902" height="159"/></p>
+  <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}</p>
 <table border="0">
   <thead>
   <tr>
   	<th width="77"><div align="left">Nomor</div></th>
     <th width="10"><div align="left">:</div></th>
     <th width="317"><div align="left">&nbsp;/UN9.1.9/AK/{!! date('Y',strtotime($tanggal)) !!}</div></th>
-    <th width="443"><div align="right">{!! date('d-m-Y',strtotime($tanggal)) !!}</div></th>
+    <th width="443"><div align="right">{!! date('d-M-Y',strtotime($tanggal)) !!}</div></th>
   </tr>
   <tr>
   	<th width="77"><div align="left">Lampiran</div></th>
@@ -41,7 +41,7 @@ window.print();
     <th>&nbsp;</th>
   </tr>
   <tr>
-    <th colspan="3"><div align="left">Yth. Ketua</div></th>
+    <th colspan="3"><div align="left">Yth. Ketua </div></th>
     <th>&nbsp;</th>
   </tr>
   <tr>
@@ -75,31 +75,31 @@ window.print();
     <td width="25">&nbsp;</td>
     <td width="93">Nama</td>
     <td width="8"><div align="center">:</div></td>
-    <td width="717">&nbsp;</td>
+    <td width="717">{!! $psta->mahasiswa->nama !!}</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>NIM</td>
     <td><div align="center">:</div></td>
-    <td>&nbsp;</td>
+    <td>{!! $psta->mahasiswa->nim !!}</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>Jurusan</td>
     <td><div align="center">:</div></td>
-    <td>&nbsp;</td>
+    <td>{!! $psta->mahasiswa->prodi->nama !!}</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>Program Studi</td>
     <td><div align="center">:</div></td>
-    <td>&nbsp;</td>
+    <td>{!! $psta->mahasiswa->prodi->nama !!}</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
     <td>Judul</td>
     <td><div align="center">:</div></td>
-    <td>&nbsp;</td>
+    <td>{!! $psta->mahasiswa->judul !!}</td>
   </tr>
   <tr>
     <td colspan="4"><div align="justify">Bermaksud untuk mengumpulkan data-data yang ada kaitannya dengan judul Tugas Akhir (TA) di lembaga yang Saudara pimpin selama 2 bulan. Mohon kiranya Saudara dapat membantu mahasiswa tersebut. Data-data yang diperoleh hanya akan digunakan untuk kepentingan penelitian dan tidak akan diberikan kepada pihak lain.</div></td>

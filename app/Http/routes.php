@@ -188,5 +188,11 @@ Route::get('form_cetak/cetak_rekap_penilaian/{nim}',"BimbingankpController@cetak
 
 // cetak laporan ta
 Route::get('form_cetak/{id}/cetak_verifikasi_ta',"VerifikasisyarattaController@cetakVerifikasi");
+Route::get('form_cetak/{id}/surat_ambildata',"VerifikasisyarattaController@cetakSuratambildata");
+Route::get('form_cetak/{id}/sk_ta',"VerifikasisyarattaController@cetakSk");
+Route::get('form_cetak/{id}/cetak_verifikasi_uta1',"VerifikasiUjianTa1Controller@cetakVerifikasi");
+
+
+
 
 });

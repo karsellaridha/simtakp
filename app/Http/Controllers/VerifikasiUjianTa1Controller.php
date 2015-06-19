@@ -67,6 +67,13 @@ class VerifikasiUjianTa1Controller extends Controller {
 		return redirect('verifikasi_ujian/ta1');
 	}
 
+	public function cetakVerifikasi($id){
+			
+		$psta=Pengajuansyaratta::findOrFail($id);
+		$verifikasi = VerifikasiUjianTa1::findOrFail($id);
+		$pengajuanUjian = PengajuanSyaratUjianTa1::findOrFail($id);
+		return view('form_cetak.cetak_verifikasi_uta1')->with('verifikasi',$verifikasi)->with('psta',$psta)->with('pengajuanUjian',$pengajuanUjian);
+	}
 
 } // end of class
  
