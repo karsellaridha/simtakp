@@ -8,8 +8,9 @@ window.print();
  
 <center>
   <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}
-  </p>
-<table width="915" border="0">
+  </p></center>
+  
+<center><table width="915" border="0">
     <tr>
       <td colspan="6"><div align="center"><strong>KEPUTUSAN</strong></div></td>
     </tr>
@@ -129,16 +130,17 @@ window.print();
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      @if($ppta->pembimbing_2==null)
       <td><div align="center">1.</div></td>
-      <td colspan="3"><div align="left">{!! $psta->ppta->data_pembimbing_1->nama!!}</div></td>
-      @else
-      <td><div align="center">1.</div></td>
-      <td colspan="3"><div align="left">{!! $psta->ppta->data_pembimbing_1->nama!!} <br>
+      <td colspan="3">{!! $psta->ppta->data_pembimbing_1->nama!!}</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      @if($ppta->pembimbing_2!=null)
       <td><div align="center">2.</div></td>
-      </div></td>
-      
       <td colspan="3"><div align="left">{!! $psta->ppta->data_pembimbing_2->nama!!}</div></td>
+      @else
+      <td colspan="3"><div align="left"></div></td>
       @endif
     </tr>
     <tr>
