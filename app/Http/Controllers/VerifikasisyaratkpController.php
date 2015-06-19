@@ -49,6 +49,16 @@ class VerifikasisyaratkpController extends Controller {
 		return redirect('verifikasisyaratkp');
 	}
 
+	public function inputNoSk($id){
+		$verifikasi=Verifikasisyaratkp::findOrFail($id);
+		return view('verifikasisyaratkp.inputsk')->with('verifikasi',$verifikasi);
+	}
+
+	public function simpanNoSk(Request $request, $id){
+		Verifikasisyaratkp::findOrFail($id)->update($request->all());
+		return redirect('verifikasisyaratkp');
+	}
+
 	public function cetakVerifikasi($id){
 			
 		$pskp=Pengajuansyaratkp::findOrFail($id);

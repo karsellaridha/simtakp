@@ -18,7 +18,7 @@
 		<th>Nama</th>
 		<th>Dosen Pembimbing</th>
 		<th>Tempat KP</th>
-		<th colspan="2">No. SK KP</th>
+		<th>No. SK KP</th>
 		<th>Opsi</th>
 		<th>Status</th>
 		<th>Aksi</th>
@@ -34,9 +34,12 @@
 		<td>{!! $data->mahasiswa->nama !!}</td>
 		<td>{!! $data->ppkp->dosen->nama!!}</td>
 		<td>{!! $data->ppkp->tempat_kp !!}</td>
-		<td></td>
 
-		<td>Input</td>
+		<td>@if($data->verifikasi->no_sk==null)
+		<a href="{!! url("verifikasisyaratkp/$data->id/input_no_sk") !!}">Input</a></td>
+		@else
+			{!! $data->verifikasi->no_sk !!}
+		@endif
 
 		<td><a href="{!! url("verifikasisyaratkp/$data->id/detail") !!}">Detail</a></td>
 

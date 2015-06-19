@@ -111,7 +111,8 @@ Route::get('susunpembkp/simpan',"SusunpembkpController@simpan");
 Route::get('verifikasisyaratkp',"VerifikasisyaratkpController@index");
 Route::get('verifikasisyaratkp/{id}/detail',"VerifikasisyaratkpController@detail");
 Route::post('verifikasisyaratkp/{id}',"VerifikasisyaratkpController@verifikasi");
-
+Route::get('verifikasisyaratkp/{id}/input_no_sk',"VerifikasisyaratkpController@inputNoSK");
+Route::patch('verifikasisyaratkp/{id}',"VerifikasisyaratkpController@simpanNoSk");
 
 //tampilkan mahasiswa yang dibimbing kp di page dosen
 Route::get('mhsdibimbingkp',"BimbingankpController@dataMhsbimbingankp");
