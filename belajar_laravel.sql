@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2015 at 01:15 AM
+-- Generation Time: Jun 19, 2015 at 04:12 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -385,9 +385,16 @@ CREATE TABLE IF NOT EXISTS `pengajuan_syaratujianta2` (
   `bebas_pustaka` enum('ada','tidak ada') NOT NULL,
   `bebas_bayaran` enum('ada','tidak ada') NOT NULL,
   `sk_ta` enum('ada','tidak ada') NOT NULL,
-  `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `create_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `pengajuan_syaratujianta2`
+--
+
+INSERT INTO `pengajuan_syaratujianta2` (`id`, `nim`, `status`, `jadwal`, `tempat_sidang`, `ksmktm`, `biaya_ujian`, `dkn`, `sertifikat`, `suliet`, `printscreen_suliet`, `rekomendasi`, `form_ta1`, `eksemplar`, `bebas_pustaka`, `bebas_bayaran`, `sk_ta`, `updated_at`, `created_at`) VALUES
+(1, '09111003024', 1, '0000-00-00', '', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', '2015-06-18 18:51:05', '2015-06-18 18:51:05');
 
 -- --------------------------------------------------------
 
@@ -449,13 +456,13 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `remember_token`) VALUES
-(11, 'admin_indralaya', '$2y$10$xjFplltitavluTjg4HxJI.0JTGUcR/WH5SKoOkz1yclL4XDoVy8t2', 'admin', 'Usyon2zSCkOmyO0kAhTRASowdAF52dfPuyyLzPBVPFbND9y8WmHRBUScDdTq'),
+(11, 'admin_indralaya', '$2y$10$xjFplltitavluTjg4HxJI.0JTGUcR/WH5SKoOkz1yclL4XDoVy8t2', 'admin', 'Djd54QIX9gfXmVRI1mv51jfkmm34QvLr24GWMg8pobdujfxyzjfbfYPh1vde'),
 (42, 'kajur_SI', '$2y$10$hk.vPJNn7qxJGy0N22xaQeYwhFukQuomKKo4smuxlgVTxDAeU8qLq', 'ketua jurusan', 'ljJZD3AWVkhRddXEfKThMdIMBJ8Aw4HH4Y9beUAvxhDKmrTUoWG73iqWfraB'),
 (43, 'sekjur_SI', '$2y$10$O2QX1Xy1w5XQWfhNepcENeMTzYoEeY785KeDpMtWPomu1dccU40iu', 'sekretaris jurusan', 'IxyWKf1JMSHrBxRQAseu7jB5ktYWjls5FTY6GgPyKOJ5iQDAMGOeRxVzq95a'),
 (44, 'admin_bukit', '$2y$10$F9./kbVCyIwNqHzKitM.iOGZkc3PIkwAT7.gijcUgUUQFpiyL78Z2', 'admin', 'yDuhyGEqV2b39WHwGIA3mMuluBHJhaWPdE80kPUJB5tMQtpsE1RfoEqrj6as'),
-(45, '09111003024', '$2y$10$PWGsvVN27xZNYdjK9Xm5L.38JgCX4EFB/icf3CCfTzj3CAVUMpZ.K', 'mahasiswa', 'iY3KmTqh2PnETJjUrQcLSHNyw4G3H80r6hdzYKpkIYqHLvjsQNTqFVy048UO'),
+(45, '09111003024', '$2y$10$PWGsvVN27xZNYdjK9Xm5L.38JgCX4EFB/icf3CCfTzj3CAVUMpZ.K', 'mahasiswa', 's2NBQH93ZUliy5FcsqJGJ8cpeGidmDoJpzpno3oJgp04Z5ypZ9JFhsSn2Oi0'),
 (46, '197210182008121001', '$2y$10$bjj.wjOJgbyop0jlzBcMDeVKyO6vDrLYuOY9Buhw0JCQ6CxmuBKi2', 'dosen', 'qrfo5Dg4710I2grBjxcLFGkmdRA52Fri1xJbR3iMWRnHy7Q3vsXZ225jfvec'),
-(48, '09111003036', '$2y$10$rqBwoDTCy8paNDe/tdZOROgP4CKoOKTl0kMz1FgU/lI8VAYTmRYBi', 'mahasiswa', '8S2ib7v2o1suKuqoc1xIxStQ6P8ENhyIL4f59fHzuTA8Zo0JIbSZpakzC3gu'),
+(48, '09111003036', '$2y$10$rqBwoDTCy8paNDe/tdZOROgP4CKoOKTl0kMz1FgU/lI8VAYTmRYBi', 'mahasiswa', 'dCWBGNutZOdtr31kCOvdPAqpMKj68ygIZ5JFsOLzRe1gumcbWXqtnbk6RZKm'),
 (49, '198202122006041003', '$2y$10$j6ndI3yRmU32cVaQTyFdWegvrTnhSd8mc2dZcO0KDEY0fDIpqH7OC', 'dosen', '0TxuCtAbjNe4iZLcenAVWKVpxhmFRi4UZhbOv7pxUucG2d7QaL6RDv6JThFb'),
 (50, '197811172006042001', '$2y$10$l2fkpuHokuSfZqt9xB0hAuMQJepHju.GD6zu47zmxUa10kOkGwbL6', 'dosen', 'uhDF92FRjmAPbEu9VaNX26wv1ptfz7laCRZ1SLq4GnKg0dl2oj2eGl9jBprD'),
 (51, '09111003026', '$2y$10$zVMKG6PvlwM0twvG0M8rbeuUSNKTkObP4.KoaXNsGNkl4AP9qMooe', 'mahasiswa', 'STypvCZbX2rJwHyUIhcAlkS4ytSLhGxP9LudAwfjx5VNIkAnLzvcvMCKQjYz');
@@ -484,7 +491,7 @@ CREATE TABLE IF NOT EXISTS `verifikasi_syaratkp` (
 --
 
 INSERT INTO `verifikasi_syaratkp` (`id`, `id_pengajuan_syaratkp`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `lama_kp`, `proposal_kp`, `permohonan_kp`, `kesediaan_membimbing`, `no_sk`) VALUES
-(1, 1, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', '');
+(1, 1, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', '2565');
 
 -- --------------------------------------------------------
 
@@ -504,15 +511,16 @@ CREATE TABLE IF NOT EXISTS `verifikasi_syaratta` (
   `kesediaan_membimbing` enum('ya','tidak') NOT NULL,
   `persetujuan_ta` enum('ya','tidak') NOT NULL,
   `sk_pemb` enum('ya','tidak') NOT NULL,
-  `permohonan_ambildata` enum('ya','tidak') NOT NULL
+  `permohonan_ambildata` enum('ya','tidak') NOT NULL,
+  `no_sk` varchar(25) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `verifikasi_syaratta`
 --
 
-INSERT INTO `verifikasi_syaratta` (`id`, `id_pengajuan_syaratta`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `ktm`, `proposal_ta`, `tanda_kp`, `kesediaan_membimbing`, `persetujuan_ta`, `sk_pemb`, `permohonan_ambildata`) VALUES
-(1, 1, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya');
+INSERT INTO `verifikasi_syaratta` (`id`, `id_pengajuan_syaratta`, `jumlah_sks`, `id_transaksispp`, `id_transaksidpl`, `ktm`, `proposal_ta`, `tanda_kp`, `kesediaan_membimbing`, `persetujuan_ta`, `sk_pemb`, `permohonan_ambildata`, `no_sk`) VALUES
+(1, 1, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', '0');
 
 -- --------------------------------------------------------
 
@@ -762,7 +770,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `pengajuan_syaratujianta2`
 --
 ALTER TABLE `pengajuan_syaratujianta2`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `penguji_ujian_ta`
 --
