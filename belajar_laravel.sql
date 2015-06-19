@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2015 at 04:12 AM
+-- Generation Time: Jun 19, 2015 at 05:02 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -389,13 +389,6 @@ CREATE TABLE IF NOT EXISTS `pengajuan_syaratujianta2` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `pengajuan_syaratujianta2`
---
-
-INSERT INTO `pengajuan_syaratujianta2` (`id`, `nim`, `status`, `jadwal`, `tempat_sidang`, `ksmktm`, `biaya_ujian`, `dkn`, `sertifikat`, `suliet`, `printscreen_suliet`, `rekomendasi`, `form_ta1`, `eksemplar`, `bebas_pustaka`, `bebas_bayaran`, `sk_ta`, `updated_at`, `created_at`) VALUES
-(1, '09111003024', 1, '0000-00-00', '', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', '2015-06-18 18:51:05', '2015-06-18 18:51:05');
-
 -- --------------------------------------------------------
 
 --
@@ -460,7 +453,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `remember_token`) VAL
 (42, 'kajur_SI', '$2y$10$hk.vPJNn7qxJGy0N22xaQeYwhFukQuomKKo4smuxlgVTxDAeU8qLq', 'ketua jurusan', 'ljJZD3AWVkhRddXEfKThMdIMBJ8Aw4HH4Y9beUAvxhDKmrTUoWG73iqWfraB'),
 (43, 'sekjur_SI', '$2y$10$O2QX1Xy1w5XQWfhNepcENeMTzYoEeY785KeDpMtWPomu1dccU40iu', 'sekretaris jurusan', 'IxyWKf1JMSHrBxRQAseu7jB5ktYWjls5FTY6GgPyKOJ5iQDAMGOeRxVzq95a'),
 (44, 'admin_bukit', '$2y$10$F9./kbVCyIwNqHzKitM.iOGZkc3PIkwAT7.gijcUgUUQFpiyL78Z2', 'admin', 'yDuhyGEqV2b39WHwGIA3mMuluBHJhaWPdE80kPUJB5tMQtpsE1RfoEqrj6as'),
-(45, '09111003024', '$2y$10$PWGsvVN27xZNYdjK9Xm5L.38JgCX4EFB/icf3CCfTzj3CAVUMpZ.K', 'mahasiswa', 's2NBQH93ZUliy5FcsqJGJ8cpeGidmDoJpzpno3oJgp04Z5ypZ9JFhsSn2Oi0'),
+(45, '09111003024', '$2y$10$PWGsvVN27xZNYdjK9Xm5L.38JgCX4EFB/icf3CCfTzj3CAVUMpZ.K', 'mahasiswa', 'P5oQKhWuhoSKWMgnPzyWZK0Yd4WnDI7qRol5bqhNhC1bSnWoADrA8XKNIFG9'),
 (46, '197210182008121001', '$2y$10$bjj.wjOJgbyop0jlzBcMDeVKyO6vDrLYuOY9Buhw0JCQ6CxmuBKi2', 'dosen', 'qrfo5Dg4710I2grBjxcLFGkmdRA52Fri1xJbR3iMWRnHy7Q3vsXZ225jfvec'),
 (48, '09111003036', '$2y$10$rqBwoDTCy8paNDe/tdZOROgP4CKoOKTl0kMz1FgU/lI8VAYTmRYBi', 'mahasiswa', 'dCWBGNutZOdtr31kCOvdPAqpMKj68ygIZ5JFsOLzRe1gumcbWXqtnbk6RZKm'),
 (49, '198202122006041003', '$2y$10$j6ndI3yRmU32cVaQTyFdWegvrTnhSd8mc2dZcO0KDEY0fDIpqH7OC', 'dosen', '0TxuCtAbjNe4iZLcenAVWKVpxhmFRi4UZhbOv7pxUucG2d7QaL6RDv6JThFb'),
@@ -557,6 +550,7 @@ INSERT INTO `verifikasi_syaratujianta1` (`id`, `id_syarat_pengajuanujianta1`, `n
 
 CREATE TABLE IF NOT EXISTS `verifikasi_syaratujianta2` (
   `id` int(11) NOT NULL,
+  `id_syarat_pengajuanujianta2` int(10) unsigned NOT NULL,
   `nim` varchar(225) NOT NULL,
   `ksmktm` enum('ya','tidak') NOT NULL,
   `biaya_ujian` enum('ya','tidak') NOT NULL,
@@ -700,7 +694,7 @@ ALTER TABLE `verifikasi_syaratujianta1`
 -- Indexes for table `verifikasi_syaratujianta2`
 --
 ALTER TABLE `verifikasi_syaratujianta2`
- ADD PRIMARY KEY (`id`), ADD KEY `nim` (`nim`);
+ ADD PRIMARY KEY (`id`), ADD KEY `nim` (`nim`), ADD KEY `id_syarat_pengajuanujianta2` (`id_syarat_pengajuanujianta2`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -932,7 +926,8 @@ ADD CONSTRAINT `verifikasi_syaratujianta1_ibfk_2` FOREIGN KEY (`id_syarat_pengaj
 -- Constraints for table `verifikasi_syaratujianta2`
 --
 ALTER TABLE `verifikasi_syaratujianta2`
-ADD CONSTRAINT `verifikasi_syaratujianta2_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `verifikasi_syaratujianta2_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `verifikasi_syaratujianta2_ibfk_2` FOREIGN KEY (`id_syarat_pengajuanujianta2`) REFERENCES `pengajuan_syaratujianta2` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
