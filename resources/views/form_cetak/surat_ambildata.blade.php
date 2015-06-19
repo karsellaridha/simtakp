@@ -99,7 +99,7 @@ window.print();
     <td>&nbsp;</td>
     <td>Judul</td>
     <td><div align="center">:</div></td>
-    <td>{!! $psta->mahasiswa->judul !!}</td>
+    <td>{!! $psta->judul !!}</td>
   </tr>
   <tr>
     <td colspan="4"><div align="justify">Bermaksud untuk mengumpulkan data-data yang ada kaitannya dengan judul Tugas Akhir (TA) di lembaga yang Saudara pimpin selama 2 bulan. Mohon kiranya Saudara dapat membantu mahasiswa tersebut. Data-data yang diperoleh hanya akan digunakan untuk kepentingan penelitian dan tidak akan diberikan kepada pihak lain.</div></td>

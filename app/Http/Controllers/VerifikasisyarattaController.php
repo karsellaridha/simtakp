@@ -49,6 +49,16 @@ class VerifikasisyarattaController extends Controller {
 		return redirect('verifikasisyaratta');
 	}
 
+	public function inputNoSk($id){
+		$verifikasi=Verifikasisyaratta::findOrFail($id);
+		return view('verifikasisyaratta.inputsk')->with('verifikasi',$verifikasi);
+	}
+
+	public function simpanNoSk(Request $request, $id){
+		Verifikasisyaratta::findOrFail($id)->update($request->all());
+		return redirect('verifikasisyaratta');
+	}
+
 	public function cetakVerifikasi($id){
 			
 		$psta=Pengajuansyaratta::findOrFail($id);

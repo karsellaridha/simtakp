@@ -17,7 +17,8 @@ class Verifikasisyaratta extends Model {
 	'kesediaan_membimbing',
 	'persetujuan_ta',
 	'sk_pemb',
-	'permohonan_ambildata'
+	'permohonan_ambildata',
+	'no_sk'
 	];
 	
 	public $timestamps = false;
