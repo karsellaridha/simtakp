@@ -18,6 +18,7 @@
 		<th>Dosen Pembimbing 1</th>
 		<th>Dosen Pembimbing 2</th>
 		<th>Judul TA</th>
+		<th>No. SK TA</th>
 		<th>Opsi</th>
 		<th>Status</th>
 		<th>Aksi</th>
@@ -32,6 +33,12 @@
 		<td>{!! @$data->ppta->data_pembimbing_1->nama!!}</td>
 		<td>{!! @$data->ppta->data_pembimbing_2->nama!!}</td>
 		<td>{!! @$data->judul !!}</td>
+		<td>@if($data->verifikasi->no_sk==null)
+		<a href="{!! url("verifikasisyaratta/$data->id/input_no_sk") !!}">Input</a></td>
+		@else
+			{!! $data->verifikasi->no_sk !!}
+		@endif
+
 		<td><a href="{!! url("verifikasisyaratta/$data->id/detail") !!}">Detail</a></td>
 		<td><span class="label {!! ($data->status_syaratta=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $data->status_syaratta !!}</td>
 		<td>

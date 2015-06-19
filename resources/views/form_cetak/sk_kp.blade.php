@@ -7,7 +7,7 @@ window.print();
  ?>
  
 <center>
-  <p><img src="../kop copy.png" width="902" height="159"/>
+  <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}
   </p>
 <table width="915" border="0">
     <tr>
@@ -17,7 +17,7 @@ window.print();
       <td colspan="6"><div align="center"><strong>DEKAN FAKULTAS ILMU KOMPUTER UNIVERSITAS SRIWIJAYA</strong></div></td>
     </tr>
     <tr>
-      <td colspan="6"><div align="center"><strong>Nomor :        /UN9.1.9/PP/{!! date('Y',strtotime($tanggal)) !!}</strong></div></td>
+      <td colspan="6"><div align="center"><strong>Nomor :{!! @$pskp->verifikasi->no_sk !!}/UN9.1.9/PP/{!! date('Y',strtotime($tanggal)) !!}</strong></div></td>
     </tr>
     <tr>
       <td colspan="6">&nbsp;</td>

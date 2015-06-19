@@ -37,6 +37,7 @@
 
 		<td>@if($data->verifikasi->no_sk==null)
 		<a href="{!! url("verifikasisyaratkp/$data->id/input_no_sk") !!}">Input</a></td>
+		<a href="{!! url("verifikasisyaratkp/$data->id/input_no_sk") !!}">Edit</a>
 		@else
 			{!! $data->verifikasi->no_sk !!}
 		@endif
