@@ -69,10 +69,8 @@ class VerifikasiUjianTa1Controller extends Controller {
 
 	public function cetakVerifikasi($id){
 			
-		$psta=Pengajuansyaratta::findOrFail($id);
-		$verifikasi = VerifikasiUjianTa1::findOrFail($id);
 		$pengajuanUjian = PengajuanSyaratUjianTa1::findOrFail($id);
-		return view('form_cetak.cetak_verifikasi_uta1')->with('verifikasi',$verifikasi)->with('psta',$psta)->with('pengajuanUjian',$pengajuanUjian);
+		return view('form_cetak.cetak_verifikasi_uta1')->with('pengajuanUjian',$pengajuanUjian);
 	}
 
 } // end of class

@@ -137,6 +137,7 @@ Route::get('susunpembta/simpan',"SusunpembtaController@simpan");
 Route::get('verifikasisyaratta',"VerifikasisyarattaController@index");
 Route::get('verifikasisyaratta/{id}/detail',"VerifikasisyarattaController@detail");
 Route::post('verifikasisyaratta/{id}',"VerifikasisyarattaController@verifikasi");
+Route::get('verifikasisyaratta/{id}/input_no_sk',"VerifikasisyarattaController@inputNoSK");
 Route::patch('verifikasisyaratta/{id}',"VerifikasisyarattaController@simpanNoSk");
 
 //tampilkan mahasiswa yang dibimbing ta di page dosen
