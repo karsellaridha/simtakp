@@ -1,6 +1,6 @@
-<script>
+<!--<script>
 window.print();
-</script>
+</script>-->
 
 <?php
   $tanggal=date_default_timezone_get();
@@ -129,8 +129,17 @@ window.print();
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      @if($ppta->pembimbing_2==null)
       <td><div align="center">1.</div></td>
-      <td colspan="3"><div align="left">{!! $ppta->dosen->nama!!}</div></td>
+      <td colspan="3"><div align="left">{!! $psta->ppta->data_pembimbing_1->nama!!}</div></td>
+      @else
+      <td><div align="center">1.</div></td>
+      <td colspan="3"><div align="left">{!! $psta->ppta->data_pembimbing_1->nama!!} <br>
+      <td><div align="center">2.</div></td>
+      </div></td>
+      
+      <td colspan="3"><div align="left">{!! $psta->ppta->data_pembimbing_2->nama!!}</div></td>
+      @endif
     </tr>
     <tr>
       <td colspan="6">&nbsp;</td>
@@ -146,7 +155,7 @@ window.print();
       <td>&nbsp;</td>
       <td width="101">Nama</td>
       <td width="8"><div align="center">:</div></td>
-      <td width="677">{!! $verifikasi->psta->mahasiswa->nama !!}</td>
+      <td width="677">{!! $psta->mahasiswa->nama !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
