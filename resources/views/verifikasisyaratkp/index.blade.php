@@ -35,10 +35,10 @@
 		<td>{!! $data->ppkp->dosen->nama!!}</td>
 		<td>{!! $data->ppkp->tempat_kp !!}</td>
 
-		<td>@if($data->verifikasi->no_sk==null)
+		<td>@if(@$data->verifikasi->no_sk==null)
 		<a href="{!! url("verifikasisyaratkp/$data->id/input_no_sk") !!}">Input</a></td>
 		@else
-			{!! $data->verifikasi->no_sk !!}
+			{!! @$data->verifikasi->no_sk !!}
 			| <a href="{!! url("verifikasisyaratkp/$data->id/input_no_sk") !!}">Edit</a>
 		@endif
 

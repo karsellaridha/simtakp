@@ -8,7 +8,7 @@ window.print();
  
 <html>
 <head>
-<title>Cetak Verifikasi Syarat SK TA</title>
+<title>Cetak Verifikasi Syarat Proposal TA</title>
 </head>
 
 <body>

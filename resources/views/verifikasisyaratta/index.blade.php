@@ -33,10 +33,10 @@
 		<td>{!! @$data->ppta->data_pembimbing_1->nama!!}</td>
 		<td>{!! @$data->ppta->data_pembimbing_2->nama!!}</td>
 		<td>{!! @$data->judul !!}</td>
-		<td>@if($data->verifikasi->no_sk==null)
+		<td>@if(@$data->verifikasi->no_sk==null)
 		<a href="{!! url("verifikasisyaratta/$data->id/input_no_sk") !!}">Input</a></td>
 		@else
-			{!! $data->verifikasi->no_sk !!}
+			{!! @$data->verifikasi->no_sk !!}
 			| <a href="{!! url("verifikasisyaratta/$data->id/input_no_sk") !!}">Edit</a>
 		@endif
 

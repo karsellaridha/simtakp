@@ -63,12 +63,18 @@ class VerifikasiUjianTa2Controller extends Controller {
 		$verifikasi=VerifikasiUjianTa2::firstOrNew(["nim"=>$nim]);
 		$verifikasi->fill($checkable);
 		$verifikasi->save();
-		if($hitung==8){
+		if($hitung==12){
 			PengajuanSyaratUjianTa2::where('nim','=',$nim)->update(["status"=>2]);
 		} 
 
 
 		return redirect('verifikasi_ujian/ta2');
+	}
+
+	public function cetakVerifikasi($id){
+			
+		$pengajuanUjian = PengajuanSyaratUjianTa::findOrFail($id);
+		return view('form_cetak.cetak_verifikasi_uta2')->with('pengajuanUjian',$pengajuanUjian);
 	}
 
 

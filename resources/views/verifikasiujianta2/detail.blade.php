@@ -24,7 +24,7 @@
 	<tr>
 		<td><h4>Dosen Pembimbing 2</h4></td>
 		<td><h4>:</h4></td> 
-		<td><h4>{!! @$psta->ppta->data_pembimbing_1->nama !!}</h4><td>
+		<td><h4>{!! @$psta->ppta->data_pembimbing_2->nama !!}</h4><td>
 	</tr>
 	<tr>
 		<td><h4>Judul Tugas Akhir</h4></td>

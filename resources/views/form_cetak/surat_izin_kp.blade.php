@@ -14,7 +14,7 @@ window.print();
   	<th width="77"><div align="left">Nomor</div></th>
     <th width="10"><div align="left">:</div></th>
     <th width="317"><div align="left">&nbsp;/UN9.1.9/AK/{!! date('Y',strtotime($tanggal)) !!}</div></th>
-    <th width="443"><div align="right">{!! date('d-m-Y',strtotime($tanggal)) !!}</div></th>
+    <th width="443"><div align="right">{!! date('d-M-Y',strtotime($tanggal)) !!}</div></th>
   </tr>
   <tr>
   	<th width="77"><div align="left">Lampiran</div></th>
@@ -54,7 +54,6 @@ window.print();
   	<th width="77"><div align="left"></div></th>
     <th><div align="left"></div></th>
     <th><div align="left">Tempat</div></th>
-    <th>{!! $ppkp->tempat_kp !!}</th>
   </tr>
   </thead>
   <tbody>

@@ -17,6 +17,7 @@
 	<td>Nama</td>
 	<td>Status</td>
 	<td>Aksi</td>
+	<td>Opsi</td>
 </tr>
 </thead>
 
@@ -29,6 +30,7 @@
 	<td>{!! $p->mahasiswa->nama !!}</td>
 	<td><span class="label {!! ($p->status=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $p->status !!}</span></td>
 	<td><a href='{!! url("verifikasi_ujian/ta2/input/".$p->nim) !!}'>Verifikasi</a></td>
+	<td><a href="{!! url("form_cetak/$p->id/cetak_verifikasi_uta2")!!}">Cetak Hasil Verifikasi</a><br></td>
 </tr>
 	@endforeach
 </tbody>
