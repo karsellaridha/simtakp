@@ -33,12 +33,30 @@ class PengajuanpembtaController extends Controller {
 	}
 	public function prosesInput(Request $request){
 		$pemb1=Dosen::where("nip","=",$request->input('pembimbing_1'))->first();
-		$pemb2=Dosen::where("nip","=",$request->input('pembimbing_2'))->first();
-		if($pemb1->sisakuotata()>=0 and $pemb1->sisakuotata()>=0){
-			$nim=Auth::user()->mahasiswa->nim;
-			$ppkp=Pengajuanpembta::firstOrNew(["nim"=>$nim]);
-			$ppkp->fill($request->all());
-			$ppkp->save();
+
+		if($request->input('pembimbing_2')==''){
+			$pemb2 = null;	
+		}else{
+			$pemb2 = Dosen::where("nip","=",$request->input('pembimbing_2'))->first();	
+		}
+		if($pemb1->sisakuotata()>=0){
+			if(isset($pemb2)){
+				if($pemb2->sisakuotata()>=0){
+					$simpan = $request->all();
+					$simpan['pembimbing_2'] = ($request->input('pembimbing_2')=='') ? null : $request->input('pembimbing_2');
+					$nim=Auth::user()->mahasiswa->nim;
+					$ppkp=Pengajuanpembta::firstOrNew(["nim"=>$nim]);
+					$ppkp->fill($simpan);
+					$ppkp->save();
+				}
+			}else{
+					$simpan = $request->all();
+					$simpan['pembimbing_2'] = ($request->input('pembimbing_2')=='') ? null : $request->input('pembimbing_2');
+					$nim=Auth::user()->mahasiswa->nim;
+					$ppkp=Pengajuanpembta::firstOrNew(["nim"=>$nim]);
+					$ppkp->fill($simpan);
+					$ppkp->save();
+			}
 		}
 		
 		return redirect("pengajuanpembta");
