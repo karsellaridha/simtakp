@@ -89,7 +89,7 @@ color: #000;
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Ubah Password</a>
+                      <a href="{{url('ubahpassword')}}" class="btn btn-default btn-flat">Ubah Password</a>
                     </div>
                     <div class="pull-right">
                       <a href="{{url('auth/logout')}}" class="btn btn-default btn-flat">Sign out</a>

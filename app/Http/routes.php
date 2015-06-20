@@ -179,6 +179,7 @@ Route::get('laporan_ta',function(){
 
 Route::get('laporan_ta/laporan',"BimbingantaController@dataMhsbimbinganta");
 
+
 //cetak laporan kp
 Route::get('form_cetak/printreguler_kp',"SusunpembkpController@printReguler");
 Route::get('form_cetak/printbilingual_kp',"SusunpembkpController@printBilingual");
@@ -195,6 +196,8 @@ Route::get('form_cetak/{id}/sk_ta',"VerifikasisyarattaController@cetakSk");
 Route::get('form_cetak/{id}/cetak_verifikasi_uta1',"VerifikasiUjianTa1Controller@cetakVerifikasi");
 Route::get('form_cetak/{id}/cetak_verifikasi_uta2',"VerifikasiUjianTa2Controller@cetakVerifikasi");
 
-
+//ubah password
+Route::get('ubahpassword',"UserController@ubahPassword");
+Route::post('ubahpassword/{id}',"UserController@prosesUbah");
 
 });
