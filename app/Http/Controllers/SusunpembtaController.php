@@ -36,7 +36,7 @@ class SusunpembtaController extends Controller {
 					->where('id','=',$value)
 					->update([
 							'pembimbing_1'=>$pembimbing_1[$key],
-							'pembimbing_2'=>$pembimbing_2[$key],
+							'pembimbing_2'=>($pembimbing_2[$key]=='')? null : $pembimbing_2[$key],
 							'status_pembimbing'=>'disetujui'
 						]);
 				}	
