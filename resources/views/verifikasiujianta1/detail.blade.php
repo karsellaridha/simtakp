@@ -40,7 +40,7 @@
 
 @if(count($verifikasi)==0)
 
-{!! Form::open(['url'=>"verifikasi_ujian/ta1/input/$pengajuanUjian->nim"]) !!}
+{!! Form::open(['url'=>"verifikasi_ujian/ta1/input/$pengajuanUjian->nim/$pengajuanUjian->id"]) !!}
 
 <table border="0" class="table">
 	<tr>

@@ -8,6 +8,7 @@ class VerifikasiUjianTa1 extends Model {
 	protected $table = 'verifikasi_syaratujianta1';
 	protected $fillable	= [
 	'nim',
+	'id_syarat_pengajuanujianta1',
 	'ksm',
 	'spp',
 	'dkn',

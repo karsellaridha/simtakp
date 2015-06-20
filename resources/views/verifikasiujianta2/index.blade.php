@@ -30,7 +30,11 @@
 	<td>{!! $p->mahasiswa->nama !!}</td>
 	<td><span class="label {!! ($p->status=="diverifikasi")? "label-danger" : "label-success" !!}">{!! $p->status !!}</span></td>
 	<td><a href='{!! url("verifikasi_ujian/ta2/input/".$p->nim) !!}'>Verifikasi</a></td>
-	<td><a href="{!! url("form_cetak/$p->id/cetak_verifikasi_uta2")!!}">Cetak Hasil Verifikasi</a><br></td>
+	<td>
+	@if($p->status=="Diverifikasi")
+	<a href="{!! url("form_cetak/$p->id/cetak_verifikasi_uta2")!!}">Cetak Hasil Verifikasi</a><br>
+	@endif
+	</td>
 </tr>
 	@endforeach
 </tbody>

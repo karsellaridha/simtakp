@@ -31,7 +31,7 @@ class VerifikasiUjianTa1Controller extends Controller {
 		->with('verifikasi',$verifikasi);
 	} 
 
-	public function postInput($nim, Request $request){
+	public function postInput($nim, $id, Request $request){
 
 		$field=[
 	'ksm',
@@ -56,6 +56,7 @@ class VerifikasiUjianTa1Controller extends Controller {
 			}
 		}
 
+		$checkable["id_syarat_pengajuanujianta1"]=$id;
 		$verifikasi=VerifikasiUjianTa1::firstOrNew(["nim"=>$nim]);
 		$verifikasi->fill($checkable);
 		$verifikasi->save();

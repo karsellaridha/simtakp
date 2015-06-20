@@ -31,7 +31,7 @@ class VerifikasiUjianTa2Controller extends Controller {
 		->with('verifikasi',$verifikasi);
 	} 
 
-	public function postInput($nim, Request $request){
+	public function postInput($nim, $id, Request $request){
 
 		$field=[
 		'ksmktm',
@@ -60,6 +60,7 @@ class VerifikasiUjianTa2Controller extends Controller {
 			}
 		}
 
+		$checkable["id_syarat_pengajuanujianta2"]=$id;
 		$verifikasi=VerifikasiUjianTa2::firstOrNew(["nim"=>$nim]);
 		$verifikasi->fill($checkable);
 		$verifikasi->save();
@@ -73,7 +74,7 @@ class VerifikasiUjianTa2Controller extends Controller {
 
 	public function cetakVerifikasi($id){
 			
-		$pengajuanUjian = PengajuanSyaratUjianTa::findOrFail($id);
+		$pengajuanUjian = PengajuanSyaratUjianTa2::findOrFail($id);
 		return view('form_cetak.cetak_verifikasi_uta2')->with('pengajuanUjian',$pengajuanUjian);
 	}
 
