@@ -1,8 +1,8 @@
 <script>
 window.print();
 </script>
-<center><img src="../kop copy.png" width="902" height="159"/>
-</center>
+<p align="center">{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}
+</p>
 <p align="center"><strong>PEMBIMBING KERJA PRAKTEK
 </strong></p>
 <p align="center"> <strong>JURUSAN SISTEM INFORMASI </strong></p>

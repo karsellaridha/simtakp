@@ -238,17 +238,17 @@ color: #000;
 <ul class="treeview-menu">
     <li class='white treeview'>
      <a href="#">
-        <i class="fa fa-circle-o"></i> Input Nilai Ujian TA
+        <i class="fa fa-circle-o"></i>Ujian TA
        <i class="fa fa-angle-left pull-right"></i>
        </a>
       <ul class="treeview-menu">
           <li>
             <a href="{!! url('#')!!}"><i class="fa fa-minus">
-          </i> Nilai Ujian TA 1</a>
+          </i> Ujian Proposal</a>
           </li>
           <li>
             <a href="{!! url('#')!!}"><i class="fa fa-minus">
-          </i> Nilai Ujian TA 2</a>
+          </i> Ujian Komprehensif</a>
           </li>
       
   </ul>
@@ -267,7 +267,9 @@ color: #000;
               <ul class="treeview-menu">
                 <li class='white'><a href="{{ url('mahasiswa') }}"><i class="fa fa-circle-o"></i>Data Mahasiswa</a></li>
                 <li class='white'><a href="{{ url('dosen') }}"><i class="fa fa-circle-o"></i>Data Dosen</a></li>
+                <li class='white'><a href="{{ url('#') }}"><i class="fa fa-circle-o"></i>Data Laporan</a></li>
               </ul>
+              
       </li>
 
 

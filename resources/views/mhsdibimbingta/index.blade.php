@@ -3,7 +3,12 @@
 
 <div class="box">
                 <div class="box-header">
+                @if(Auth::user()->role == "ketua jurusan")
+                  <h3 class="box-title">Laporan Mahasiswa yang Telah Ambil TA</h3>
+                @endif
+                @if(Auth::user()->role == "dosen")
                   <h3 class="box-title">Laporan Progress Bimbingan TA Mahasiswa yang Dibimbing</h3>
+                @endif
                 </div><!-- /.box-header -->
 				<div class="box-body">
 

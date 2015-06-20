@@ -1,3 +1,15 @@
+<!--<script>
+window.print();
+</script>-->
+
+<?php
+  $tanggal=date_default_timezone_get();
+ ?>
+
+<center>
+  <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}
+  </p></center>
+
 <h3><b><center>FORM PERBAIKAN UJIAN PROPOSAL TUGAS AKHIR *)</center><b></h3>
 <br>
 <br>
