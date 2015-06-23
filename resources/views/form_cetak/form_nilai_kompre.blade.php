@@ -1,7 +1,18 @@
+<script>
+window.print();
+</script>
+
+<?php
+  $tanggal=date_default_timezone_get();
+ ?>
+
+<center>
+  <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}
+  </p></center>
+  
 <h3><b><center>
 FORM PENILAIAN UJIAN KOMPREHENSIF
 </center><b></h3>
-<br>
 <br>
 <table width="100%" border="0">
   <tr>
@@ -205,7 +216,7 @@ Telah diperbaiki sesuai dengan saran dan koreksi tim penguju ujian komprehensif 
     <td width="13%"><B>Keterangan Nilai:</B></td>
     <td width="2%">&nbsp;</td>
     <td width="51%">&nbsp;</td>
-    <td width="34%">Palembang,</td>
+    <td width="34%">Palembang, {!! date('d-M-Y',strtotime($tanggal)) !!}</td>
   </tr>
   <tr>
     <td>86-100</td>

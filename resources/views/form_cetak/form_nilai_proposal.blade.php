@@ -1,9 +1,19 @@
+<script>
+window.print();
+</script>
+
+<?php
+  $tanggal=date_default_timezone_get();
+ ?>
+
+<center>
+  <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}
+  </p></center>
+
 <h3><b><center>
-FORM PENILAIAN UJIAN KOMPREHENSIF
-</center><b></h3>
-<br>
-<br>
-<table width="100%" border="0">
+  <p>FORM PENILAIAN UJIAN KOMPREHENSIF </p>
+</center></h3>
+<center><table width="100%" border="0">
   <tr>
     <td width="28%">Nama Mahasiswa<td width="3%">:</td>
     <td width="69%">&nbsp;</td>
@@ -196,7 +206,7 @@ Telah diperbaiki sesuai dengan saran dan koreksi tim penguju ujian komprehensif 
   </tr>
   <tr>
     <th scope="row">4.</th>
-    <td>Untuk topik Tugas Akhir yang tidak membahas pengembangan produk sistem informasi, indikator penilaian pada bagian penguasaan materi TA disesuaikan.</td>
+    <td>Untuk topik Tugas Akhir yang tidak membahas pengembangan produk sistem informasi, indikator penilaian pada bagian penguasaan materi TA disesuaikan.</td>{!! date('d-M-Y',strtotime($tanggal)) !!}
   </tr>
 </table>
 <br />
@@ -205,7 +215,7 @@ Telah diperbaiki sesuai dengan saran dan koreksi tim penguju ujian komprehensif 
     <td width="13%"><B>Keterangan Nilai:</B></td>
     <td width="2%">&nbsp;</td>
     <td width="51%">&nbsp;</td>
-    <td width="34%">Palembang,</td>
+    <td width="34%">Palembang, {!! date('d-M-Y',strtotime($tanggal)) !!}</td>
   </tr>
   <tr>
     <td>86-100</td>
@@ -237,7 +247,7 @@ Telah diperbaiki sesuai dengan saran dan koreksi tim penguju ujian komprehensif 
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
-</table>
+</table></center>
 
 
 
