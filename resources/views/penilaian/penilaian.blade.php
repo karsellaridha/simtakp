@@ -7,8 +7,16 @@
                 </div><!-- /.box-header -->
         <div class="box-body">
 
+<?php
+if(isset($admin)){
+  $url="penilaianadmin/$sebagai/$jenis/$nim/$nip";
+}
+else{
+  $url="penilaian/$sebagai/$jenis/$nim";
+}
+?>
 
-{!! Form::open(['url'=>"penilaian/$sebagai/$jenis/$nim"]) !!}
+{!! Form::open(['url'=>$url]) !!}
 
 
 

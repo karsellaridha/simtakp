@@ -243,11 +243,11 @@ color: #000;
        </a>
       <ul class="treeview-menu">
           <li>
-            <a href="{!! url('#')!!}"><i class="fa fa-minus">
+            <a href="{!! action('SusunJadwalTaController@getUjianProposal') !!}"><i class="fa fa-minus">
           </i> Ujian Proposal</a>
           </li>
           <li>
-            <a href="{!! url('#')!!}"><i class="fa fa-minus">
+            <a href="{!! action('SusunJadwalTaController@getUjianKomprehensif') !!}"><i class="fa fa-minus">
           </i> Ujian Komprehensif</a>
           </li>
       

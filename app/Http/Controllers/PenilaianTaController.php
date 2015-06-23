@@ -66,4 +66,41 @@ class PenilaianTaController extends Controller {
 		return redirect("penilaian/detail/$sebagai/$nim");
 	}
 
+	public function penilaianAdmin($sebagai,$jenis,$nim,$nip){
+		
+		if($jenis == 'ta1'){
+
+		$nilaiuta1 = NilaiTa1::where('nim','=',$nim)->where('nip','=',$nip)->first();
+				
+		}
+		elseif($jenis == 'ta2'){
+		$nilaiuta1 = NilaiTa2::where('nim','=',$nim)->where('nip','=',$nip)->first();
+		}
+
+		return view('penilaian.penilaian')->with('nim',$nim)
+		->with('nilaiuta1',$nilaiuta1)
+		->with('jenis',$jenis)
+		->with('sebagai',$sebagai)
+		->with('nip',$nip)
+		->with('admin',true);
+	}
+
+		public function penilaianAdminProses($sebagai,$jenis,$nim,$nip, Request $request){
+		
+		if($jenis=='ta1'):
+			$nilai = NilaiTa1::firstOrNew(['nip'=>$nip]);
+			$url = 'ujian-proposal';
+		elseif($jenis == 'ta2'):
+			$nilai = NilaiTa2::firstOrNew(['nip'=>$nip]);
+			$url = 'ujian-komprehensif';
+		endif;
+
+		$data = $request->all();
+		$data['nim'] = $nim;
+		$nilai->fill($data);
+		$nilai->save();
+
+		return redirect("susunjadwalta/$url");
+	}
+
 }

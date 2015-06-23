@@ -7,6 +7,7 @@ use  Illuminate\Http\Request;
 
 use App\Mahasiswa;
 use App\PengajuanSyaratUjianTa1;
+use App\PengajuanSyaratUjianTa2;
 use App\Pengajuansyaratta;
 use Auth;
 use App\VerifikasiUjianTa1;
@@ -53,6 +54,25 @@ class SusunJadwalTaController extends Controller {
 		return redirect('susunjadwalta');
 	}
 
+	public function getUjianProposal()
+	{
+		$pengajuanUjian=PengajuanSyaratUjianTa1::all();
+		$psta=new Pengajuansyaratta;
+
+		return view('ujianta.indexproposal')
+		->with('psta',$psta)
+		->with('pengajuanUjian',$pengajuanUjian);
+	}
+
+	public function getUjianKomprehensif()
+	{
+		$pengajuanUjian=PengajuanSyaratUjianTa2::all();
+		$psta=new Pengajuansyaratta;
+
+		return view('ujianta.indexkomprehensif')
+		->with('psta',$psta)
+		->with('pengajuanUjian',$pengajuanUjian);
+	}
 
 } // end of class
  

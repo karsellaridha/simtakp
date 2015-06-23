@@ -153,11 +153,12 @@ Route::get('mhsdiujita/detail/{nim}',"BimbingantaController@detail");
 Route::get('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaian");
 Route::post('mhsdiujita/penilaian/{nim}',"BimbingantaController@penilaianProses");
 
-
-// penilaian kp
+// penilaian ta
 Route::get('penilaian/detail/{sebagai}/{nim}', "PenilaianTaController@detail");
 Route::get('penilaian/{sebagai}/{jenis}/{nim}', "PenilaianTaController@penilaian");
 Route::post('penilaian/{sebagai}/{jenis}/{nim}', "PenilaianTaController@penilaianProses");
+Route::get('penilaianadmin/{sebagai}/{jenis}/{nim}/{nip}', "PenilaianTaController@penilaianAdmin");
+Route::post('penilaianadmin/{sebagai}/{jenis}/{nim}/{nip}', "PenilaianTaController@penilaianAdminProses");
 
 // verifikasi pengajuan ujian TA
 Route::controller('verifikasi_ujian/ta1','VerifikasiUjianTa1Controller');
@@ -176,7 +177,6 @@ Route::get('laporan_kp/laporan',"BimbingankpController@dataMhsbimbingankp");
 Route::get('laporan_ta',function(){
 	return view('laporan_ta/index');
 });
-
 Route::get('laporan_ta/laporan',"BimbingantaController@dataMhsbimbinganta");
 
 
