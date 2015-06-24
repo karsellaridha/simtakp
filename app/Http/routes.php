@@ -167,9 +167,6 @@ Route::controller('verifikasi_ujian/ta2','VerifikasiUjianTa2Controller');
 // susun jadawal TA
 Route::controller('susunjadwalta','SusunJadwalTaController');
 
-// Ujian Ta
-Route::
-
 //Laporan
 Route::get('laporan_kp',function(){
 	return view('laporan_kp/index');
