@@ -22,7 +22,11 @@
 
 <tbody>
 @foreach ($pengajuanUjian as $data)
-<?php $psta = $psta->where('nim','=',$data->nim)->first(); ?>
+<?php 
+	$psta = $psta->where('nim','=',$data->nim)->first();
+	$penguji = $penguji->where('nim','=',$data->nim)->first(); 
+?>
+
 <tr>
 <td>{!! $data->nim !!}</td>
 <td>{!! $data->mahasiswa->nama !!}</td>
@@ -33,9 +37,9 @@
 	<a href="{{ url('penilaianadmin/pembimbing/ta1/'.$data->nim.'/'.$psta->ppta->pembimbing_1) }}">Pembimbing 1</a>
 	@else
 	<a href="{{ url('penilaianadmin/pembimbing/ta1/'.$data->nim.'/'.$psta->ppta->pembimbing_1) }}">Pembimbing 1</a>
-	 | Pembimbing 2 
+	 | <a href="{{ url('penilaianadmin/pembimbing/ta1/'.$data->nim.'/'.$psta->ppta->pembimbing_2) }}">Pembimbing 2 </a>
 	@endif
-	| Penguji 1 | Penguji 2</td>
+	| <a href="{{ url('penilaianadmin/penguji/ta1/'.$data->nim.'/'.$penguji->penguji_1) }}">Penguji 1</a> | <a href="{{ url('penilaianadmin/penguji/ta1/'.$data->nim.'/'.$penguji->penguji_2) }}">Penguji 2 </a></td>
 <td>cetak form perbaikan | cetak berita acara | cetak form penilaian | cetak absensi</a></td>
 </tr>
 @endforeach

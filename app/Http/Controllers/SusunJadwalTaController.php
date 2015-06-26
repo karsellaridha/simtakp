@@ -58,20 +58,24 @@ class SusunJadwalTaController extends Controller {
 	{
 		$pengajuanUjian=PengajuanSyaratUjianTa1::all();
 		$psta=new Pengajuansyaratta;
+		$penguji=new PengujiUjianTa;
 
 		return view('ujianta.indexproposal')
 		->with('psta',$psta)
-		->with('pengajuanUjian',$pengajuanUjian);
+		->with('pengajuanUjian',$pengajuanUjian)
+		->with('penguji',$penguji);
 	}
 
 	public function getUjianKomprehensif()
 	{
 		$pengajuanUjian=PengajuanSyaratUjianTa2::all();
 		$psta=new Pengajuansyaratta;
+		$penguji=new PengujiUjianTa;
 
 		return view('ujianta.indexkomprehensif')
 		->with('psta',$psta)
-		->with('pengajuanUjian',$pengajuanUjian);
+		->with('pengajuanUjian',$pengajuanUjian)
+		->with('penguji',$penguji);
 	}
 
 } // end of class
