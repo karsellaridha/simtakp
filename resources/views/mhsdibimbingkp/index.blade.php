@@ -3,8 +3,12 @@
 
 <div class="box">
                 <div class="box-header">
-                 @if(Auth::user()->role == "ketua jurusan")
-                  <h3 class="box-title">Laporan Mahasiswa yang Telah Ambil KP Tahun</h3>
+                @if(Auth::user()->role == "ketua jurusan")
+                 @if($tahun)
+			  	 	<h3 class="box-title">Laporan Mahasiswa yang Telah Ambil KP Tahun {!! $tahunnya !!}</h3>
+				 @else
+				 	<h3 class="box-title">Laporan Mahasiswa yang Telah Ambil KP</h3>
+				 @endif
                 @endif
                 @if(Auth::user()->role == "dosen")
                   <h3 class="box-title">Laporan Progress Bimbingan KP Mahasiswa yang Dibimbing</h3>
@@ -46,7 +50,7 @@
 			<td>{!! (count($data_bimbingankp->nilaikp)>0 ? $data_bimbingankp->nilaikp->total_nilaikp() : "Belum di input") !!}</td>
 			<td><a href="{!! url("mhsdibimbingkp/detail/".$data_bimbingankp->nim) !!}">Lihat Detail</td>
 			@if($tahun)
-			<td></td>
+			<td>{!!$data_bimbingankp->pskp->verifikasi->no_sk!!}</td>
 			@endif
 
 			@if(!$tahun)

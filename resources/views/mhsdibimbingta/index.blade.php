@@ -49,7 +49,8 @@
 					$j->judul :
 					$data_bimbinganta->judul." <span class='label label-danger'>belum fix</span>";
 			 !!}</td>
-			 <?php $ta1 = $nilaita1->nilaiTotal($data_bimbinganta->nim) ?>
+			 <?php $ta1 = $nilaita1->nilaiTotal($data_bimbinganta->nim);
+			 	   $ta2 = $nilaita2->nilaiTotal($data_bimbinganta->nim); ?>
 			<td>{!! $ta1['huruf'] !!}</td>
 			<td>{!! $ta2['huruf'] !!}</td>
 

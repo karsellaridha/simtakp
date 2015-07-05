@@ -24,4 +24,8 @@ class Pengajuanpembkp extends Model {
 	public function nilaikp(){
 		return $this->hasOne('App\Inputnilaikp','id_pengajuanpembkp');
 	}
+
+	public function pskp(){
+		return $this->hasOne('App\Pengajuansyaratkp','id_pengajuan_pembkp');
+	}
 }

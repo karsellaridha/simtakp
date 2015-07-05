@@ -62,7 +62,8 @@ public function dataMhsbimbingankp(Request $request){
 		$datamhsbimbingankp=Pengajuanpembkp::where('nip','=',Auth::user()->dosen->nip)->get();
 	}
 	return view("mhsdibimbingkp.index")->with("datamhsbimbingankp",$datamhsbimbingankp)
-	->with("tahun",$request->has('tahun'));
+	->with("tahun",$request->has('tahun'))
+	->with("tahunnya",$request->input('tahun'));
 	}
 
 public function bimbingankp($id){

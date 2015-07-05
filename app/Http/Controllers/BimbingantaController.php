@@ -13,6 +13,7 @@ use Auth;
 use App\Bimbinganta;
 use App\Inputnilaikp;
 use App\NilaiTa1;
+use App\NilaiTa2;
 use App\PengujiUjianTa;
 
 class BimbingantaController extends Controller {
@@ -70,10 +71,12 @@ public function dataMhsbimbinganta(Request $request){
 	}
 	$psta = new Pengajuansyaratta;
 	$nilaita1 = new NilaiTa1;
+	$nilaita2 = new NilaiTa2;
 	return view("mhsdibimbingta.index")
 	->with('psta', $psta)
 	->with("datamhsbimbinganta",$datamhsbimbinganta)
 	->with('nilaita1',$nilaita1)
+	->with('nilaita2',$nilaita2)
 	->with("tahun",$request->has('tahun'));
 	}
 
