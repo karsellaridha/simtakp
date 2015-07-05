@@ -24,6 +24,9 @@
 			<th>Judul TA</th>
 			<th>Nilai TA 1 </th>
 			<th>Nilai TA 2 </th>
+	@if($tahun)
+			<th>No.SK</th>
+	@endif
 		@if(!$tahun)
 			<th>Nilai</th>
 			<th>Aksi</th>
@@ -48,7 +51,12 @@
 			 !!}</td>
 			 <?php $ta1 = $nilaita1->nilaiTotal($data_bimbinganta->nim) ?>
 			<td>{!! $ta1['huruf'] !!}</td>
+			<td>{!! $ta2['huruf'] !!}</td>
+
+			@if($tahun)
 			<td></td>
+			@endif
+
 			@if(!$tahun)
 			<td><a href="{!! url("penilaian/detail/pembimbing/".$data_bimbinganta->nim) !!}">Penilaian</td>
 			<td>
