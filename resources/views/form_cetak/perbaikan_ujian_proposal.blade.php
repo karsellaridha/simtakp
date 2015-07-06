@@ -17,38 +17,45 @@ window.print();
   <tr>
     <td width="28%">Nama</th>
     <td width="3%">:</td>
-    <td width="69%">&nbsp;</td>
+    <td width="69%">{!! $verifikasi->mahasiswa->nama !!}</td>
   </tr>
   <tr>
     <td>NIM</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! $verifikasi->mahasiswa->nim !!}</td>
   </tr>
   <tr>
     <td>Program Studi</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! $verifikasi->mahasiswa->prodi->nama !!}</td>
   </tr>
   <tr>
     <td>Hari/Tanggal</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! date('d-M-Y',strtotime($tanggal)) !!}</td>
   </tr>
   <tr>
     <td>Waktu</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! date('d-M-Y',strtotime($tanggal)) !!}</td>
   </tr>
   <tr>
     <td>Judul Tugas Akhir</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! $verifikasi->judul !!}</td>
   </tr>
   <tr>
     <td>Pembimbing I</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! $verifikasi->ppta->data_pembimbing_1->nama!!}</td>
   </tr>
+  @if($verifikasi->ppta->pembimbing_2==null)
+  <tr>
+    <td>Pembimbing II</th>
+    <td>:</td>
+    <td>{!! $verifikasi->ppta->data_pembimbing_2->nama!!}</td>
+  </tr>
+  @endif
   <tr>
     <td>Perbaikan</th>
     <td>:</td>
@@ -94,7 +101,7 @@ window.print();
   </tr>
 </table>
 
-Telah diperbaiki sesuai dengan saran dan koreksi tim penguju ujian komprehensif <br>
+Telah diperbaiki sesuai dengan saran dan koreksi tim penguji ujian proposal<br>
 <table width="100%" border="0">
   <tr>
     <td><div align="center">No</div></td>
