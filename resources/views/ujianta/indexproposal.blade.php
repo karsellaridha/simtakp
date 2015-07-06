@@ -40,7 +40,9 @@
 	 | <a href="{{ url('penilaianadmin/pembimbing/ta1/'.$data->nim.'/'.$psta->ppta->pembimbing_2) }}">Pembimbing 2 </a>
 	@endif
 	| <a href="{{ url('penilaianadmin/penguji/ta1/'.$data->nim.'/'.$penguji->penguji_1) }}">Penguji 1</a> | <a href="{{ url('penilaianadmin/penguji/ta1/'.$data->nim.'/'.$penguji->penguji_2) }}">Penguji 2 </a></td>
-<td>cetak form perbaikan | cetak berita acara | cetak form penilaian | cetak absensi</a></td>
+<td>
+	<a href="{!! url("form_cetak/$data->id/berita_acara_proposal")!!}">cetak berita acara |</a>
+	cetak form perbaikan | cetak form penilaian | cetak absensi</a></td>
 </tr>
 @endforeach
 </tbody>
