@@ -197,6 +197,8 @@ Route::get('form_cetak/{id}/sk_ta',"VerifikasisyarattaController@cetakSk");
 Route::get('form_cetak/{id}/cetak_verifikasi_uta1',"VerifikasiUjianTa1Controller@cetakVerifikasi");
 Route::get('form_cetak/{id}/cetak_verifikasi_uta2',"VerifikasiUjianTa2Controller@cetakVerifikasi");
 Route::get('form_cetak/{id}/berita_acara_proposal',"SusunJadwalTaController@cetakBeritaAcaraProposal");
+Route::get('form_cetak/{id}/perbaikan_ujian_proposal',"SusunJadwalTaController@cetakFormPerbaikanProposal");
+
 
 //ubah password
 Route::get('ubahpassword',"UserController@ubahPassword");

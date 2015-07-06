@@ -85,7 +85,16 @@ class SusunJadwalTaController extends Controller {
 		$verifikasi=Verifikasisyaratta::findOrFail($id);
 		$penguji=PengujiUjianTa::findOrFail($id);
 
-		return view('form_cetak.berita_acara_kompre')
+		return view('form_cetak.berita_acara_proposal')
+		->with('verifikasi',$verifikasi)
+		->with('penguji',$penguji);
+	}
+
+	public function cetakFormPerbaikanProposal($id){
+		$verifikasi=Verifikasisyaratta::findOrFail($id);
+		$penguji=PengujiUjianTa::findOrFail($id);
+
+		return view('form_cetak.perbaikan_ujian_proposal')
 		->with('verifikasi',$verifikasi)
 		->with('penguji',$penguji);
 	}
