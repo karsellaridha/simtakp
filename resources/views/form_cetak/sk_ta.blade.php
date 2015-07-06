@@ -1,6 +1,6 @@
-<!--<script>
+<script>
 window.print();
-</script>-->
+</script>
 
 <?php
   $tanggal=date_default_timezone_get();
@@ -206,7 +206,7 @@ window.print();
     <tr>
       <td>KETIGA</td>
       <td><div align="center">:</div></td>
-      <td colspan="4">Keputusan ini berlaku selama 6 (enam) bulan sejak tanggal ditetapkan samapi dengan tanggal </td>
+      <td colspan="4">Keputusan ini berlaku selama 6 (enam) bulan sejak tanggal ditetapkan sampai dengan tanggal </td>
     </tr>
     <tr>
       <td>&nbsp;</td>

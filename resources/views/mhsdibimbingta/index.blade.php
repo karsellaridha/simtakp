@@ -3,8 +3,12 @@
 
 <div class="box">
                 <div class="box-header">
-                @if(Auth::user()->role == "ketua jurusan")
-                  <h3 class="box-title">Laporan Mahasiswa yang Telah Ambil TA</h3>
+				 @if(Auth::user()->role == "ketua jurusan")
+                 @if($tahun)
+			  	 	<h3 class="box-title">Laporan Mahasiswa yang Telah Ambil TA Tahun {!! $tahunnya !!}</h3>
+				 @else
+				 	<h3 class="box-title">Laporan Mahasiswa yang Telah Ambil TA</h3>
+				 @endif
                 @endif
                 @if(Auth::user()->role == "dosen")
                   <h3 class="box-title">Laporan Progress Bimbingan TA Mahasiswa yang Dibimbing</h3>
@@ -55,7 +59,7 @@
 			<td>{!! $ta2['huruf'] !!}</td>
 
 			@if($tahun)
-			<td></td>
+			<td>{!! @$data_bimbinganta->psta->verifikasi->no_sk !!}</td>
 			@endif
 
 			@if(!$tahun)

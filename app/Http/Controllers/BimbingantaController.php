@@ -77,7 +77,9 @@ public function dataMhsbimbinganta(Request $request){
 	->with("datamhsbimbinganta",$datamhsbimbinganta)
 	->with('nilaita1',$nilaita1)
 	->with('nilaita2',$nilaita2)
-	->with("tahun",$request->has('tahun'));
+	->with("tahun",$request->has('tahun'))
+	->with("tahunnya",$request->input('tahun'))
+		;
 	}
 
 

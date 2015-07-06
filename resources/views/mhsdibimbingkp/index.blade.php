@@ -50,7 +50,7 @@
 			<td>{!! (count($data_bimbingankp->nilaikp)>0 ? $data_bimbingankp->nilaikp->total_nilaikp() : "Belum di input") !!}</td>
 			<td><a href="{!! url("mhsdibimbingkp/detail/".$data_bimbingankp->nim) !!}">Lihat Detail</td>
 			@if($tahun)
-			<td>{!!$data_bimbingankp->pskp->verifikasi->no_sk!!}</td>
+			<td>{!! @$data_bimbingankp->pskp->verifikasi->no_sk!!}</td>
 			@endif
 
 			@if(!$tahun)

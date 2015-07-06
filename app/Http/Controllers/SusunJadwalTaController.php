@@ -6,6 +6,7 @@ use Illuminate\Http\HttpResponse;
 use  Illuminate\Http\Request;
 
 use App\Mahasiswa;
+use App\Pengajuanpembta;
 use App\PengajuanSyaratUjianTa1;
 use App\PengajuanSyaratUjianTa2;
 use App\Pengajuansyaratta;
@@ -13,6 +14,7 @@ use Auth;
 use App\VerifikasiUjianTa1;
 use App\PengujiUjianTa;
 use App\Dosen;
+use App\Verifikasisyaratta;
 
 
 class SusunJadwalTaController extends Controller {
@@ -75,6 +77,16 @@ class SusunJadwalTaController extends Controller {
 		return view('ujianta.indexkomprehensif')
 		->with('psta',$psta)
 		->with('pengajuanUjian',$pengajuanUjian)
+		->with('penguji',$penguji);
+	}
+
+
+	public function cetakBeritaAcaraProposal($id){
+		$verifikasi=Verifikasisyaratta::findOrFail($id);
+		$penguji=PengujiUjianTa::findOrFail($id);
+
+		return view('form_cetak.berita_acara_kompre')
+		->with('verifikasi',$verifikasi)
 		->with('penguji',$penguji);
 	}
 
