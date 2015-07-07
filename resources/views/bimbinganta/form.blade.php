@@ -1,6 +1,6 @@
 		<div class="form-group">
 			{!! Form::label('nip','NIP :') !!}
-			{!! Form::text('nip',$nip,['class'=>'form-control','id'=>'nip','required','readonly']) !!}
+			{!! Form::text('nip',@$bimbinganta->nip,['class'=>'form-control','id'=>'nip','required','readonly']) !!}
 		</div>
 
 		<div class="form-group">
