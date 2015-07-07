@@ -16,7 +16,7 @@
 <td>Pembimbing</td>
 <td>Jadwal</td>
 <td>Penguji</td>
-<td>Aksi</td>
+<td>Aksi </td>
 </tr>
 </thead>
 
@@ -32,7 +32,7 @@
 <?php $penguji = $uji->where('nim','=',$p->nim)->first(); ?>
 <td>{!! "- ".@$penguji->data_penguji_1->nama."<br>- ".@$penguji->data_penguji_2->nama !!}</td>
 
-<td><a href='{!! url("susunjadwalta/jadwal/$p->nim")!!}' data-toggle="modal" data-target="#myModal" >Susun Jadwal</a> - <a href='{!! url("susunjadwalta/penguji/$p->nim")!!}' data-toggle="modal" data-target="#myModal">Penguji</a> </td>
+<td><a href='{!! url("susunjadwalta/jadwal/$p->nim/$jenista")!!}' data-toggle="modal" data-target="#myModal" >Susun Jadwal</a> - <a href='{!! url("susunjadwalta/penguji/$p->nim")!!}' data-toggle="modal" data-target="#myModal">Penguji</a> </td>
 </tr>
 @endforeach
 </tbody>

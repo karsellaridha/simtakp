@@ -304,12 +304,24 @@ color: #000;
 </a>
 </li>
 
- <li>
- <a href="{{ url('susunjadwalta') }}" style='color:#fff'>
 
-  <i class="fa fa-dashboard"></i> Susun Jadwal Ujian TA 
-</a>
-</li>
+
+<li class="treeview">
+              <a href="#" style='color:#fff'>
+                <i class="fa fa-dashboard"></i> <span>Susun Jadwal Ujian TA </span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class='white'><a href="{{ url('susunjadwalta/index/ta1') }}" >
+
+  <i class="fa fa-circle-o"></i> Ujian Proposal
+</a></li>
+                <li class='white'><a href="{{ url('susunjadwalta/index/ta2') }}" >
+
+  <i class="fa fa-circle-o"></i> Ujian Komprehensif
+</a></li>
+  </ul>
+  </li>
 
  <li>
   <a href="{{ url('kuotabimbingan') }}" style='color:#fff'>
