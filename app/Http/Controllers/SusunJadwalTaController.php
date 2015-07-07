@@ -56,21 +56,22 @@ class SusunJadwalTaController extends Controller {
 		return redirect('susunjadwalta/index/'.$jenista);
 	}
 
-	public function getPenguji($nim){
+	public function getPenguji($nim, $jenista){
 		$dosen = Dosen::lists('nama','nip');
 		$penguji = PengujiUjianTa::where('nim','=',$nim)->first();
 		return view('susunjadwalta.penguji')->with('nim',$nim)
+		->with('jenista',$jenista)
 		->with('dosen',$dosen)
 		->with('penguji',$penguji);
 	} 
 
-	public function postPenguji($nim, Request $request){
+	public function postPenguji($nim, $jenista, Request $request){
 
 		$penguji = PengujiUjianTa::firstOrNew(['nim'=>$nim]);
 		$penguji->fill($request->all());
 		$penguji->save();
 
-		return redirect('susunjadwalta');
+		return redirect('susunjadwalta/index/'.$jenista);
 	}
 
 	public function getUjianProposal()

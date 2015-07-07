@@ -1,4 +1,4 @@
-{!! Form::open(['url'=>"susunjadwalta/penguji/$nim"]) !!}
+{!! Form::open(['url'=>"susunjadwalta/penguji/$nim/$jenista"]) !!}
 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">Susun Penguji </h4>
