@@ -14,9 +14,11 @@ use App\NilaiTa2;
   
    <div class="box-body">
 
-@if(count($pengajuanUjian)==0)
+@if(count($pengajuanUjian)>0)
+	@if(count($pengajuanUjian2)==0)
 	<a href='{!! url("ujian_ta/input/ta2") !!}' class='btn btn-primary pull-right'>Ajukan <br> Ujian Komprehensif</a>
-@elseif(count($pengajuanUjian)==1)
+@endif
+@else
 	<a href='{!! url("ujian_ta/input/ta1") !!}' class='btn btn-primary pull-right'>Ajukan <br> Ujian Proposal TA</a>
 @endif
 <div class='clearfix'></div>

@@ -18,8 +18,6 @@ else{
 
 {!! Form::open(['url'=>$url]) !!}
 
-
-
     <div class="form-group">
       {!! Form::label('presentasi','Penyajian/Presentasi :') !!}
       {!! Form::text('persentasi',@$nilaiuta1->persentasi,['class'=>'form-control','id'=>'presentasi'])!!}

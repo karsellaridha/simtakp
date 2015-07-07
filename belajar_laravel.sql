@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2015 at 07:03 PM
+-- Generation Time: Jul 07, 2015 at 08:50 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `bimbingan_ta` (
 --
 
 INSERT INTO `bimbingan_ta` (`id`, `nim`, `nip`, `tanggal`, `hasil_konsultasi`, `id_pengajuanpembta`) VALUES
-(4, '09111003024', '197210182008121001', '2015-06-13', 'bab 1 perbaiki latar belakang, tujuan, bab 2 perjelas sumber data perbanyak ambil penjelasan dari buku', 1),
+(4, '09111003024', '197210182008121001', '2015-06-13', 'bab 1 perbaiki latar belakang, tujuan, bab 2 perjelas sumber data perbanyak ambil penjelasan dari buku-buku terbitan baru', 1),
 (5, '09111003024', '197811172006042001', '2015-06-15', 'bab 1 latar belakang jangan terlalu panjang, bab 2 acc', 1),
 (7, '09111003054', '196709132006042001', '2015-07-01', 'konsultasi latar belakang', 6),
 (8, '09111003054', '197904202003121003', '2015-07-02', 'konsultasi tujuan penelitian', 6);
@@ -225,7 +225,7 @@ INSERT INTO `nilai_ta1` (`id`, `nim`, `nip`, `persentasi`, `kesesuaian_format`, 
 --
 
 CREATE TABLE IF NOT EXISTS `nilai_ta2` (
-  `id` int(11) NOT NULL,
+`id` int(11) unsigned NOT NULL,
   `nim` varchar(225) NOT NULL,
   `nip` varchar(225) NOT NULL,
   `persentasi` int(11) NOT NULL,
@@ -241,7 +241,17 @@ CREATE TABLE IF NOT EXISTS `nilai_ta2` (
   `jaringan` int(11) NOT NULL,
   `sikap_etika` int(11) NOT NULL,
   `penilaian_proses` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `nilai_ta2`
+--
+
+INSERT INTO `nilai_ta2` (`id`, `nim`, `nip`, `persentasi`, `kesesuaian_format`, `bahasa_indonesia`, `kesesuaian_isi`, `kelengkapan_dokumen`, `analisis`, `metodologi`, `basisdata`, `office`, `os`, `jaringan`, `sikap_etika`, `penilaian_proses`) VALUES
+(1, '09111003054', '197811172006042001', 85, 85, 80, 80, 80, 80, 80, 80, 86, 87, 70, 89, 0),
+(2, '09111003054', '197904202003121003', 80, 80, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85),
+(3, '09111003054', '196709132006042001', 83, 83, 83, 83, 83, 83, 83, 83, 83, 83, 83, 83, 80),
+(4, '09111003054', '198104162008122006', 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 0);
 
 -- --------------------------------------------------------
 
@@ -422,7 +432,7 @@ CREATE TABLE IF NOT EXISTS `pengajuan_syaratujianta2` (
 
 INSERT INTO `pengajuan_syaratujianta2` (`id`, `nim`, `status`, `jadwal`, `tempat_sidang`, `ksmktm`, `biaya_ujian`, `dkn`, `sertifikat`, `suliet`, `printscreen_suliet`, `rekomendasi`, `form_ta1`, `eksemplar`, `bebas_pustaka`, `bebas_bayaran`, `sk_ta`, `updated_at`, `created_at`) VALUES
 (2, '09111003024', 2, '0000-00-00', '', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', '2015-06-19 23:28:04', '2015-06-18 20:05:02'),
-(3, '09111003054', 1, '0000-00-00', '', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', '2015-07-07 16:03:03', '2015-07-07 16:03:03');
+(3, '09111003054', 2, '2015-07-23', 'Palembang', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', 'ada', '2015-07-07 18:07:36', '2015-07-07 16:03:03');
 
 -- --------------------------------------------------------
 
@@ -485,23 +495,23 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `remember_token`) VALUES
-(11, 'admin_indralaya', '$2y$10$xjFplltitavluTjg4HxJI.0JTGUcR/WH5SKoOkz1yclL4XDoVy8t2', 'admin', 'HBF93KzCZrkwgJbpAE0KRzlc7vGymyfoSnRk6qxOfw5CkRxLTTOU0EJkuMSm'),
-(42, 'kajur_SI', '$2y$10$hk.vPJNn7qxJGy0N22xaQeYwhFukQuomKKo4smuxlgVTxDAeU8qLq', 'ketua jurusan', 'ozM8whfGcx4FRlYkn9SOWmqtmk3EHbJUHPLvatbQdgNN2ODpMdwd7SsYUzmH'),
+(11, 'admin_indralaya', '$2y$10$xjFplltitavluTjg4HxJI.0JTGUcR/WH5SKoOkz1yclL4XDoVy8t2', 'admin', 'k7va2pZMIrl9uAvclyIiKskDKjolR4f3zZqwHJInGcDFCt5RM3UD8B3huzdM'),
+(42, 'kajur_SI', '$2y$10$hk.vPJNn7qxJGy0N22xaQeYwhFukQuomKKo4smuxlgVTxDAeU8qLq', 'ketua jurusan', '12ZJzl3Nvtw8xJaRYLcxISXqF1FFeSRhI6IZ2K2gXhNWWKQtnkLouG6Z5lZ6'),
 (43, 'sekjur_SI', '$2y$10$O2QX1Xy1w5XQWfhNepcENeMTzYoEeY785KeDpMtWPomu1dccU40iu', 'sekretaris jurusan', 'IxyWKf1JMSHrBxRQAseu7jB5ktYWjls5FTY6GgPyKOJ5iQDAMGOeRxVzq95a'),
 (44, 'admin_bukit', '$2y$10$F9./kbVCyIwNqHzKitM.iOGZkc3PIkwAT7.gijcUgUUQFpiyL78Z2', 'admin', 'yDuhyGEqV2b39WHwGIA3mMuluBHJhaWPdE80kPUJB5tMQtpsE1RfoEqrj6as'),
-(45, '09111003024', '$2y$10$PWGsvVN27xZNYdjK9Xm5L.38JgCX4EFB/icf3CCfTzj3CAVUMpZ.K', 'mahasiswa', 'r5Nq3OkXSdrfr0ZqY5S00vwbVaPT3E9QGkp1aOGJGEyOTpTiMtkL32AyhBrl'),
+(45, '09111003024', '$2y$10$PWGsvVN27xZNYdjK9Xm5L.38JgCX4EFB/icf3CCfTzj3CAVUMpZ.K', 'mahasiswa', 'UNripVati141rpPh8VYK4vtvgb5IO6VLoynAJ64R5495ldcXiKqQCeJXlE7b'),
 (46, '197210182008121001', '$2y$10$bjj.wjOJgbyop0jlzBcMDeVKyO6vDrLYuOY9Buhw0JCQ6CxmuBKi2', 'dosen', 'BvObraJhSr1TkTrsvX5KWWMoN9UibzkucPMyiCj57BP46Uy0ZjmoCx8He0cX'),
 (48, '09111003036', '$2y$10$j00lkrzyEaCDjeYeiUoZO.GEiXsJVfCaA6gHVZ6XRWrLNSn2ULKCO', 'mahasiswa', 'TxjGMhS9N0jvLc89BQmvtVQ3koThBVvVdcvuD8HJlIpRWKKgGTPqs1gLnYDR'),
-(49, '198202122006041003', '$2y$10$j6ndI3yRmU32cVaQTyFdWegvrTnhSd8mc2dZcO0KDEY0fDIpqH7OC', 'dosen', 'zzqS63IoG8IB7vWfS5eAb4ZvJ6kCn0c63OfLkA6u9jAY93ChwMbQIe6LXmns'),
-(50, '197811172006042001', '$2y$10$l2fkpuHokuSfZqt9xB0hAuMQJepHju.GD6zu47zmxUa10kOkGwbL6', 'dosen', 'NFZynoJiS2ED2KOJGVxk0L3KeA0bJPejd1WDjSiq2q1CcawxCKPrsorsgk1j'),
+(49, '198202122006041003', '$2y$10$j6ndI3yRmU32cVaQTyFdWegvrTnhSd8mc2dZcO0KDEY0fDIpqH7OC', 'dosen', 'PnAk6O8kQGlOZtrd9h5mMh70z2J6MtE7O39dwIZD8yKt5j1cmCF9qZqRi1te'),
+(50, '197811172006042001', '$2y$10$l2fkpuHokuSfZqt9xB0hAuMQJepHju.GD6zu47zmxUa10kOkGwbL6', 'dosen', 'RFqvZ5eUT0d1CUJIEAdlwnsQugoijO8KkmVIiYh3KgwmpzD3FsroGkcmfZ38'),
 (51, '09111003026', '$2y$10$zVMKG6PvlwM0twvG0M8rbeuUSNKTkObP4.KoaXNsGNkl4AP9qMooe', 'mahasiswa', 'STypvCZbX2rJwHyUIhcAlkS4ytSLhGxP9LudAwfjx5VNIkAnLzvcvMCKQjYz'),
 (52, '197107212005011005', '$2y$10$CI8dI.ab0RC7jS4FIttk.ubvkgEQn1ZAaY0ACb9tbwuyDLmcXgAti', 'dosen', NULL),
-(53, '196709132006042001', '$2y$10$1f3ZTpXG3X9jkMwC4vTv.eVrRQHg6xidpcW/KPpZAFAF2TFtL3dMe', 'dosen', 'Vw6xVjJaL9cYWJsyuaAciBzGT14o8qPV7DcNi6Xe0RdBi06HRt94I5Aero1T'),
-(54, '197904202003121003', '$2y$10$7dzJNHAmW2QA51/Wc2TY6O1095at2OStdSO11g0JKwSNMB0YTIUP6', 'dosen', 'Iy2GxZbNFH3qe3OAhjCT4yjNekI06ROQH4Ut3DX1q6FmChT4934z0fjJZsnx'),
+(53, '196709132006042001', '$2y$10$1f3ZTpXG3X9jkMwC4vTv.eVrRQHg6xidpcW/KPpZAFAF2TFtL3dMe', 'dosen', 'uusldTXkcR3s3AWXt6Tk2fM8NYA8JhUZHZryfDesZsVrtct7iwPvlWBlQrFZ'),
+(54, '197904202003121003', '$2y$10$7dzJNHAmW2QA51/Wc2TY6O1095at2OStdSO11g0JKwSNMB0YTIUP6', 'dosen', 'SnOcu6Kzl2Hs35tPim0o7DEqAgLDywJIZmCP6y3o5DLA6MxgUUkhlyg7FMfz'),
 (55, '197901152008011008', '$2y$10$o8PN529EYaRo1t5VxDTTAuf4095jpWSD1nNZUGr48aI6BvgGhMone', 'dosen', NULL),
 (56, '197801212008121003', '$2y$10$hYDZEC13pH5vynC1oUTfyODrp5CVNa0AUjiRcidZf8ea1y9.g94e6', 'dosen', NULL),
-(57, '198104162008122006', '$2y$10$eJ7MTamRE/gtfiSiMS6V9Ov08xlDb5h.xN9N8oi1H94x11hzjQTBq', 'dosen', 'AtzEaNWMGBUakSZH3v7AyQMpaVTWikdlyjUoE6LZwBQV2LMMG5jfSLHq3aqg'),
-(58, '09111003054', '$2y$10$D9HgIY8Nimz9rfgTBZ6dCOj3Cg3mXrTyuwbkMMNnQ4nxuq9jNs6eW', 'mahasiswa', 'PWvkek29AZcpgbkQHL351eQoc9NRq05YyRci90f9v9bcOtQwS3Q0wtAlnP3s');
+(57, '198104162008122006', '$2y$10$eJ7MTamRE/gtfiSiMS6V9Ov08xlDb5h.xN9N8oi1H94x11hzjQTBq', 'dosen', '4oABZhJKXE5HZAmiiHid6nWtk4pdTXa0yHRuCm2ePI5c2K8Xln40j5Llip8g'),
+(58, '09111003054', '$2y$10$D9HgIY8Nimz9rfgTBZ6dCOj3Cg3mXrTyuwbkMMNnQ4nxuq9jNs6eW', 'mahasiswa', '4axpKtglJaF4ap38TbMpWKTsnMfyKUYkIpwLSg6PXAkNwHMBTCrsLGX1ZzvG');
 
 -- --------------------------------------------------------
 
@@ -597,7 +607,7 @@ INSERT INTO `verifikasi_syaratujianta1` (`id`, `id_syarat_pengajuanujianta1`, `n
 --
 
 CREATE TABLE IF NOT EXISTS `verifikasi_syaratujianta2` (
-  `id` int(11) NOT NULL,
+`id` int(11) unsigned NOT NULL,
   `id_syarat_pengajuanujianta2` int(10) unsigned NOT NULL,
   `nim` varchar(225) NOT NULL,
   `ksmktm` enum('ya','tidak') NOT NULL,
@@ -612,14 +622,15 @@ CREATE TABLE IF NOT EXISTS `verifikasi_syaratujianta2` (
   `bebas_pustaka` enum('ya','tidak') NOT NULL,
   `bebas_bayaran` enum('ya','tidak') NOT NULL,
   `sk_ta` enum('ya','tidak') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `verifikasi_syaratujianta2`
 --
 
 INSERT INTO `verifikasi_syaratujianta2` (`id`, `id_syarat_pengajuanujianta2`, `nim`, `ksmktm`, `biaya_ujian`, `dkn`, `sertifikat`, `suliet`, `printscreen_suliet`, `rekomendasi`, `form_ta1`, `eksemplar`, `bebas_pustaka`, `bebas_bayaran`, `sk_ta`) VALUES
-(0, 2, '09111003024', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya');
+(1, 2, '09111003024', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(2, 3, '09111003054', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya');
 
 --
 -- Indexes for dumped tables
@@ -791,6 +802,11 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 ALTER TABLE `nilai_ta1`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT for table `nilai_ta2`
+--
+ALTER TABLE `nilai_ta2`
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `pengajuan_pembkp`
 --
 ALTER TABLE `pengajuan_pembkp`
@@ -850,6 +866,11 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 ALTER TABLE `verifikasi_syaratujianta1`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `verifikasi_syaratujianta2`
+--
+ALTER TABLE `verifikasi_syaratujianta2`
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --

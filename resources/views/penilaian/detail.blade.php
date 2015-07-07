@@ -6,7 +6,7 @@
                   <h3 class="box-title">Detail Nilai TA Keseluruhan Mahasiswa</h3>
                 </div><!-- /.box-header -->
 <div class="box-body">
-<a href='{!! url("penilaian/$sebagai/ta2/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right' data-toggle="modal" data-target="#myModal">Input Nilai TA 2</a> 
+<a href='{!! url("penilaian/$sebagai/ta2/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right' style='margin-right'>Input Nilai TA 2</a> 
 <a href='{!! url("penilaian/$sebagai/ta1/$pengajuanpembta->nim") !!}' class=' btn btn-danger pull-right'  style='margin-right:10px'>Input Nilai TA 1</a>
 
 <br><br>
