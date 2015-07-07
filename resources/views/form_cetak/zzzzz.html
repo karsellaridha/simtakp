@@ -1,0 +1,17 @@
+<?php
+  $tanggal=date_default_timezone_get();
+
+  $expired = strtotime("+7 months", strtotime($tanggal)); // returns timestamp
+  //echo date('Y-m-d',$effectiveDate);
+ ?>
+
+<center>
+  <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}</p>
+<table border="0">
+  <thead>
+  <tr>
+  	<th width="77"><div align="left">Nomor</div></th>
+    <th width="10"><div align="left">:</div></th>
+    <th width="317"><div align="left">&nbsp;/UN9.1.9/AK/{!! date('Y',strtotime($tanggal)) !!}</div></th>
+    <th width="443"><div align="right">{!! date('d-M-Y',$expired) !!}</div></th>
+  </tr>

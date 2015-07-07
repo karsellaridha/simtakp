@@ -19,17 +19,17 @@ window.print();
   <tr>
     <td width="210"><div align="left">Nama Mahasiswa</div></td>
     <td width="19"><div align="center">:</div></td>
-    <td width="461">{!! $verifikasi->mahasiswa->nama !!}</td>
+    <td width="461">{!! $ujianta1->mahasiswa->nama !!}</td>
   </tr>
   <tr>
     <td><div align="left">NIM</div></td>
     <td><div align="center">:</div></td>
-    <td>{!! $verifikasi->mahasiswa->nim !!}</td>
+    <td>{!! $ujianta1->mahasiswa->nim !!}</td>
   </tr>
   <tr>
     <td><div align="left">Program Studi</div></td>
     <td><div align="center">:</div></td>
-    <td>{!! $verifikasi->mahasiswa->prodi->nama !!}</td>
+    <td>{!! $ujianta1->mahasiswa->prodi->nama !!}</td>
   </tr>
   <tr>
     <td><div align="left">Hari/Tanggal</div></td>
@@ -39,17 +39,17 @@ window.print();
   <tr>
     <td><div align="left">Judul Tugas Akhir</div></td>
     <td><div align="center">:</div></td>
-    <td>{!! $verifikasi->judul !!}</td>
+    <td>{!! $pengajuan->judul !!}</td>
   </tr>
   <tr>
     <td><div align="left">Pembimbing I</div></td>
     <td><div align="center">:</div></td>
-    <td>{!! $verifikasi->ppta->data_pembimbing_1->nama!!}</td>
+    <td>{!! $pengajuan->ppta->data_pembimbing_1->nama!!}</td>
   </tr>
   <tr>
     <td><div align="left">Pembimbing II</div></td>
     <td><div align="center">:</div></td>
-    <td>{!! @$verifikasi->ppta->data_pembimbing_2->nama!!}</td>
+    <td>{!! @$pengajuan->ppta->data_pembimbing_2->nama!!}</td>
   </tr>
   <tr>
     <td><div align="left">Dengan Penguji</div></td>
@@ -66,25 +66,25 @@ window.print();
   </tr>
   <tr>
     <td><div align="center">1.</div></td>
-    <td>{!! $verifikasi->ppta->data_pembimbing_1->nama!!}</td>
+    <td>{!! $pengajuan->ppta->data_pembimbing_1->nama!!}</td>
     <td><div align="center">Ketua</div></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td><div align="center">2.</div></td>
-    <td>{!! @$verifikasi->ppta->data_pembimbing_1->nama!!}</td>
+    <td>{!! @$pengajuan->ppta->data_pembimbing_2->nama!!}</td>
     <td><div align="center">Sekretaris</div></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td><div align="center">3.</div></td>
-    <td>{!! $penguji->penguji_1->dosen->nama !!}</td>
+    <td>{!! $penguji->data_penguji_1->nama !!}</td>
     <td><div align="center">Anggota</div></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
     <td><div align="center">4.</div></td>
-    <td>{!! $penguji->penguji_2->dosen->nama !!}</td>
+    <td>{!! $penguji->data_penguji_2->nama !!}</td>
     <td><div align="center">Anggota</div></td>
     <td>&nbsp;</td>
   </tr>
@@ -120,11 +120,11 @@ window.print();
     </tr>
     <tr>
       <td>Fathoni, MMSI</td>
-      <td>{!! $verifikasi->ppta->data_pembimbing_1->nama!!}</td>
+      <td>{!! $pengajuan->ppta->data_pembimbing_1->nama!!}</td>
     </tr>
     <tr>
       <td>NIP. 197210182008121001</td>
-      <td>{!! $verifikasi->ppta->data_pembimbing_1->nip!!}</td>
+      <td>{!! $pengajuan->ppta->data_pembimbing_1->nip!!}</td>
     </tr>
   </table>
   <p>&nbsp;</p>

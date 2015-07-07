@@ -21,3 +21,4 @@ class VerifikasiUjianTa1 extends Model {
 	public $timestamps = false;
 
 }
+

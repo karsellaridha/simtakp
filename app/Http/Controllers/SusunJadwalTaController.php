@@ -12,6 +12,7 @@ use App\PengajuanSyaratUjianTa2;
 use App\Pengajuansyaratta;
 use Auth;
 use App\VerifikasiUjianTa1;
+use App\VerifikasiUjianTa2;
 use App\PengujiUjianTa;
 use App\Dosen;
 use App\Verifikasisyaratta;
@@ -81,18 +82,20 @@ class SusunJadwalTaController extends Controller {
 	}
 
 
-	public function cetakBeritaAcaraProposal($id){
-		$verifikasi=Verifikasisyaratta::findOrFail($id);
-		$penguji=PengujiUjianTa::findOrFail($id);
+	public function cetakBeritaAcaraProposal($nim){
+		$ujianta1=PengajuanSyaratUjianTa1::where('nim','=',$nim)->first();
+		$pengajuan=Pengajuansyaratta::where('nim','=',$nim)->first();
+		$penguji=PengujiUjianTa::where('nim','=',$nim)->first();
 
 		return view('form_cetak.berita_acara_proposal')
-		->with('verifikasi',$verifikasi)
+		->with('ujianta1',$ujianta1)
+		->with('pengajuan',$pengajuan)
 		->with('penguji',$penguji);
 	}
 
 	public function cetakFormPerbaikanProposal($id){
 		$verifikasi=Verifikasisyaratta::findOrFail($id);
-		$penguji=PengujiUjianTa::findOrFail($id);
+		$penguji=new PengujiUjianTa;
 
 		return view('form_cetak.perbaikan_ujian_proposal')
 		->with('verifikasi',$verifikasi)
