@@ -60,5 +60,18 @@ class SusunpembtaController extends Controller {
 		return redirect('susunpembta');
 	}
 
+	public function printReguler(){
+		$dosen=Dosen::lists('nama','id');
+		$ppta=Pengajuanpembta::where('status_pembimbing','=','disetujui')->get();
+		return view('form_cetak.printreguler_ta')->with('ppta',$ppta)->with('dosen',$dosen);
+	}
+
+	public function printBilingual(){
+		$dosen=Dosen::lists('nama','id');
+		$ppta=Pengajuanpembta::where('status_pembimbing','=','disetujui')->get();
+		return view('form_cetak.printbilingual_ta')->with('ppta',$ppta)->with('dosen',$dosen);
+
+	}
+
 }
  

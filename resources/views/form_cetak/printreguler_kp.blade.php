@@ -1,13 +1,18 @@
 <script>
 window.print();
 </script>
+
+<?php
+  $tanggal=date_default_timezone_get();
+ ?>
+
 <p align="center">{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}
 </p>
 <p align="center"><strong>PEMBIMBING KERJA PRAKTEK
 </strong></p>
 <p align="center"> <strong>JURUSAN SISTEM INFORMASI </strong></p>
 <p align="center"><strong>PROGRAM STUDI SISTEM INFORMASI REGULER</strong></p>
-<p align="center"><strong>TAHUN</strong></p>
+<p align="center"><strong>TAHUN {!! date('Y',strtotime($tanggal)) !!}</strong></p>
 <center><table width="560" border="1">
   <tr>
     <td width="37"><div align="center">No</div></td>

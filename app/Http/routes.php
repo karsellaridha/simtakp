@@ -191,14 +191,19 @@ Route::get('form_cetak/cetak_penilaian_dosen/{nim}',"BimbingankpController@cetak
 Route::get('form_cetak/cetak_rekap_penilaian/{nim}',"BimbingankpController@cetakRekappenilaian");
 
 // cetak laporan ta
+Route::get('form_cetak/printreguler_ta',"SusunpembtaController@printReguler");
+Route::get('form_cetak/printbilingual_ta',"SusunpembtaController@printBilingual");
 Route::get('form_cetak/{id}/cetak_verifikasi_ta',"VerifikasisyarattaController@cetakVerifikasi");
 Route::get('form_cetak/{id}/surat_ambildata',"VerifikasisyarattaController@cetakSuratambildata");
 Route::get('form_cetak/{id}/sk_ta',"VerifikasisyarattaController@cetakSk");
 Route::get('form_cetak/{id}/cetak_verifikasi_uta1',"VerifikasiUjianTa1Controller@cetakVerifikasi");
 Route::get('form_cetak/{id}/cetak_verifikasi_uta2',"VerifikasiUjianTa2Controller@cetakVerifikasi");
 Route::get('form_cetak/{nim}/berita_acara_proposal',"SusunJadwalTaController@cetakBeritaAcaraProposal");
-Route::get('form_cetak/{id}/perbaikan_ujian_proposal',"SusunJadwalTaController@cetakFormPerbaikanProposal");
-
+Route::get('form_cetak/{nim}/perbaikan_ujian_proposal',"SusunJadwalTaController@cetakFormPerbaikanProposal");
+Route::get('form_cetak/{nim}/form_nilai_proposal',"SusunJadwalTaController@cetakFormPenilaianProposal");
+Route::get('form_cetak/{nim}/berita_acara_kompre',"SusunJadwalTaController@cetakBeritaAcaraKomprehensif");
+Route::get('form_cetak/{nim}/perbaikan_ujian_kompre',"SusunJadwalTaController@cetakFormPerbaikanKomprehensif");
+Route::get('form_cetak/{nim}/form_nilai_kompre',"SusunJadwalTaController@cetakFormPenilaianKomprehensif");
 
 //ubah password
 Route::get('ubahpassword',"UserController@ubahPassword");

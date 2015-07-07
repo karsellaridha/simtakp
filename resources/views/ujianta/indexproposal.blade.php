@@ -3,7 +3,7 @@
 
 <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Dafar Jadwal Ujian Proposal Mahasiswa</h3>
+                  <h3 class="box-title">Daftar Jadwal Ujian Proposal Mahasiswa</h3>
                 </div><!-- /.box-header -->
 
                 <div class="box-body">
@@ -42,8 +42,9 @@
 	| <a href="{{ url('penilaianadmin/penguji/ta1/'.$data->nim.'/'.$penguji->penguji_1) }}">Penguji 1</a> | <a href="{{ url('penilaianadmin/penguji/ta1/'.$data->nim.'/'.$penguji->penguji_2) }}">Penguji 2 </a></td>
 <td>
 	<a href="{!! url("form_cetak/$data->nim/berita_acara_proposal")!!}">cetak berita acara</a> |
-	<a href="{!! url("form_cetak/$data->id/perbaikan_ujian_proposal")!!}">cetak form perbaikan</a>
-	cetak form penilaian | cetak absensi</a></td>
+	<a href="{!! url("form_cetak/$data->nim/perbaikan_ujian_proposal")!!}">cetak form perbaikan</a> |
+	<a href="{!! url("form_cetak/$data->nim/form_nilai_proposal")!!}">cetak form penilaian</a>
+</td>
 </tr>
 @endforeach
 </tbody>

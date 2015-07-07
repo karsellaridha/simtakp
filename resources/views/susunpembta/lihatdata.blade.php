@@ -29,8 +29,8 @@
 		<td>{!! $no++ !!}</td>
 		<td>{!! $data->mahasiswa->nim !!}</td>
 		<td>{!! $data->mahasiswa->nama !!}</td>
-		<td>{!! $data->pembimbing_1 !!}</td>
-		<td>{!! $data->pembimbing_2 !!}</td>
+		<td>{!! $data->data_pembimbing_1->nama !!}</td>
+		<td>{!! @$data->data_pembimbing_2->nama !!}</td>
 		<td><a href="{!! url('susunpembta/batal/'.$data->id)!!}" class="btn btn-primary form-control">Cancel</a></td>
 	</tr>
 	@endforeach
@@ -43,7 +43,10 @@
 				<a href="{!! url('susunpembta')!!}" class="btn btn-primary form-control">Kembali</a>
 			</div>
 			<div class="col-md-2 pull-right">
-				<a href="{!! url('susunpembta/input')!!}" class="btn btn-primary form-control">Cetak PDF</a>
+				<a href="{!! url('form_cetak/printreguler_ta')!!}" class="btn btn-primary form-control">Cetak SI reg</a>
+			</div>
+			<div class="col-md-2 pull-right">
+				<a  href="{!! url('form_cetak/printbilingual_ta')!!}" class="btn btn-primary form-control" onclick='window.print()'>Cetak SI bil</a>
 			</div>
 		</div>
 

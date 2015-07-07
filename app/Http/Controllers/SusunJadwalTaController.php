@@ -93,12 +93,58 @@ class SusunJadwalTaController extends Controller {
 		->with('penguji',$penguji);
 	}
 
-	public function cetakFormPerbaikanProposal($id){
-		$verifikasi=Verifikasisyaratta::findOrFail($id);
-		$penguji=new PengujiUjianTa;
+	public function cetakFormPerbaikanProposal($nim){
+		$ujianta1=PengajuanSyaratUjianTa1::where('nim','=',$nim)->first();
+		$pengajuan=Pengajuansyaratta::where('nim','=',$nim)->first();
+		$penguji=PengujiUjianTa::where('nim','=',$nim)->first();
 
 		return view('form_cetak.perbaikan_ujian_proposal')
-		->with('verifikasi',$verifikasi)
+		->with('ujianta1',$ujianta1)
+		->with('pengajuan',$pengajuan)
+		->with('penguji',$penguji);
+	}
+
+	public function cetakFormPenilaianProposal($nim){
+		$ujianta1=PengajuanSyaratUjianTa1::where('nim','=',$nim)->first();
+		$pengajuan=Pengajuansyaratta::where('nim','=',$nim)->first();
+		$penguji=PengujiUjianTa::where('nim','=',$nim)->first();
+
+		return view('form_cetak.form_nilai_proposal')
+		->with('ujianta1',$ujianta1)
+		->with('pengajuan',$pengajuan)
+		->with('penguji',$penguji);
+	}
+
+		public function cetakBeritaAcaraKomprehensif($nim){
+		$ujianta2=PengajuanSyaratUjianTa2::where('nim','=',$nim)->first();
+		$pengajuan=Pengajuansyaratta::where('nim','=',$nim)->first();
+		$penguji=PengujiUjianTa::where('nim','=',$nim)->first();
+
+		return view('form_cetak.berita_acara_kompre')
+		->with('ujianta2',$ujianta2)
+		->with('pengajuan',$pengajuan)
+		->with('penguji',$penguji);
+	}
+
+	public function cetakFormPerbaikanKomprehensif($nim){
+		$ujianta2=PengajuanSyaratUjianTa2::where('nim','=',$nim)->first();
+		$pengajuan=Pengajuansyaratta::where('nim','=',$nim)->first();
+		$penguji=PengujiUjianTa::where('nim','=',$nim)->first();
+
+		return view('form_cetak.perbaikan_ujian_kompre')
+		->with('ujianta2',$ujianta2)
+		->with('pengajuan',$pengajuan)
+		->with('penguji',$penguji);
+	}
+
+	public function cetakFormPenilaianKomprehensif($nim){
+		$ujianta2=PengajuanSyaratUjianTa2::where('nim','=',$nim)->first();
+		$pengajuan=Pengajuansyaratta::where('nim','=',$nim)->first();
+		$penguji=PengujiUjianTa::where('nim','=',$nim)->first();
+
+		return view('form_cetak.form_nilai_kompre')
+		->with('ujianta2',$ujianta2)
+		->with('pengajuan',$pengajuan)
 		->with('penguji',$penguji);
 	}
 

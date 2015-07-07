@@ -4,6 +4,7 @@ window.print();
 
 <?php
   $tanggal=date_default_timezone_get();
+  $expired = strtotime("+6 months", strtotime($tanggal));
  ?>
  
 <center>
@@ -131,14 +132,14 @@ window.print();
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td><div align="center">1.</div></td>
-      <td colspan="3">{!! $verifikasi->ppta->data_pembimbing_1->nama!!}</td>
+      <td colspan="3">{!! $psta->ppta->data_pembimbing_1->nama!!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      @if($ppta->pembimbing_2!=null)
+      @if($psta->ppta->pembimbing_2!=null)
       <td><div align="center">2.</div></td>
-      <td colspan="3"><div align="left">{!! $verifikasi->ppta->data_pembimbing_2->nama!!}</div></td>
+      <td colspan="3"><div align="left">{!! @$psta->ppta->data_pembimbing_2->nama!!}</div></td>
       @else
       <td colspan="3"><div align="left"></div></td>
       @endif
@@ -157,7 +158,7 @@ window.print();
       <td>&nbsp;</td>
       <td width="101">Nama</td>
       <td width="8"><div align="center">:</div></td>
-      <td width="677">{!! $verifikasi->mahasiswa->nama !!}</td>
+      <td width="677">{!! $verifikasi->pskp->mahasiswa->nama !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -165,7 +166,7 @@ window.print();
       <td>&nbsp;</td>
       <td>NIM</td>
       <td><div align="center">:</div></td>
-      <td>{!! $verifikasi->mahasiswa->nim !!}</td>
+      <td>{!! $verifikasi->pskp->mahasiswa->nim !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -173,7 +174,7 @@ window.print();
       <td>&nbsp;</td>
       <td>Program Studi</td>
       <td><div align="center">:</div></td>
-      <td>{!! $verifikasi->mahasiswa->prodi->nama !!}</td>
+      <td>{!! $verifikasi->pskp->mahasiswa->prodi->nama !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -181,7 +182,7 @@ window.print();
       <td>&nbsp;</td>
       <td>Judul TA</td>
       <td><div align="center">:</div></td>
-      <td>{!! $verifikasi->ppta->judul !!}</td>
+      <td>{!! $verifikasi->pskp->judul !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -206,7 +207,7 @@ window.print();
     <tr>
       <td>KETIGA</td>
       <td><div align="center">:</div></td>
-      <td colspan="4">Keputusan ini berlaku selama 6 (enam) bulan sejak tanggal ditetapkan sampai dengan tanggal </td>
+      <td colspan="4">Keputusan ini berlaku selama 6 (enam) bulan sejak tanggal {!! date('d-m-Y',strtotime($tanggal)) !!} ditetapkan sampai dengan tanggal {!! date('d-M-Y',$expired) !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>

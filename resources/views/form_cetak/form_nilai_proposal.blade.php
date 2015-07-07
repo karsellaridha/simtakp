@@ -11,37 +11,37 @@ window.print();
   </p></center>
 
 <h3><b><center>
-  <p>FORM PENILAIAN UJIAN KOMPREHENSIF </p>
+  <p>FORM PENILAIAN UJIAN PROPOSAL </p>
 </center></h3>
 <center><table width="100%" border="0">
   <tr>
     <td width="28%">Nama Mahasiswa<td width="3%">:</td>
-    <td width="69%">&nbsp;</td>
+    <td width="69%">{!! $ujianta1->mahasiswa->nama !!}</td>
   </tr>
   <tr>
     <td>NIM</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! $ujianta1->mahasiswa->nim !!}</td>
   </tr>
   <tr>
     <td>Program Studi</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! $ujianta1->mahasiswa->prodi->nama !!}</td>
   </tr>
   <tr>
     <td>Hari/Tanggal</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! date('d-M-Y',strtotime($tanggal)) !!}</td>
   </tr>
   <tr>
     <td>Waktu</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! date('d-M-Y',strtotime($tanggal)) !!}</td>
   </tr>
   <tr>
     <td>Judul Tugas Akhir</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! $pengajuan->judul !!}</td>
   </tr>
   <tr>
     <td>
@@ -56,12 +56,12 @@ window.print();
   <tr>
     <td>Pembimbing I</td>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! $pengajuan->ppta->data_pembimbing_1->nama!!}</td>
   </tr>
   <tr>
     <td>Pembimbing II</th>
     <td>:</td>
-    <td>&nbsp;</td>
+    <td>{!! @$pengajuan->ppta->data_pembimbing_2->nama!!}</td>
   </tr>
    <tr>
     <td>&nbsp;</th>
@@ -69,8 +69,7 @@ window.print();
     <td>&nbsp;</td>
   </tr>
 </table>
-
-Telah diperbaiki sesuai dengan saran dan koreksi tim penguju ujian komprehensif <br>
+  <br>
 <table width="100%" border="1">
   <tr>
     <td><div align="center"><strong>No</strong></div></td>

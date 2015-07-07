@@ -4,7 +4,9 @@ window.print();
 
 <?php
   $tanggal=date_default_timezone_get();
+  $expired = strtotime("+6 months", strtotime($tanggal));
  ?>
+
  
 <center>
   <p>{!! Html::image('kop copy.png','a picture', array('style'=>'width:902px; height:159px')) !!}
@@ -195,7 +197,7 @@ window.print();
     <tr>
       <td>KETIGA</td>
       <td><div align="center">:</div></td>
-      <td colspan="4">Keputusan ini berlaku selama 6 (enam) bulan sejak tanggal ditetapkan samapi dengan tanggal </td>
+      <td colspan="4">Keputusan ini berlaku selama 6 (enam) bulan sejak tanggal {!! date('d-m-Y',strtotime($tanggal)) !!} ditetapkan sampai dengan tanggal {!! date('d-M-Y',$expired) !!}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
