@@ -19,6 +19,7 @@ use App\PengujiUjianTa;
 class BimbingantaController extends Controller {
 
 public function tambah($nip){
+
 	return view("bimbinganta.tambah_bimbinganta")
 	->with('nip',$nip);
 	}
@@ -41,7 +42,9 @@ public function dataBimbinganta(){
 
 public function editBimbinganta($id){
 	$bimbinganta=Bimbinganta::findOrFail($id);
-	return view('bimbinganta.edit')->with('bimbinganta',$bimbinganta);
+	$nip=$bimbinganta->nip;
+	return view('bimbinganta.edit')->with('bimbinganta',$bimbinganta)
+	->with('nip',$nip);
 }
 
 public function updateBimbinganta(Request $request, $id){

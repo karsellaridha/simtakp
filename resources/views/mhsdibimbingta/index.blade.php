@@ -31,9 +31,11 @@
 	@if($tahun)
 			<th>No.SK</th>
 	@endif
+	    @if(Auth::user()->role != "ketua jurusan")
 		@if(!$tahun)
 			<th>Nilai</th>
 			<th>Aksi</th>
+		@endif
 		@endif
 		</tr>
 	</thead>
@@ -61,9 +63,10 @@
 			@if($tahun)
 			<td>{!! @$data_bimbinganta->psta->verifikasi->no_sk !!}</td>
 			@endif
-
+			@if(Auth::user()->role != "ketua jurusan")
 			@if(!$tahun)
 			<td><a href="{!! url("penilaian/detail/pembimbing/".$data_bimbinganta->nim) !!}">Penilaian</td>
+			@endif
 			<td>
 				<a href="{!! url("mhsdibimbingta/bimbinganta/".$data_bimbinganta->id) !!}">Progress Bimbingan</a><br>
 			</td>

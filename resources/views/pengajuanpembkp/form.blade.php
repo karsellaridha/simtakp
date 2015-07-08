@@ -1,4 +1,6 @@
-
+<?php
+  $tanggal=date_default_timezone_get();
+ ?>
 		<div class="form-group">
 			{!! Form::label('dosen','Dosen :') !!}
 				<div class="input-group input-group-md">
@@ -21,7 +23,7 @@
 
 		<div class="form-group">
 			{!! Form::label('tahun','Tahun :') !!}
-			{!! Form::text('tahun',@$ppkp->tahun,['class'=>'form-control','id'=>'tahun']) !!}
+			{!! Form::text('tahun',date('Y',strtotime($tanggal)),['class'=>'form-control','id'=>'tahun','readonly']) !!}
 		</div>
 
 

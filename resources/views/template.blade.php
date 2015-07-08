@@ -267,7 +267,6 @@ color: #000;
               <ul class="treeview-menu">
                 <li class='white'><a href="{{ url('mahasiswa') }}"><i class="fa fa-circle-o"></i>Data Mahasiswa</a></li>
                 <li class='white'><a href="{{ url('dosen') }}"><i class="fa fa-circle-o"></i>Data Dosen</a></li>
-                <li class='white'><a href="{{ url('#') }}"><i class="fa fa-circle-o"></i>Data Laporan</a></li>
               </ul>
               
       </li>

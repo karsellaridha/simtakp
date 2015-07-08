@@ -15,6 +15,8 @@
 <td>Judul TA</td>
 <td>Jadwal</td>
 <td>Tempat</td>
+<td>Penguji 1</td>
+<td>Penguji 2</td>
 <td>Input Nilai</td>
 <td>Aksi</td>
 </tr>
@@ -33,6 +35,8 @@
 <td>{!! $psta->judul !!}</td>
 <td>{!! @$data->jadwal !!}</td>
 <td>{!! @$data->tempat_sidang !!}</td>
+<td>{!! @$penguji->data_penguji_1->nama !!}</td>
+<td>{!! @$penguji->data_penguji_2->nama !!}</td>
 <td>@if($psta->ppta->pembimbing_2==null)
 	<a href="{{ url('penilaianadmin/pembimbing/ta1/'.$data->nim.'/'.$psta->ppta->pembimbing_1) }}">Pembimbing 1</a>
 	@else

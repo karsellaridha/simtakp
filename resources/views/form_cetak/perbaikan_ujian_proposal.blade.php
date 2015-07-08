@@ -1,6 +1,6 @@
-<!--<script>
+<script>
 window.print();
-</script>-->
+</script>
 
 <?php
   $tanggal=date_default_timezone_get();
